@@ -4,7 +4,11 @@
             <div class="header" style="font-family:arial;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="http://192.168.3.36:8069/custom_reports/static/src/bw_logo.jpg" alt="" style="width:150px;"/>
+                        <img 
+                            t-attf-src="/custom_reports/static/src/bw_logo.jpg" 
+                            alt="Logo de la empresa" 
+                            style="width:150px;"
+                        />
                     </div>
                     <div class="col-8 text-center" style="font-size:16px;">
                         <p>DEPARTAMENTO DE MATERIALES</p>

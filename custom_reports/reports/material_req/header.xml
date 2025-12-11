@@ -4,7 +4,11 @@
             <div class="header">
                 <div class="row">
                     <div style="width:20%;" >
-                        <img src="http://190.6.32.86/custom_reports/static/src/bw_logo.jpg" alt="" style="width:150px;"/>
+                        <img 
+                            t-attf-src="/custom_reports/static/src/bw_logo.jpg" 
+                            alt="Logo de la empresa" 
+                            style="width:150px;"
+                        />
                     </div>
                     <div class="text-center" style="width:70%;display:table;margin-top:20px;">
                         <div class="col-3" style="display:table-cell;vertical-align: middle;text-align:center;">
