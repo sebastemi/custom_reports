@@ -15,18 +15,30 @@
                                     <tbody>
                                         <tr>
                                             <td style="border:1px solid #fff;">Sub-Total:</td>
-                                            <td style="border:1px solid #fff;"><span t-field="doc.currency_id.symbol"></span></td>
-                                            <td style="border:1px solid #fff;"><t t-esc="format_value(doc.subtotal, {'digits': [False, 2]})"/></td>
+                                            <td style="border:1px solid #fff;">
+                                                <span 
+                                                    t-field="doc.subtotal" 
+                                                    t-options='{"widget": "monetary", "display_currency": doc.currency_id, "minimum_label_width": 2}'
+                                                />
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td style="border:1px solid #fff;">I.V.A</td>
-                                            <td style="border:1px solid #fff;"><span t-field="doc.currency_id.symbol"></span></td>
-                                            <td style="border:1px solid #fff;"><t t-esc="format_value(doc.iva, {'digits': [False, 2]})"/></td>
+                                            <td style="border:1px solid #fff;">
+                                                <span 
+                                                    t-field="doc.iva" 
+                                                    t-options='{"widget": "monetary", "display_currency": doc.currency_id, "minimum_label_width": 2}'
+                                                />
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td style="border:1px solid #fff;">Total:</td>
-                                            <td style="border:1px solid #fff;"><span t-field="doc.currency_id.symbol"></span></td>
-                                            <td style="border:1px solid #fff;"><t t-esc="format_value(doc.total, {'digits': [False, 2]})"/></td>
+                                            <td style="border:1px solid #fff;">
+                                                <span 
+                                                    t-field="doc.subtotal" 
+                                                    t-options='{"widget": "monetary", "display_currency": doc.currency_id, "minimum_label_width": 2}'
+                                                />
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
