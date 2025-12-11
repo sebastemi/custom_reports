@@ -1,0 +1,62 @@
+<odoo>
+    <data>
+        <template id="report_dispatch_order_footer">
+            <div class="footer" style="font-family:sans-serif;font-size:16px;">
+                <div class="letter-amount">
+                    <p>Monto a Pagar:</p>
+                    <p><t t-esc="doc.spell_amount"/></p>
+                </div>
+                <table style="width:100%;border:1px solid #fff;">
+                    <tbody>
+                        <tr class="">
+                            <td style="width:50%;border:1px solid #fff;"></td>
+                            <td style="width:50%;text-align:end;border:1px solid #fff;">
+                                <table style="width:100%;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="border:1px solid #fff;">Sub-Total:</td>
+                                            <td style="border:1px solid #fff;"><span t-field="doc.currency_id.symbol"></span></td>
+                                            <td style="border:1px solid #fff;"><t t-esc="doc.subtotal"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border:1px solid #fff;">I.V.A</td>
+                                            <td style="border:1px solid #fff;"><span t-field="doc.currency_id.symbol"></span></td>
+                                            <td style="border:1px solid #fff;"><t t-esc="doc.iva"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border:1px solid #fff;">Total:</td>
+                                            <td style="border:1px solid #fff;"><span t-field="doc.currency_id.symbol"></span></td>
+                                            <td style="border:1px solid #fff;"><t t-esc="doc.total"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="footer-info">
+                    <div>
+                        <p style="display:inline-block;width:100%;text-align:center;">
+                            e-mail: cobranzas@grupoteml.com - contrato@grupotemi.com 
+                        </p>
+                        <p class="direction">
+                            Domicilio Fiscal: Calle 88 Av. Este-Oeste 4 CC Rotoval Nivel PB Local 2 Y 3 Zona Industrial Municipal Norte Valencia Carabobo. Tel. 0241-4121388/ 412-5318450.
+                        </p>
+                        <p class="direction">
+                            Dirección de Planta: Carretera Nacional Valencia-Tocuyito, Local Teml No. 0, Sector El Vigia Z.P. 2035, Valencia, Edo. Carabobo, Venezuela. Tels.: (58) 0241-3000200/6179071 al74-Fax: 0241 3000241 
+                        </p>
+                    </div>
+                    <div class="printer-info">
+                        <p style="font-size:10px;width:50%;">
+                            Datos del Impresor: GRAFIPRESS, C.A., R.I.F. J-07004200-1 Calles 77 y 78 Esq. Av. 3C Edif. Centro Gráfico Maracaibo. Telfs.: (0261) 7916584 85, 7920309 - 91. Providencia No SENIAT/04/00001 de Fecha 10- 01-2008 Region Zuliana Cantidad 10000 N° de Control desde el N° 00-0012001 hasta el N° 00-0022000 Fecha: 08-08-2014 
+                        </p>
+                    </div>
+                    <p style="text-align:center; color:red;">
+                        ORIGINAL-CLIENTE 
+                    </p>
+                </div>
+            </div>    
+
+        </template>
+    </data>
+</odoo>

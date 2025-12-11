@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+        <template id="layout_delivery_note_wh_order">
+            <t t-call="custom_reports.report_delivery_note_wh_order_header"/>
+            <div class="article">
+                <div class="row">
+                    <t t-out="0"/>
+                </div>
+            </div>
+            <t t-call="custom_reports.report_delivery_note_wh_order_footer"/>
+        </template>
+
+        <template id="report_delivery_note_wh_order_document">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="custom_reports.layout_delivery_note_wh_order">
+                        <t t-call="custom_reports.report_delivery_note_wh_order_main"/>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_delivery_note_wh_order" model="report.paperformat">
+            <field name="name">Formato Nota de Entrega entre Almacenes</field>
+            <field name="default" eval="False"/> 
+            <field name="format">A4</field> 
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">70</field> 
+            <field name="margin_bottom">40</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/> 
+            <field name="header_spacing">60</field> 
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="report_delivery_note_wh_order_custom" model="ir.actions.report">
+            <field name="name">Nota de entrega entre almacenes</field>
+            <field name="model">stock.picking</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">custom_reports.report_delivery_note_wh_order_document</field>
+            <field name="report_file">custom_reports.report_delivery_note_wh_order_document</field>
+            <field name="binding_model_id" ref="model_stock_picking"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="custom_reports.paperformat_delivery_note_wh_order"/> 
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,101 @@
+<odoo>
+    <data>
+        <template id="report_international_purchase_order_footer">
+            <t t-set="tasa" t-value="'Undefined'"/>
+            <t t-if="doc.currency == 'USD'">
+                <t t-set="tasa" t-value="1"/>
+            </t>
+            <t t-elif="doc.currency == 'EUR'">
+                <t t-set="tasa" t-value="doc.currency_rate_usd_to_eur"/>
+            </t>
+            <t t-else="">
+                <t t-set="tasa" t-value="doc.currency_rate_usd"/>
+            </t>
+
+            <div class="footer" style="font-family:Courier !important;">
+                <div class="row" style="height:50px;"></div>
+                <div style=" display:-webkit-box;display:-webkit-flex;;display:flex;border:1px solid #000;margin-bottom:10px;">
+                    <div style="width:50%;padding-left:10px;padding-top:10px;">
+                        <p>22. FORWARDER ADDRESS</p>
+                        <p><t t-esc="doc.supplier_direction"/></p>
+                    </div>
+                    <div style="width:50%;-webkit-box-flex: 1;-webkit-flex: 1;flex: 1;display:-webkit-box;display:-webkit-flex;;display:flex;">
+                        <div style="width:50%;  -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;">
+                            <p style="text-align:end;display:inline-block;margin:0px;width:100%;">21. Subtotal:<t t-esc="doc.currency"/></p>
+                            <p style="text-align:end;display:inline-block;margin:0px;width:100%;">21. IVA:%:<t t-esc="doc.currency"/></p>
+                            <p style="text-align:end;display:inline-block;margin:0px;width:100%;">21. TOTAL:<t t-esc="doc.currency"/></p>
+                        </div>
+                        <div style="width:50%;padding-right:10px; -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;">
+                            <p style="text-align:end;display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.sub_total*tasa)"/></p>
+                            <p style="text-align:end;display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.iva*tasa)"/></p>
+                            <p style="text-align:end;display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.total*tasa)"/></p>
+                        </div>
+                    </div>
+                </div>
+
+                <table style="width:100%;border:1px solid #000;border-collapse:collapse;">
+                    <tbody>
+                        <tr>
+                            <td style="border:1px solid #000;padding-left:5px;">
+                                <p style="margin: 2px;">23. SEND (02) ORIGINAL COMMERCIAL INVOICE IN SPANISH AND PACKING LIST TO: TEMI, C.A.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #000;padding-left:5px;">
+                                <p style="margin: 2px;">24. SEND (01) ORIGINAL COMMERCIAL INVOICE IN SPANISH AND PACKING LIST TO:</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #000;padding-left:5px;">
+                                <p style="margin: 2px;">25. REGIMEN</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #000;padding-left:5px;">
+                                <p style="margin: 2px;">26. NOTE: <t t-esc="doc.notes"/></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="width:100%;border:1px solid #000;border-collapse:collapse;">
+                    <tbody>
+                        <tr>
+                            <td style="border:1px solid #000;text-align:center;padding-top:0px;">
+                                <p>27. JOB NUMBER</p>
+                                <p><t t-esc="doc.worker_order"/></p>
+                            </td>
+                            <td style="border:1px solid #000;text-align:center;padding-top:0px;">
+                                <p>28. REQUISITION NUMBER</p>
+                                <p><t t-esc="doc.requisition"/></p>
+                            </td>
+                            <td style="border:1px solid #000;text-align:center;padding-top:0px;">
+                                <p>29. PREPARED:</p>
+                                <p><t t-esc="doc.created_by"/></p>
+                            </td>
+                            <td style="border:1px solid #000;text-align:center;padding-top:0px;">
+                                <p>30. REVISED BY:</p>
+                                <p><t t-esc="doc.reviewed_by"/></p>
+                            </td>
+                            <td style="border:1px solid #000;text-align:center;padding-top:0px;">
+                                <p>31. AUTORIZED BY:</p>
+                                <p><t t-esc="doc.approved_by"/></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p style="width:80%;padding-left:10px;font-family:Arial;font-size:12px;">
+                    Dirección Fiscal: Calle 88 Av. Este - Oeste 4 CC Rotoval Nivel PB Local 2 y 3 Zona Industrial Municipal Norte Valencia Carabobo Zona Postal 2003 Telfs:
+                    Master: (0241)-4123000, 3000200, 6179071 al 73. Fax: (0241)-3000241, 4123002, 4123046 e-mail: manaru.molina@grupotemi.com, elisa.aponte@grupotemi.com
+                    lila.garcia@grupotemi.com
+                </p>
+                <p style="text-align:end;font-family:Arial;font-size:12px;">
+                    Rif: J-07508517-5
+                </p>
+                <p style="font-family:Arial;font-size:12px;">
+                    TGLO-F03 / Rev. 0
+                </p>
+            </div>
+        </template>
+    </data>
+</odoo>

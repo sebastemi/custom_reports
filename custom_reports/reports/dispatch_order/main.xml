@@ -1,0 +1,90 @@
+<odoo>
+    <data>
+        <template id="report_dispatch_order_main">
+            <div class="container" style="font-family:sans-serif;font-size:16px;">
+                <div class="row">
+                    <p>NOMBRE O RAZON SOCIAL: <t t-esc="doc.company_name"/></p>
+                </div>
+                <div class="row">
+                    <p>DOMICILIO FISCAL: <t t-esc="doc.company_address"/></p>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <p>R.I.F.: <t t-esc="doc.tin"/></p>
+                    </div>
+                    <div class="col-6">
+                        <p>CODIGO CLIENTE <t t-esc="doc.tin_client"/></p>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <table class="data">
+                        <thead>
+                            <tr>
+                                <td>RENG</td>
+                                <td>DESCRIPCION</td>
+                                <td>CODIGO</td>
+                                <td>CANT</td>
+                                <td>PRECIO UNITARIO</td>
+                                <td>IMPORTE NETO</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="doc.move_ids_without_package" t-as="line" t-as-index="line_index">
+                                <tr>
+                                    <td class="text-center"><span t-esc="line_index + 1"/></td>
+                                    <td><span t-field="line.product_id.name"/></td>
+                                    <td><span t-field="line.product_id.default_code"/></td>
+                                    <td><span t-field="line.quantity"/></td>
+                                    <td class="text-right"><span t-field="line.id"/></td>
+                                    <td class="text-right"><span t-field="line.id"/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <style>
+                
+                .footer{
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                }
+
+                .footer .total{
+                    width:100%;
+                    display: -webkit-box;   
+                    display: -webkit-flex;
+                    -webkit-justify-content: end;
+                    text-align:right;
+                }
+
+                .footer .total .amount{
+                    width: 30%;
+                    max-width: 300px;
+                    margin: 0px;
+                    display: -webkit-box;   
+                    display: -webkit-flex;
+                }
+
+                .footer .total .amount div{
+                    display: -webkit-box;   
+                    display: -webkit-flex;
+                    -webkit-justify-content: justify;
+                }
+
+                .footer .footer-info{
+                    text-align: center;
+                }
+
+                .footer .footer-info .direction{
+                    text-align: left;
+                }
+
+                .footer .footer-info .printer-info {
+                    text-align: left;
+                }
+            </style>
+        </template>
+    </data>
+</odoo>

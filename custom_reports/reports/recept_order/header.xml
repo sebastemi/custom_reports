@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+        <template id="report_recept_order_header">
+            <div class="header" style="font-family:arial;">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="http://192.168.3.36:8069/custom_reports/static/src/bw_logo.jpg" alt="" style="width:150px;"/>
+                    </div>
+                    <div class="col-8 text-center" style="font-size:16px;">
+                        <p>DEPARTAMENTO DE MATERIALES</p>
+                        <p>INFORME DE RECEPCIÓN</p>
+                    </div>
+                    <div class="col-2">
+                        <p>
+                            1. Fecha:
+                        </p>
+                        <p>
+                            2. Pág. <span class="page"/> de <span class="topage"/>
+                        </p>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:50px;">
+                    <div class="col-5" style="border:1px solid #000;border-radius:10px;padding-left:10px;">
+                        <p>Datos de Recepción</p>
+                        <p>3. Nº de Informe de Recepción:</p>
+                        <p>4. Fecha de Entrega Solicitada:</p>
+                        <p>5. Fecha de Entrega Real:</p>
+                        <p>Recibido Por:</p>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-5" style="border:1px solid #000;border-radius:10px;padding-left:10px;">
+                        <p>Datos del Proveedor</p>
+                        <p>7. Codigo</p>
+                        <p>8. Nº Nota de Entrega:</p>
+                        <p>9. Nº de Factura:</p>
+                    </div>
+
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

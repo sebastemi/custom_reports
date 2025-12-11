@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <record id="stock_picking_report_view_form" model="ir.ui.view">
+            <field name="name">stock.picking.report.view.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Datos para Impresion">
+                        <button string="Descargar" name="download" type="object" class="oe_highlight"/>
+                        <group>
+                            <group>
+                                <field name="currency_id" options="{'currency_field': 'currency_id'}"/>
+                                <field name="control_index" />
+                                <field name="delivery_order" />
+                                <field name="delivery_date" />
+                                <field name="company_name" />
+                                <field name="company_address" />
+                                <field name="tin" />
+                                <field name="tin_client" />
+                                <field name="work_order" />
+                            </group>
+                            <group>
+                                <field name="purshase_order" />
+                                <field name="pay_conditions" />
+                                <field name="pay_method" />
+                                <field name="transport" />
+                                <field name="spell_amount" />
+                                <field name="subtotal" class="monetary"/>
+                                <field name="iva" class="monetary"/>
+                                <field name="total" class="monetary"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        
+    </data>
+</odoo>

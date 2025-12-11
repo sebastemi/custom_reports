@@ -1,0 +1,72 @@
+<odoo>
+    <data>
+        <template id="report_national_purchase_order_main">
+            <t t-set="tasa" t-value="'Undefined'"/>
+            <t t-if="doc.currency == 'USD'">
+                <t t-set="tasa" t-value="1"/>
+            </t>
+            <t t-elif="doc.currency == 'EUR'">
+                <t t-set="tasa" t-value="doc.currency_rate_usd_to_eur"/>
+            </t>
+            <t t-else="">
+                <t t-set="tasa" t-value="doc.currency_rate_usd"/>
+            </t>
+            <div class="container">
+                <div class="row" style="font-family:Arial;letter-spacing:2px;">
+                    <table style="width:100%;border-collapse: collapse;border:1px solid #FFF;font-size:11px;">
+                        <thead style="font-size:10px;">
+                            <tr>
+                                <th style="padding:1px;white-spacing:nowrap;">11.Reng.</th>
+                                <th style="padding:1px;white-spacing:nowrap;">12.Artículo</th>
+                                <th style="padding:1px;white-spacing:nowrap;">13.Descripción</th>
+                                <th style="padding:1px;text-align:right;white-spacing:nowrap;">14.Cantidad</th>
+                                <th style="padding:1px;white-spacing:nowrap;"></th>
+                                <th style="padding:1px;text-align:right;white-spacing:nowrap;">15.Precio</th>
+                                <th style="padding:1px;text-align:right;white-spacing:nowrap;">16.Desc.</th>
+                                <th style="padding:1px;text-align:right;white-spacing:nowrap;">17.Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="doc.order_line" t-as="line">
+                                <tr>
+                                    <td style="padding:5px;text-align:center;width:2%;">
+                                        <t t-esc="line_index + 1"/>
+                                    </td>
+
+                                    <td style="padding:5px;width:20%;">
+                                        <t t-esc="line.product_id.default_code"/>
+                                    </td>
+
+                                    <td style="padding:5px;width:30%;">
+                                        <t t-esc="line.product_id.name"/>
+                                    </td>
+
+                                    <td style="padding:5px;text-align:right;width:10%;">
+                                        <t t-esc="'{:.2f}'.format(line.product_qty)"/>
+                                    </td>
+
+                                    <td style="padding:5px;width:5%;">
+                                        <t t-esc="line.product_uom.name"/>
+                                    </td>
+
+                                    <td style="padding:5px;text-align:right;width:10%;">
+                                        <t t-esc="'{:.2f}'.format(line.price_unit*tasa)"/>
+                                    </td>
+
+                                    <td style="padding:5px;text-align:right;width:10%;">
+                                        0,00
+                                    </td>
+
+                                    <td style="padding:5px;text-align:right;width:10%;">
+                                        <t t-esc="'{:.2f}'.format(line.price_subtotal*tasa)"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,26 @@
+.cell-spacing{
+    padding:8px 10px 8px 4px;
+}
+
+.custom-cell-border-body{
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.custom-table-borderless{
+    border:1px solid #fff;
+}
+
+.custom-border-black{
+    border:1px solid #000;
+}
+
+.data{
+    width:100%;
+    border-collapse: collapse;
+    border:1px solid #000;
+}
+
+.data th, .data td{
+    padding: 5px;
+}

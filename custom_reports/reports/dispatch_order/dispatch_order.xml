@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+        <template id="layout_dispatch_order">
+            <t t-call="custom_reports.report_dispatch_order_header"/>
+            <div class="article o_report_layout_standard">
+                <div class="row">
+                    <t t-out="0"/>
+                </div>
+            </div>
+            <t t-call="custom_reports.report_dispatch_order_footer"/>
+        </template>
+
+        <template id="report_dispatch_order_document">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="custom_reports.layout_dispatch_order">
+                        <t t-call="custom_reports.report_dispatch_order_main"/>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_dispatch_order_no_margin" model="report.paperformat">
+            <field name="name">Formato Orden de Despacho</field>
+            <field name="default" eval="False"/> 
+            <field name="format">A4</field> 
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">70</field> 
+            <field name="margin_bottom">100</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/> 
+            <field name="header_spacing">80</field> 
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="report_stock_picking_custom" model="ir.actions.report">
+            <field name="name">Órden de Despacho</field>
+            <field name="model">stock.picking</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">custom_reports.report_dispatch_order_document</field>
+            <field name="report_file">custom_reports.report_dispatch_order_document</field>
+            <field name="binding_model_id" ref="model_stock_picking"/>
+            <field name="binding_type">report</field>
+            <field name="print_report_name">'Órden de Despacho - %s' % (object.name)</field>
+            <field name="paperformat_id" ref="custom_reports.paperformat_dispatch_order_no_margin"/> 
+        </record>
+    </data>
+</odoo>

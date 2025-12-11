@@ -1,0 +1,86 @@
+<odoo>
+    <data>
+        <template id="report_purchase_request_order_main">
+            <div class="container">
+                <div class="row" style="font-family:Arial;">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>7. Nº</th>
+                                <th>8. Código</th>
+                                <th>9. Descripción</th>
+                                <th>10. Cant.</th>
+                                <th>11. U/M</th>
+                                <th>12. Proveedor Seleccionado</th>
+                                <th>13. O/C</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="doc.order_line" t-as="line">
+                                <tr>
+                                    <td class="text-center" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                        <t t-esc="line_index + 1"/>
+                                    </td>
+                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                        <t t-esc="line.product_id.default_code"/>
+                                    </td>
+                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                        <t t-esc="line.product_id.name"/>
+                                        <div class="row" style="margin-top:5px">
+                                            <div class="col-2">
+                                                <p>RC: 
+                                                    <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="col-2">
+                                                <p>PP: 
+                                                    <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="col-2">
+                                                <p>CG: 
+                                                    <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="col-2">
+                                                <p>PS: 
+                                                    <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="col-2">
+                                                <p>CC: 
+                                                    <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="col-2">
+                                                <p>NA: 
+                                                    <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                        <t t-esc="'{:.2f}'.format(line.product_qty)"/>
+                                    </td>
+                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                        <t t-esc="line.product_uom.name"/>
+                                    </td>
+                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}"></td>
+                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                        <t t-esc="doc.preq_po"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

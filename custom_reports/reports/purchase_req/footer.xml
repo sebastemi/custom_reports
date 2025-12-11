@@ -1,0 +1,62 @@
+<odoo>
+    <data>
+        <template id="report_purchase_request_order_footer">
+            <div class="footer">
+                <div class="container" style="font-family:arial;margin-top:100px;">
+                    <div style="display:-webkit-box;display:-webkit-flex;display:flex;" >
+                        <div style="width:25%;">
+                            <span>15.Elaborado Por: </span>
+                            <span class="d-inline-block" style="border-bottom:1px solid #000;width:150px;font-size:12px;">
+                                <t t-esc="doc.preq_created_by"/>
+                            </span>
+                        </div>
+                        <div style="width:25%;">
+                            <span>16. Revisado Por: </span>
+                            <span class="d-inline-block" style="border-bottom:1px solid #000;width:150px;font-size:12px;">
+                                <t t-esc="doc.preq_received_by"/>
+                            </span>
+                        </div>
+                        <div style="width:25%;">
+                            <span>17. Aprobado Por: </span>
+                            <span class="d-inline-block" style="border-bottom:1px solid #000;width:150px;font-size:12px;">
+                                <t t-esc="doc.preq_approved_by"/>
+                            </span>
+                        </div>
+                        <div style="width:25%;">
+                            <span>Recibido Por Compras: </span>
+                            <span class="d-inline-block" style="border-bottom:1px solid #000;width:150px;font-size:12px;">
+                                <t t-esc="doc.preq_approved_by"/>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div style="width:15%;">
+                            <p>18. Observaciones:</p>
+                        </div>
+                        <div style="border-bottom:1px solid #000;width:85%;">
+                            <div style="display:table-cell;vertical-align: bottom;">
+                                <t t-esc="doc.preq_notes"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <p style="font-size:12px;">
+                            <b>RC:</b> Reporte de calidad 
+                            <b>PP:</b> Protocolo de Pruebas 
+                            <b>CG:</b> Certificado de Garantia 
+                            <b>PS:</b> Pruebas en Sitio 
+                            <b>CC:</b> Certificado de Calibración 
+                            <b>NA:</b> No aplica
+                        </p>
+                    </div>
+                    <div class="row mt-2">
+                        <span>19. Pág <span class="page"/> de <span class="topage"/></span>
+                    </div>
+                    <div class="row mt-4">
+                        <p>TGIN-F01 / Rev. 0</p>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

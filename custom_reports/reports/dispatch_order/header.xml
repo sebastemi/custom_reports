@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+        <template id="report_dispatch_order_header">
+            <div class="header" style="font-family:sans-serif;font-size:16px;">
+                <div class="row mt-4">
+                    <table style="width:100%;border:1px solid #fff;">
+                        <tbody>
+                            <tr>
+                                <td style="border:1px solid #fff;">
+                                    <div class="logo" style="margin-top:100px;">
+                                        <img src="https://lirp.cdn-website.com/ac63c28d/dms3rep/multi/opt/LOGO+TEMI+web-288w.png" alt=""/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <h1 style="margin:0px;padding:0px;font-size:26px;font-weight:600;">TEMI, C.A.</h1>
+                                        <h2 style="margin:0px;padding:0px;font-size:16px;font-weight:600;">RIF: J-07508517-5</h2>
+                                    </div>
+                                </td>
+                                <td style="border:1px solid #fff;">
+                                    <div style="text-align:right;">
+                                        <p style="margin:0px;padding:0px;font-weight:100 !important;">FORMA LIBRE</p>
+                                        <p style="margin:0px;padding:0px;">Nº. DE CONTROL:</p>
+                                        <p style="margin:0px;padding:0px;">00-<span style="color:red;font-size:20px;"><t t-esc="doc.control_index"/></span></p>
+                                    </div>
+                                    <div style="text-align:right;">
+                                        <p style="margin:0px;padding:0px;">Orden de Entrega: <t t-esc="doc.delivery_order"/></p>
+                                        <p style="margin:0px;padding:0px;"><span t-field="doc.delivery_date" t-options="{'widget': 'date', 'format': 'dd/MM/yyyy'}"/></p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row mt-4">
+                    <table class="data">
+                        <thead>
+                            <tr>
+                                <td>ORDEN DE TRABAJO</td>
+                                <td>ORDEN DE COMPRAS</td>
+                                <td>CONDICIONES DE PAGO</td>
+                                <td>FORMA DE PAGO</td>
+                                <td>TRANSPORTE</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><t t-esc="doc.work_order"/></td>
+                                <td><t t-esc="doc.purshase_order"/></td>
+                                <td><t t-esc="doc.pay_conditions"/></td>
+                                <td><t t-esc="doc.pay_method"/></td>
+                                <td><t t-esc="doc.transport"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

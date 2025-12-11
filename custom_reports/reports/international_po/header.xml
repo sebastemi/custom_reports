@@ -1,0 +1,110 @@
+    <odoo>
+    <data>
+    
+        <template id="report_international_purchase_order_header">
+            <div class="header" style="font-family:Courier !important;">
+                <table style="width:100%;border:1px solid #000;border-collapse:collapse;">
+                    <tbody>
+                        <tr>
+                            <td style="display:inline-block;padding:10px 10px;border-right:1px solid #fff;">
+                                <img src="https://lirp.cdn-website.com/ac63c28d/dms3rep/multi/opt/LOGO+TEMI+web-288w.png" alt="" style="width:100px;"/>
+                            </td>
+                            <td style="border-left:1px solid #fff;"> 
+                                <h1 style="display:inline-block;padding-left:100px;font-size:16px;"><b>PURCHASE ORDER</b></h1>
+                            </td>
+                            <td>
+                                <p style="display:inline-block;padding-left:10px;">
+                                    1. Page: <span class="page"/> of <span class="topage"/>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="width:100%;border:1px solid #000;border-collapse:collapse;">
+                    <tbody>
+                        <tr>
+                            <td style="border:1px solid #000;width:50%;padding-left:10px;">
+                                <p>2. SUPPLIER: <t t-esc="doc.supplier"/></p>
+                            </td>
+                            <td style="border:1px solid #000;width:25%;padding-left:10px;">
+                                <p style="">3. ATT: </p>
+                            </td>
+                            <td style="border:1px solid #000;width:25%;padding-left:10px;">
+                                <p style="">4. ORDER Nº. <t t-esc="doc.name"/></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="width:100%;border:1px solid #000;border-collapse:collapse;">
+                    <tbody>
+                        <tr>
+                            <td style="border:1px solid #000;width:75%;padding-left:10px;">
+                                <p>5. ADDRESS: <t t-esc="doc.supplier_direction"/></p>
+                            </td>
+                            <td style="border:1px solid #000;width:25%;padding-left:10px;">
+                                <p>6. REV.: <t t-esc="doc.rev"/></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="width:100%;border:1px solid #000;border-collapse:collapse;">
+                    <tbody>
+                        <tr>
+                            <td style="border:1px solid #000;width:40%;padding-left:10px;">
+                                <p>7. PURCHASER: TEMI, C.A.</p>
+                            </td>
+                            <td style="border:1px solid #000;width:40%;padding-left:10px;">
+                                <p>8. ORDER TERMS: </p>
+                            </td>
+                            <td style="border:1px solid #000;width:20%;padding-left:10px;">
+                                <p>9. DATE: <span t-field="doc.order_date" t-options='{"widget": "date", "format": "MM/dd/yyyy"}'/></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="width:100%;border:1px solid #000;border-collapse:collapse;">
+                    <tbody>
+                        <tr>
+                            <td style="border:1px solid #000;width:75%;padding-left:10px;">
+                                <p>10. TERMS OF PAYMENT: <t t-esc="doc.payment_conditions"/></p>
+                            </td>
+                            <td style="border:1px solid #000;width:25%;padding-left:10px;">
+                                <p>11. DATE REQUIRED IN THE FORWARDER: <span t-field="doc.delivery_date" t-options='{"widget": "date", "format": "MM/dd/yyyy"}'/></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="width:100%;border:1px solid #000;border-collapse:collapse;">
+                    <tbody>
+                        <tr>
+                            <td style="border:1px solid #000;width:75%;padding-left:10px;">
+                                <p>12. SHIPPING MARK: <t t-esc="doc.delivery_place"/></p>
+                            </td>
+                            <td style="border:1px solid #000;width:25%;padding-left:10px;">
+                                <p>13. INSURANCE: </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="width:100%;border:1px solid #000;border-collapse:collapse;">
+                    <tbody>
+                        <tr>
+                            <td style="border:1px solid #000;width:40%;padding-left:10px;">
+                                <p>14. TYPE OF PACKING: </p>
+                            </td>
+                            <td style="border:1px solid #000;width:60%;padding-left:10px;">
+                                <p>
+                                    <b>
+                                        IMPORTANT: PLEASE ACKNOWLEDGE THIS ORDER
+                                        PROMPTLY AND ADVISE APROXIMATE SHIPPING DATE,
+                                        GROSS AND NET WEIGHT TO TEMI, C.A
+                                    </b>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </template>
+    </data>
+</odoo>

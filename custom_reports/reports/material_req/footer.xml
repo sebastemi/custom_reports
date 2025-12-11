@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+        <template id="report_material_request_order_footer">
+            <div class="footer">
+                <div class="row">
+                    <p style="font-size:12px">
+                        C: Reporte de Calidad PP: Protocolo de Prueba  CG: Certificado de Garantía  
+                        PS: Pruebas en Sitio CC: Certificado de Calibración  NA: No aplica
+                    </p>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-2">14. Observaciones:</div>
+                    <div class="col-10" style="border-bottom:1px solid #000;"><t t-esc="doc.req_notes"/></div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-4">
+                                <p><strong>15. Elaborado Por:</strong></p>
+                            </div>
+                            <div class="col-6">
+                                <div style="border-bottom: 1px solid black;"><t t-esc="doc.req_received_by"/></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4"></div>
+                            <div class="col-6">
+                                <p class="text-center">Nombre, Apellido y Firma</p>
+                            </div>
+                        </div>
+                   </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-4">
+                                <p><strong>16. Aprobado Por:</strong></p>
+                            </div>
+                            <div class="col-6">
+                                <div style="border-bottom: 1px solid black;"><t t-esc="doc.req_received_by"/></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4"></div>
+                            <div class="col-6">
+                                <p class="text-center">Nombre, Apellido y Firma</p>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+                <div class="row mt-4" >
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-4">
+                                <p><strong>16. Recibido Por:</strong></p>
+                            </div>
+                            <div class="col-6">
+                                <div style="border-bottom: 1px solid black;"><t t-esc="doc.req_received_by"/></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4"></div>
+                            <div class="col-6">
+                                <p class="text-center">Nombre, Apellido y Firma</p>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+                <div class="row" style="margin-top:50px;">
+                    <p>TGIN-F06 / Rev. 0</p>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

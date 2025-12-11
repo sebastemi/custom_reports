@@ -1,0 +1,52 @@
+<odoo>
+    <data >
+        <template id="report_delivery_note_wh_order_main">
+            <div class="page"> 
+                <div class="row">
+                    <table class="table table-bordered" style="font-family:arial;">
+                        <thead>
+                            <tr>
+                                <th>6. Cod. Articulo</th>
+                                <th>7. Descripcion</th>
+                                <th>8. Origen</th>
+                                <th>9. Destino</th>
+                                <th>10. Unidad</th>
+                                <th>11. Cantidad</th>
+                                <th>12. Numero de Lote</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="doc.move_ids_without_package" t-as="line">
+                                <t t-foreach="line.move_line_ids" t-as="subline">
+                                    <tr>
+                                        <td>
+                                            <t t-esc="line.product_id.default_code"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="line.product_id.name"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="doc.location_id.name"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="doc.location_dest_id.name"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="subline.product_uom_id.name"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="'{:.2f}'.format(subline.quantity)"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="subline.lot_id.name"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

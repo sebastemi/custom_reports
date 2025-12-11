@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+        <template id="layout_international_purchase_order">
+            <t t-call="custom_reports.report_international_purchase_order_header"/>
+            <div class="article" style="font-family:Courier !important;">
+                <div class="row">
+                    <t t-out="0"/>
+                </div>
+            </div>
+            <t t-call="custom_reports.report_international_purchase_order_footer"/>
+        </template>
+
+        <template id="report_international_purchase_order_document">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="custom_reports.layout_international_purchase_order">
+                        <t t-call="custom_reports.report_international_purchase_order_main"/>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_international_purchase_order" model="report.paperformat">
+            <field name="name">Formato Orden de Compras Internacional</field>
+            <field name="default" eval="False"/> 
+            <field name="format">A4</field> 
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">120</field> 
+            <field name="margin_bottom">120</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/> 
+            <field name="header_spacing">110</field> 
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="report_international_purchase_order_custom" model="ir.actions.report">
+            <field name="name">Órden de Compras Internacional</field>
+            <field name="model">purchase.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">custom_reports.report_international_purchase_order_document</field>
+            <field name="report_file">custom_reports.report_international_purchase_order_document</field>
+            <field name="binding_model_id" ref="model_purchase_order"/>
+            <field name="binding_type">report</field>
+            <field name="print_report_name">'Órden de Compras Internacional - %s' % (object.name)</field>
+            <field name="paperformat_id" ref="custom_reports.paperformat_international_purchase_order"/> 
+        </record>
+    </data>
+</odoo>

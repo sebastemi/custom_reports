@@ -1,0 +1,61 @@
+<odoo>
+    <data >
+        <template id="report_delivery_note_wh_order_header">
+            <div class="header" style="font-family:arial;">
+                <div class="row">
+                    <div style="width:20%;" >
+                        <img src="http://192.168.3.36:8069/custom_reports/static/src/bw_logo.jpg" alt="" style="width:150px;"/>
+                    </div>
+                    <div class="text-center" style="width:70%;display:table;margin-top:20px;">
+                        <div class="col-3" style="display:table-cell;vertical-align: middle;text-align:center;">
+                            <div style="border-bottom: 3px solid black; margin-top: 10px; margin-bottom: 10px;"></div>
+                        </div>
+                        <div class="col-6" style="display:table-cell;vertical-align: bottom;text-align:center;">
+                            <b style="font-family:arial;display:inline-block;font-size:20px;">NOTA DE ENTREGA ENTRE ALMACEN</b>
+                        </div>
+                        <div class="col-3" style="display:table-cell;vertical-align: middle;text-align:center;">
+                            <div style="border-bottom: 3px solid black; margin-top: 10px; margin-bottom: 10px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div style="border:1px solid #000;height:50px;padding:10px;width:600px;">
+                                        1. ORIGEN
+                                        <p><t t-esc="doc.location_id.name"/></p>
+                                    </div>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <div style="border:1px solid #000;height:50px;padding:10px;width:600px;">
+                                        2. DESTINO
+                                        <p><t t-esc="doc.location_dest_id.name"/></p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-6">
+                        <div>
+                            3. Nro. Nota de Entrega: <t t-esc="doc.name"/>
+                        </div>
+                        <div class="mt-4">
+                            4. Fecha de Entrega: <span t-field="doc.delivery_date" t-options="{'widget': 'date', 'format': 'dd/MM/yyyy'}"/>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div>
+                            5. Observación: 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

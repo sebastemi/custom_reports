@@ -1,0 +1,81 @@
+<odoo>
+    <data>
+        <template id="report_international_purchase_order_main">
+            <t t-set="tasa" t-value="'Undefined'"/>
+            <t t-if="doc.currency == 'USD'">
+                <t t-set="tasa" t-value="1"/>
+            </t>
+            <t t-elif="doc.currency == 'EUR'">
+                <t t-set="tasa" t-value="doc.currency_rate_usd_to_eur"/>
+            </t>
+            <t t-else="">
+                <t t-set="tasa" t-value="doc.currency_rate_usd"/>
+            </t>
+            <div>
+                <table style="width:100%;border:1px solid #000;border-collapse:collapse;">
+                    <thead >
+                        <tr style="height:20px;margin:0px;padding:0px;">
+                            <td style="border:1px solid #000;text-align:center;">
+                                <p style="margin:0px">ITEM</p>
+                            </td>
+                            <td style="border:1px solid #000;text-align:center;">
+                                <p style="margin:5px">SUP CODE</p>
+                            </td>
+                            <td style="border:1px solid #000;text-align:center;">
+                                <p style="margin:5px">DESCRIPTION</p>
+                            </td>
+                            <td style="border:1px solid #000;text-align:center;">
+                                <p style="margin:5px">QTY</p>
+                            </td>
+                            <td style="border:1px solid #000;text-align:center;">
+                                <p style="margin:5px">U.P</p>
+                            </td>
+                            <td style="border:1px solid #000;text-align:center;">
+                                <p style="margin:5px">TOTAL</p>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="doc.order_line" t-as="line">
+                            <tr >
+                                <td class="td-data border-right border-left text-center px-2" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                    <p style="margin: 0px;"><t t-esc="line_index + 1"/></p>
+                                </td>
+                                <td class="td-data border-right px-1" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                    <p style="margin: 0px;"><t t-esc="line.product_id.default_code"/></p>
+                                </td>
+                                <td class="td-data border-right px-2" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                    <p style="margin: 0px;"><t t-esc="line.product_id.name"/></p>
+                                </td>
+                                <td class="td-data border-right px-2" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                    <p style="margin: 0px;"><t t-esc="'{:.2f}'.format(line.product_qty)"/></p>
+                                </td>
+                                <td class="td-data border-right text-right px-2" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                    <p style="margin: 0px;"><t t-esc="'{:.2f}'.format(line.price_unit*tasa)"/></p>
+                                </td>
+                                <td class="td-data border-right text-right px-2" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                    <p style="margin: 0px;"><t t-esc="'{:.2f}'.format(line.price_subtotal*tasa)"/></p>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+
+            </div>
+            <style>
+                .td-data{
+                    border: 1px solid #fff;
+                    border-right: 1px solid #000;
+                }
+
+                .border-left{
+                    border-left: 1px solid #000;
+                }
+
+                .border-right{
+                    border-right: 1px solid #000;
+                }
+            </style>
+        </template>
+    </data>
+</odoo>

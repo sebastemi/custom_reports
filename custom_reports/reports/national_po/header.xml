@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+        <template id="report_national_purchase_order_header">
+            <div class="header" style="font-family:arial;letter-spacing:1px;">
+                <div style="display:table;">
+                    <div style="display:table-cell;width:100px;padding-right:10px;text-align:center;">
+                        <img src="https://lirp.cdn-website.com/ac63c28d/dms3rep/multi/opt/LOGO+TEMI+web-288w.png" alt="" style="width:100px;"/>
+                        <br/>
+                        <span style="font-size: 8px;">R.I.F. J-075085175</span>
+                    </div>
+                    <div style="display:table-cell;vertical-align: top;font-size:11px;display:inline-block;text-align:center;">
+                        <span>
+                            Dirección Fiscal: Calle 88 Av. Este - Oeste 4 CC Rotoval Nivel PB Local 2 y 3 Zona Industrial Municipal Norte
+                            Valencia Carabobo Zona Postal 2003 Telfs: Directo: (0241)-4131281/0412-4411128/0412-4432624. <br/>
+                        </span>
+                        <span style="display:inline-block; margin-top:12px;width:100%;">
+                            email:manaru.molina@grupotemi.com, elisa.aponte@grupotemi.com
+                        </span>
+                    </div>
+                    <div style="display:table-cell;vertical-align: top;font-size:12px;text-align:right;width:100px;">
+                        <span>1. Pág <span class="page"/> de <span class="topage"/></span>
+                    </div>
+                </div>
+                <div class="container" style="margin-top:30px;">
+                    <div class="row">
+                        <div style="border:black 2px solid;height:250px;font-size:14px;" class="col-5 py-2 px-2">
+                            <p>2. Proveedor: <t t-esc="doc.supplier"/></p>
+                            <p><t t-esc="doc.supplier"/></p>
+                            <p><t t-esc="doc.supplier_direction"/></p>
+                            <p>3. R.I.F.: <t t-esc="doc.rif"/></p>
+                            <p>
+                                <span>4. Ciudad: VALENCIA</span>
+                                <span style="display:inline-block;margin-left:20px;">Pais: VENEZUELA</span>
+                            </p>
+                        </div>
+                        <div class="col-2"></div>
+
+                        <div style="border:black 2px solid;height:250px;font-size:14px;" class="col-5 py-2 px-2">
+                            <div class="row" style="margin-bottom:10px;">
+                                <div class="col-10">
+                                    <p>5. Orden de Compra No.: <t t-esc="doc.name"/></p>
+                                </div>
+                                <div class="col-2">
+                                    <p>REV.</p>
+                                </div>
+                            </div>
+                            <p>6. Requisición/Lanz Nro.: <t t-esc="doc.requisition"/></p>
+                            <p>7. Fecha de la Orden: <t t-esc="doc.order_date"/></p>
+                            <p>8. Fecha de Entrega: <t t-esc="doc.delivery_date"/></p>
+                            <p>9. Lugar de Entrega: <t t-esc="doc.delivery_place"/></p>
+                            <p>10. Orden de Trabajo o Destino: <t t-esc="doc.worker_order"/></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>
