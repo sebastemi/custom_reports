@@ -7,13 +7,13 @@
                         <tr>
                             <td style="width:30%;">
                                 <div  style="border-bottom: 1px solid black;margin:0px 50px;height:20px;">
-                                    <span><t t-esc="doc.user_id.name"/></span>
+                                    <span></span>
                                 </div>
                                 <p class="text-center">18. Nombre y Firma del Almacenista</p>
                             </td>
                             <td style="width:30%;">
                                 <div  style="border-bottom: 1px solid black;margin:0px 50px;height:20px;">
-                                    <span  style="color:white;">Relleno</span>
+                                    <span></span>
                                 </div>
                                 <p class="text-center">19. Nombre y Firma del Inspector</p>
                             </td>
