@@ -5,13 +5,13 @@
                 <table class="table-borderless w-100">
                     <tbody>
                         <tr>
-                            <td style="width:30%;margin-right:50px;">
+                            <td style="width:30%">
                                 <p class="d-inline-block mb-6">13. Elaborado por:</p>
                             </td>
-                            <td style="width:30%;margin-right:50px;">
+                            <td style="width:30%">
                                 <p class="d-inline-block mb-6">14. Aprobado por:</p>
                             </td>
-                            <td style="width:30%;margin-right:50px;">
+                            <td style="width:30%">
                                 <p class="d-inline-block mb-6">15. Recibido por:</p>
                             </td>
                         </tr>
