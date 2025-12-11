@@ -2,7 +2,7 @@
     <data >
         <template id="report_delivery_note_wh_order_footer">
             <div class="footer" style="font-family:arial;">
-                <table class="table-bordered w-100">
+                <table class="table-borderless w-100" style="margin-top:20px;">
                     <tbody>
                         <tr>
                             <td style="width:30%">
@@ -18,19 +18,19 @@
                         <tr>
                             <td style="width:30%;">
                                 <div  style="border-bottom: 1px solid black;margin:0px 50px;height:20px;">
-                                    <span><t t-esc="doc.user_id.name"/></span>
+                                    
                                 </div>
                                 <p class="text-center">Nombre y Firma</p>
                             </td>
                             <td style="width:30%;">
                                 <div  style="border-bottom: 1px solid black;margin:0px 50px;height:20px;">
-                                    <span  style="color:white;">Relleno</span>
+                                    
                                 </div>
                                 <p class="text-center">Nombre y Firma</p>
                             </td>
                             <td style="width:30%;">
                                 <div  style="border-bottom: 1px solid black;margin:0px 50px;height:20px;">
-                                    <span  style="color:white;">Relleno</span>
+                                    
                                 </div>
                                 <p class="text-center">Nombre y Firma</p>
                             </td>
