@@ -12,13 +12,14 @@
                             <td style="width:50%;border:1px solid #fff;"></td>
                             <td style="width:50%;text-align:end;border:1px solid #fff;">
                                 <table style="width:100%;">
+                                    <t t-set="current_currency" t-value="doc.company_id.currency_id"/>
                                     <tbody>
                                         <tr>
                                             <td style="border:1px solid #fff;">Sub-Total:</td>
                                             <td style="border:1px solid #fff;">
                                                 <span 
                                                     t-field="doc.subtotal" 
-                                                    t-options='{"widget": "monetary", "display_currency": doc.currency_id, "minimum_label_width": 2}'
+                                                    t-options='{"widget": "monetary", "display_currency": current_currency}'
                                                 />
                                             </td>
                                         </tr>
@@ -27,7 +28,7 @@
                                             <td style="border:1px solid #fff;">
                                                 <span 
                                                     t-field="doc.iva" 
-                                                    t-options='{"widget": "monetary", "display_currency": doc.currency_id, "minimum_label_width": 2}'
+                                                    t-options='{"widget": "monetary", "display_currency": current_currency}'
                                                 />
                                             </td>
                                         </tr>
@@ -35,8 +36,8 @@
                                             <td style="border:1px solid #fff;">Total:</td>
                                             <td style="border:1px solid #fff;">
                                                 <span 
-                                                    t-field="doc.subtotal" 
-                                                    t-options='{"widget": "monetary", "display_currency": doc.currency_id, "minimum_label_width": 2}'
+                                                    t-field="doc.total" 
+                                                    t-options='{"widget": "monetary", "display_currency": current_currency}'
                                                 />
                                             </td>
                                         </tr>
