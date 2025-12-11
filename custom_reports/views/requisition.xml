@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <record id="requisition_report_view_form" model="ir.ui.view">
+            <field name="name">requisition.view.form</field>
+            <field name="model">requisition</field>
+            <field name="inherit_id" ref="requisitions.requisition_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Info Requisicion">
+                        <group>
+                            <group>
+                                <field name="req_date" />
+                                <field name="req_expected_date" />
+                                <field name="req_ot" />
+                                <field name="req_client" />
+                            </group>
+                            <group>
+                                <field name="req_serial" />
+                                <field name="req_created_by" />
+                                <field name="req_received_by" />
+                                <field name="req_approved_by" />
+                                <field name="req_notes" />
+                            </group>
+                        </group>    
+                    </page>
+                    <page string="Info Requisicion Compras">
+                        <group>
+                            <group>
+                                <field name="preq_date" />
+                                <field name="preq_expected_date" />
+                                <field name="preq_ot" />
+                                <field name="preq_client" />
+                                <field name="preq_type" />
+                            </group>
+                            <group>
+                                <field name="preq_serial" />
+                                <field name="preq_created_by" />
+                                <field name="preq_received_by" />
+                                <field name="preq_approved_by" />
+                                <field name="preq_notes" />
+                                <field name="preq_po" />
+                            </group>
+                        </group>    
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        
+    </data>
+</odoo>

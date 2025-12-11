@@ -1,7 +1,7 @@
 from odoo import models, fields, api
 
 class MaterialRequestnReport(models.Model):
-    _inherit = 'purchase.order'
+    _inherit = 'requisition'
     
     req_date = fields.Date('Fecha de Solicitud')
     req_expected_date = fields.Date('Fecha Requerida')

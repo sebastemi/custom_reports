@@ -2,47 +2,49 @@
     <data >
         <template id="report_delivery_note_wh_order_footer">
             <div class="footer" style="font-family:arial;">
-                <table class="table-borderless w-100" style="margin-top:20px;">
-                    <tbody>
-                        <tr>
-                            <td style="width:30%">
-                                <p class="mb-6">13. Elaborado por:</p>
-                            </td>
-                            <td style="width:30%">
-                                <p class="mb-6">14. Aprobado por:</p>
-                            </td>
-                            <td style="width:30%">
-                                <p class="mb-6">15. Recibido por:</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="width:30%;">
-                                <div  style="border-bottom: 1px solid black;margin:0px 50px;height:20px;">
-                                    
-                                </div>
-                                <p class="text-center">Nombre y Firma</p>
-                            </td>
-                            <td style="width:30%;">
-                                <div  style="border-bottom: 1px solid black;margin:0px 50px;height:20px;">
-                                    
-                                </div>
-                                <p class="text-center">Nombre y Firma</p>
-                            </td>
-                            <td style="width:30%;">
-                                <div  style="border-bottom: 1px solid black;margin:0px 50px;height:20px;">
-                                    
-                                </div>
-                                <p class="text-center">Nombre y Firma</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="row mt-4">
-                    <div class="col-6">
-                        <p>TGLO-F09 / Rev. 0</p>
-                    </div>
-                    <div class="col-6" style="text-align:right;">
-                        16. Página <span class="page"/> de <span class="topage"/>
+                <div>
+                    <table class="table-borderless w-100">
+                        <tbody>
+                            <tr>
+                                <td style="width:30%">
+                                    <p class="mb-6">13. Elaborado por:</p>
+                                </td>
+                                <td style="width:30%">
+                                    <p class="mb-6">14. Aprobado por:</p>
+                                </td>
+                                <td style="width:30%">
+                                    <p class="mb-6">15. Recibido por:</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:30%;">
+                                    <div  style="border-bottom: 1px solid black;margin:0px 50px;height:20px;">
+                                        
+                                    </div>
+                                    <p class="text-center">Nombre y Firma</p>
+                                </td>
+                                <td style="width:30%;">
+                                    <div  style="border-bottom: 1px solid black;margin:0px 50px;height:20px;">
+                                        
+                                    </div>
+                                    <p class="text-center">Nombre y Firma</p>
+                                </td>
+                                <td style="width:30%;">
+                                    <div  style="border-bottom: 1px solid black;margin:0px 50px;height:20px;">
+                                        
+                                    </div>
+                                    <p class="text-center">Nombre y Firma</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <p>TGLO-F09 / Rev. 0</p>
+                        </div>
+                        <div class="col-6" style="text-align:right;">
+                            16. Página <span class="page"/> de <span class="topage"/>
+                        </div>
                     </div>
                 </div>
             </div>
