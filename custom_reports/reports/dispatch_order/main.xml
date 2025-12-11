@@ -39,8 +39,8 @@
                                     <td style="font-size:14px;"><span t-field="line.product_id.name"/></td>
                                     <td style="font-size:14px;"><span t-field="line.product_id.default_code"/></td>
                                     <td style="font-size:14px;"><span t-field="line.quantity"/></td>
-                                    <td class="text-right" style="font-size:14px;"><span t-field="line.id"/></td>
-                                    <td class="text-right" style="font-size:14px;"><span t-field="line.id"/></td>
+                                    <td style="font-size:14px;text-align:right;"></td>
+                                    <td style="font-size:14px;text-align:right;"></td>
                                 </tr>
                             </t>
                         </tbody>
