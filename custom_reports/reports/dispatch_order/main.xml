@@ -2,22 +2,22 @@
     <data>
         <template id="report_dispatch_order_main">
             <div class="container" style="font-family:sans-serif;font-size:16px;">
-                <div class="row">
-                    <p>NOMBRE O RAZON SOCIAL: <t t-esc="doc.partner_id.name"/></p>
+                <div class="row" style="padding:0px;margin:0px;">
+                    <p style="font-size:11px;">NOMBRE O RAZON SOCIAL: <t t-esc="doc.partner_id.name"/></p>
                 </div>
-                <div class="row">
-                    <span>DOMICILIO FISCAL: <t t-esc="doc.company_address"/></span>
-                    <span t-esc="doc.partner_id.street"/>
-                    <span t-esc="doc.partner_id.street2"/>
-                    <span t-esc="doc.partner_id.city"/>
-                    <span t-esc="doc.partner_id.state_id.name"/>
+                <div class="row" style="padding:0px;margin:0px;">
+                    <span style="font-size:11px;">DOMICILIO FISCAL: <t t-esc="doc.company_address"/></span>
+                    <span t-esc="doc.partner_id.street" style="font-size:11px;"/>
+                    <span t-esc="doc.partner_id.street2" style="font-size:11px;"/>
+                    <span t-esc="doc.partner_id.city" style="font-size:11px;"/>
+                    <span t-esc="doc.partner_id.state_id.name" style="font-size:11px;"/>
                 </div>
-                <div class="row">
+                <div class="row" style="padding:0px;margin:0px;">
                     <div class="col-6">
-                        <p>R.I.F.: <t t-esc="doc.partner_id.vat"/></p>
+                        <p style="font-size:11px;">R.I.F.: <t t-esc="doc.partner_id.vat"/></p>
                     </div>
                     <div class="col-6">
-                        <p>CODIGO CLIENTE <t t-esc="doc.partner_id.code"/></p>
+                        <p style="font-size:11px;">CODIGO CLIENTE <t t-esc="doc.partner_id.code"/></p>
                     </div>
                 </div>
                 <div class="row mt-4">
