@@ -6,7 +6,7 @@
                     <table style="width:100%;border:1px solid #fff;">
                         <tbody>
                             <tr>
-                                <td style="border:1px solid #fff;width:50px;">
+                                <td style="border:1px solid #fff;width:250px;">
                                     <div class="logo" style="margin-top:100px;">
                                         <img src="https://lirp.cdn-website.com/ac63c28d/dms3rep/multi/opt/LOGO+TEMI+web-288w.png" alt="" style="width:150px;"/>
                                     </div>
@@ -19,13 +19,13 @@
                                 </td>
                                 <td style="border:1px solid #fff;">
                                     <div style="text-align:right;">
-                                        <p style="margin:0px;padding:0px;font-weight:100 !important;font-size:11px;">FORMA LIBRE</p>
-                                        <p style="margin:0px;padding:0px;font-size:11px;">Nº. DE CONTROL:</p>
-                                        <p style="margin:0px;padding:0px;font-size:11px;"><span style="color:red;font-size:11px;"><t t-esc="doc.name"/></span></p>
+                                        <p style="margin:0px;padding:0px;font-weight:100 !important;font-size:12px;">FORMA LIBRE</p>
+                                        <p style="margin:0px;padding:0px;font-size:12px;">Nº. DE CONTROL:</p>
+                                        <p style="margin:0px;padding:0px;font-size:12px;"><span style="color:red;font-size:12px;"><t t-esc="doc.name"/></span></p>
                                     </div>
                                     <div style="text-align:right;">
-                                        <p style="margin:0px;padding:0px;font-size:11px;">Orden de Entrega: <t t-esc="doc.origin"/></p>
-                                        <p style="margin:0px;padding:0px;font-size:11px;"><span t-field="doc.delivery_date" t-options="{'widget': 'date', 'format': 'dd/MM/yyyy'}"/></p>
+                                        <p style="margin:0px;padding:0px;font-size:12px;">Orden de Entrega: <t t-esc="doc.origin"/></p>
+                                        <p style="margin:0px;padding:0px;font-size:12px;"><span t-field="doc.delivery_date" t-options="{'widget': 'date', 'format': 'dd/MM/yyyy'}"/></p>
                                     </div>
                                 </td>
                             </tr>
@@ -36,20 +36,20 @@
                     <table class="data">
                         <thead>
                             <tr>
-                                <td style="font-size:11px;">ORDEN DE TRABAJO</td>
-                                <td style="font-size:11px;">ORDEN DE COMPRAS</td>
-                                <td style="font-size:11px;">CONDICIONES DE PAGO</td>
-                                <td style="font-size:11px;">FORMA DE PAGO</td>
-                                <td style="font-size:11px;">TRANSPORTE</td>
+                                <td style="font-size:12px;">ORDEN DE TRABAJO</td>
+                                <td style="font-size:12px;">ORDEN DE COMPRAS</td>
+                                <td style="font-size:12px;">CONDICIONES DE PAGO</td>
+                                <td style="font-size:12px;">FORMA DE PAGO</td>
+                                <td style="font-size:12px;">TRANSPORTE</td>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="font-size:11px;"><t t-esc="doc.work_order"/></td>
-                                <td style="font-size:11px;"><t t-esc="doc.purshase_order"/></td>
-                                <td style="font-size:11px;"><t t-esc="doc.pay_conditions"/></td>
-                                <td style="font-size:11px;"><t t-esc="doc.pay_method"/></td>
-                                <td style="font-size:11px;"><t t-esc="doc.transport"/></td>
+                                <td style="font-size:12px;"><t t-esc="doc.work_order"/></td>
+                                <td style="font-size:12px;"><t t-esc="doc.purshase_order"/></td>
+                                <td style="font-size:12px;"><t t-esc="doc.pay_conditions"/></td>
+                                <td style="font-size:12px;"><t t-esc="doc.pay_method"/></td>
+                                <td style="font-size:12px;"><t t-esc="doc.transport"/></td>
                             </tr>
                         </tbody>
                     </table>
