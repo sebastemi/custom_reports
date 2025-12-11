@@ -1,7 +1,7 @@
 from odoo import models, fields, api
 
 class PurchaseRequestnReport(models.Model):
-    _inherit = 'requisition'
+    _inherit = 'purchase.order'
     
     preq_date = fields.Date('Fecha de Solicitud')
     preq_expected_date = fields.Date('Fecha Requerida')
