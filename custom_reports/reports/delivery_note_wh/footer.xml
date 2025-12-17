@@ -2,7 +2,7 @@
     <data >
         <template id="report_delivery_note_wh_order_footer">
             <div class="footer" style="font-family:arial;">
-                <div>
+                <div style="margin-top:10px;">
                     <table class="table-borderless w-100">
                         <tbody>
                             <tr>
