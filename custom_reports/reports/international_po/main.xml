@@ -51,10 +51,10 @@
                                     <p style="margin: 0px;"><t t-esc="'{:.2f}'.format(line.product_qty)"/></p>
                                 </td>
                                 <td class="td-data border-right text-right px-2" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
-                                    <p style="margin: 0px;"><t t-esc="'{:.2f}'.format(line.price_unit*tasa)"/></p>
+                                    <p style="margin: 0px;"><t t-esc="'{:.2f}'.format(line.price_unit)"/></p>
                                 </td>
                                 <td class="td-data border-right text-right px-2" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
-                                    <p style="margin: 0px;"><t t-esc="'{:.2f}'.format(line.price_subtotal*tasa)"/></p>
+                                    <p style="margin: 0px;"><t t-esc="'{:.2f}'.format(line.price_subtotal)"/></p>
                                 </td>
                             </tr>
                         </t>
