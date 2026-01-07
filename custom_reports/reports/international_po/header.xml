@@ -38,15 +38,16 @@
                 <table style="width:100%;border:1px solid #000;border-collapse:collapse;">
                     <tbody>
                         <tr>
-                            <td style="border:1px solid #000;width:50%;padding-left:10px;">
+                            <td style="border:1px solid #000;width:75%;padding-left:10px;">
                                 <p>5. ADDRESS: 
-                                    <div 
+                                    <div
+                                        style="width:70%;"
                                         t-field="doc.partner_id" 
                                         t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'
                                     />
                                 </p>
                             </td>
-                            <td style="border:1px solid #000;width:50%;padding-left:10px;">
+                            <td style="border:1px solid #000;width:25%;padding-left:10px;">
                                 <p>6. REV.: </p>
                             </td>
                         </tr>
@@ -70,10 +71,10 @@
                 <table style="width:100%;border:1px solid #000;border-collapse:collapse;">
                     <tbody>
                         <tr>
-                            <td style="border:1px solid #000;width:75%;padding-left:10px;">
+                            <td style="border:1px solid #000;width:60%;padding-left:10px;">
                                 <p>10. TERMS OF PAYMENT: <t t-esc="doc.payment_conditions"/></p>
                             </td>
-                            <td style="border:1px solid #000;width:25%;padding-left:10px;">
+                            <td style="border:1px solid #000;width:40%;padding-left:10px;">
                                 <p>11. DATE REQUIRED IN THE FORWARDER: <span t-field="doc.date_planned" t-options='{"widget": "date", "format": "MM/dd/yyyy"}'/></p>
                             </td>
                         </tr>
