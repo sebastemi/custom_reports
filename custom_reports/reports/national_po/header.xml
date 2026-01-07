@@ -24,13 +24,17 @@
                 <div class="container" style="margin-top:30px;">
                     <div class="row">
                         <div style="border:black 2px solid;height:250px;font-size:14px;" class="col-5 py-2 px-2">
-                            <p>2. Proveedor: <t t-esc="doc.supplier"/></p>
-                            <p><t t-esc="doc.supplier"/></p>
-                            <p><t t-esc="doc.supplier_direction"/></p>
-                            <p>3. R.I.F.: <t t-esc="doc.rif"/></p>
+                            <p>2. Proveedor: <t t-esc="doc.partner_id.name"/></p>
                             <p>
-                                <span>4. Ciudad: VALENCIA</span>
-                                <span style="display:inline-block;margin-left:20px;">Pais: VENEZUELA</span>
+                                <div 
+                                    t-field="o.partner_id" 
+                                    t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'
+                                />
+                            </p>
+                            <p>3. R.I.F.: <t t-esc="doc.partner_id.vat"/></p>
+                            <p>
+                                <span>4. Ciudad:VALENCIA</span>
+                                <span style="display:inline-block;margin-left:20px;">Pais:VENEZUELA</span>
                             </p>
                         </div>
                         <div class="col-2"></div>
@@ -44,9 +48,9 @@
                                     <p>REV.</p>
                                 </div>
                             </div>
-                            <p>6. Requisición/Lanz Nro.: <t t-esc="doc.requisition"/></p>
-                            <p>7. Fecha de la Orden: <t t-esc="doc.order_date"/></p>
-                            <p>8. Fecha de Entrega: <t t-esc="doc.delivery_date"/></p>
+                            <p>6. Requisición/Lanz Nro.: <t t-esc="doc.partner_ref"/></p>
+                            <p>7. Fecha de la Orden: <span t-field="o.date_order" t-options='{"format": "dd/MM/yyyy"}' /></p>
+                            <p>8. Fecha de Entrega: <span t-field="o.date_planned" t-options='{"format": "dd/MM/yyyy"}' /></p>
                             <p>9. Lugar de Entrega: <t t-esc="doc.delivery_place"/></p>
                             <p>10. Orden de Trabajo o Destino: <t t-esc="doc.worker_order"/></p>
                         </div>

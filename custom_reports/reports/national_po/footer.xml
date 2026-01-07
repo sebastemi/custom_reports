@@ -84,9 +84,9 @@
                         <p style="display:inline-block;margin:0px;width:100%;">25. Total: <t t-esc="doc.currency"/></p>
                     </div>
                     <div style="width:50%; -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;text-align:right;">
-                        <p style="display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.sub_total*tasa)"/></p>
-                        <p style="display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.iva*tasa)"/></p>
-                        <p style="display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.total*tasa)"/></p>
+                        <p style="display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.price_subtotal)"/></p>
+                        <p style="display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.price_tax)"/></p>
+                        <p style="display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.price_total)"/></p>
                     </div>
                 </div>
 

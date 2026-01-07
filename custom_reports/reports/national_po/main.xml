@@ -50,15 +50,15 @@
                                     </td>
 
                                     <td style="padding:5px;text-align:right;width:10%;">
-                                        <t t-esc="'{:.2f}'.format(line.price_unit*tasa)"/>
+                                        <t t-esc="'{:.2f}'.format(line.price_unit)"/>
                                     </td>
 
                                     <td style="padding:5px;text-align:right;width:10%;">
-                                        0,00
+                                        <t t-esc="'{:.2f}'.format(line.discount)"/>
                                     </td>
 
                                     <td style="padding:5px;text-align:right;width:10%;">
-                                        <t t-esc="'{:.2f}'.format(line.price_subtotal*tasa)"/>
+                                        <t t-esc="'{:.2f}'.format(line.price_subtotal)"/>
                                     </td>
                                 </tr>
                             </t>
