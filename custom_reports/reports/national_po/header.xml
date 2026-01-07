@@ -48,9 +48,9 @@
                                     <p>REV.</p>
                                 </div>
                             </div>
-                            <p>6. Requisición/Lanz Nro.: <t t-esc="doc.partner_ref"/></p>
-                            <p>7. Fecha de la Orden: <span t-field="o.date_order" t-options='{"format": "dd/MM/yyyy"}' /></p>
-                            <p>8. Fecha de Entrega: <span t-field="o.date_planned" t-options='{"format": "dd/MM/yyyy"}' /></p>
+                            <p>6. Requisición/Lanz Nro.: <t t-esc="doc.origin"/></p>
+                            <p>7. Fecha de la Orden: <span t-field="doc.date_order" t-options='{"format": "dd/MM/yyyy"}' /></p>
+                            <p>8. Fecha de Entrega: <span t-field="doc.date_planned" t-options='{"format": "dd/MM/yyyy"}' /></p>
                             <p>9. Lugar de Entrega: <t t-esc="doc.delivery_place"/></p>
                             <p>10. Orden de Trabajo o Destino: <t t-esc="doc.worker_order"/></p>
                         </div>
