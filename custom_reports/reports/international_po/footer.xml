@@ -9,7 +9,7 @@
                 <t t-set="tasa" t-value="doc.currency_rate_usd_to_eur"/>
             </t>
             <t t-else="">
-                <t t-set="tasa" t-value="q"/>
+                <t t-set="tasa" t-value="1"/>
             </t>
 
             <div class="footer" style="font-family:Courier !important;">
