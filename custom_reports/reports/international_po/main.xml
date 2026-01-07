@@ -2,14 +2,14 @@
     <data>
         <template id="report_international_purchase_order_main">
             <t t-set="tasa" t-value="'Undefined'"/>
-            <t t-if="doc.currency == 'USD'">
-                <t t-set="tasa" t-value="1"/>
+            <t t-if="doc.currency_id.name == 'USD'">
+                <t t-set="tasa" t-value="doc.currency_rate_ref.inverse_company_rate"/>
             </t>
             <t t-elif="doc.currency == 'EUR'">
                 <t t-set="tasa" t-value="doc.currency_rate_usd_to_eur"/>
             </t>
             <t t-else="">
-                <t t-set="tasa" t-value="doc.currency_rate_usd"/>
+                <t t-set="tasa" t-value="1"/>
             </t>
             <div>
                 <table style="width:100%;border:1px solid #000;border-collapse:collapse;">
@@ -51,10 +51,10 @@
                                     <p style="margin: 0px;"><t t-esc="'{:.2f}'.format(line.product_qty)"/></p>
                                 </td>
                                 <td class="td-data border-right text-right px-2" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
-                                    <p style="margin: 0px;"><t t-esc="'{:.2f}'.format(line.price_unit)"/></p>
+                                    <p style="margin: 0px;"><t t-esc="'{:.2f}'.format(line.price_unit/tasa)"/></p>
                                 </td>
                                 <td class="td-data border-right text-right px-2" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
-                                    <p style="margin: 0px;"><t t-esc="'{:.2f}'.format(line.price_subtotal)"/></p>
+                                    <p style="margin: 0px;"><t t-esc="'{:.2f}'.format(line.price_subtotal/tasa)"/></p>
                                 </td>
                             </tr>
                         </t>

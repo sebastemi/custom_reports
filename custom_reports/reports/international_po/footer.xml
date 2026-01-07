@@ -2,14 +2,14 @@
     <data>
         <template id="report_international_purchase_order_footer">
             <t t-set="tasa" t-value="'Undefined'"/>
-            <t t-if="doc.currency == 'USD'">
-                <t t-set="tasa" t-value="1"/>
+            <t t-if="doc.currency_id.name == 'USD'">
+                <t t-set="tasa" t-value="doc.currency_rate_ref.inverse_company_rate"/>
             </t>
             <t t-elif="doc.currency == 'EUR'">
                 <t t-set="tasa" t-value="doc.currency_rate_usd_to_eur"/>
             </t>
             <t t-else="">
-                <t t-set="tasa" t-value="doc.currency_rate_usd"/>
+                <t t-set="tasa" t-value="q"/>
             </t>
 
             <div class="footer" style="font-family:Courier !important;">
@@ -26,9 +26,9 @@
                             <p style="text-align:end;display:inline-block;margin:0px;width:100%;">21. TOTAL:<t t-esc="doc.currency_id.symbol"/></p>
                         </div>
                         <div style="width:50%;padding-right:10px; -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;">
-                            <p style="text-align:end;display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.amount_untaxed)"/></p>
-                            <p style="text-align:end;display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.amount_tax)"/></p>
-                            <p style="text-align:end;display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.amount_total)"/></p>
+                            <p style="text-align:end;display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.amount_untaxed/tasa)"/></p>
+                            <p style="text-align:end;display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.amount_tax/tasa)"/></p>
+                            <p style="text-align:end;display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.amount_total/tasa)"/></p>
                         </div>
                     </div>
                 </div>
