@@ -34,7 +34,7 @@
             <field name="dpi">90</field>
         </record>
 
-        <record id="report_stock_picking_custom" model="ir.actions.report">
+        <!-- <record id="report_stock_picking_custom" model="ir.actions.report">
             <field name="name">Órden de Despacho</field>
             <field name="model">stock.picking</field>
             <field name="report_type">qweb-pdf</field>
@@ -44,6 +44,6 @@
             <field name="binding_type">report</field>
             <field name="print_report_name">'Órden de Despacho - %s' % (object.name)</field>
             <field name="paperformat_id" ref="custom_reports.paperformat_dispatch_order_no_margin"/> 
-        </record>
+        </record> -->
     </data>
 </odoo>

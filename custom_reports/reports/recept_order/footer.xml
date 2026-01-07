@@ -23,7 +23,7 @@
                 <div class="row mt-4">
                     <span>Observaciones: </span>
                     <span class="d-inline-block" style="border-bottom:1px solid #000;width:700px">
-                        
+                        <span t-field="doc.note"/>
                     </span>
                 </div>
                 <div class="row mt-4">
