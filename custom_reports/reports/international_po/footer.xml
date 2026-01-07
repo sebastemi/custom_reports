@@ -21,9 +21,9 @@
                     </div>
                     <div style="width:50%;-webkit-box-flex: 1;-webkit-flex: 1;flex: 1;display:-webkit-box;display:-webkit-flex;;display:flex;">
                         <div style="width:50%;  -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;">
-                            <p style="text-align:end;display:inline-block;margin:0px;width:100%;">21. Subtotal:<t t-esc="doc.currency_id.name"/></p>
-                            <p style="text-align:end;display:inline-block;margin:0px;width:100%;">21. IVA %:<t t-esc="doc.currency_id.name"/></p>
-                            <p style="text-align:end;display:inline-block;margin:0px;width:100%;">21. TOTAL:<t t-esc="doc.currency_id.name"/></p>
+                            <p style="text-align:end;display:inline-block;margin:0px;width:100%;">21. Subtotal:<t t-esc="doc.currency_id.symbol"/></p>
+                            <p style="text-align:end;display:inline-block;margin:0px;width:100%;">21. IVA %:<t t-esc="doc.currency_id.symbol"/></p>
+                            <p style="text-align:end;display:inline-block;margin:0px;width:100%;">21. TOTAL:<t t-esc="doc.currency_id.symbol"/></p>
                         </div>
                         <div style="width:50%;padding-right:10px; -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;">
                             <p style="text-align:end;display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.amount_untaxed)"/></p>
