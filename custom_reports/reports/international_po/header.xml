@@ -38,7 +38,7 @@
                 <table style="width:100%;border:1px solid #000;border-collapse:collapse;">
                     <tbody>
                         <tr>
-                            <td style="border:1px solid #000;width:75%;padding-left:10px;">
+                            <td style="border:1px solid #000;width:50%;padding-left:10px;">
                                 <p>5. ADDRESS: 
                                     <div 
                                         t-field="doc.partner_id" 
@@ -46,7 +46,7 @@
                                     />
                                 </p>
                             </td>
-                            <td style="border:1px solid #000;width:25%;padding-left:10px;">
+                            <td style="border:1px solid #000;width:50%;padding-left:10px;">
                                 <p>6. REV.: </p>
                             </td>
                         </tr>
@@ -55,14 +55,14 @@
                 <table style="width:100%;border:1px solid #000;border-collapse:collapse;">
                     <tbody>
                         <tr>
-                            <td style="border:1px solid #000;width:40%;padding-left:10px;">
+                            <td style="border:1px solid #000;width:30%;padding-left:10px;">
                                 <p>7. PURCHASER: TEMI, C.A.</p>
                             </td>
-                            <td style="border:1px solid #000;width:40%;padding-left:10px;">
+                            <td style="border:1px solid #000;width:30%;padding-left:10px;">
                                 <p>8. ORDER TERMS: </p>
                             </td>
-                            <td style="border:1px solid #000;width:20%;padding-left:10px;">
-                                <p>9. DATE: <span t-field="doc.order_date" t-options='{"widget": "date", "format": "MM/dd/yyyy"}'/></p>
+                            <td style="border:1px solid #000;width:40%;padding-left:10px;">
+                                <p>9. DATE: <span t-field="doc.date_order" t-options='{"widget": "date", "format": "dd/MM/yyyy"}'/></p>
                             </td>
                         </tr>
                     </tbody>
@@ -74,7 +74,7 @@
                                 <p>10. TERMS OF PAYMENT: <t t-esc="doc.payment_conditions"/></p>
                             </td>
                             <td style="border:1px solid #000;width:25%;padding-left:10px;">
-                                <p>11. DATE REQUIRED IN THE FORWARDER: <span t-field="doc.delivery_date" t-options='{"widget": "date", "format": "MM/dd/yyyy"}'/></p>
+                                <p>11. DATE REQUIRED IN THE FORWARDER: <span t-field="doc.date_planned" t-options='{"widget": "date", "format": "MM/dd/yyyy"}'/></p>
                             </td>
                         </tr>
                     </tbody>
