@@ -9,16 +9,6 @@
                     <page string="Datos para Impresion">
                         <group>
                             <group>
-                                <field name="supplier" />
-                                <field name="supplier_direction" />
-                                <field name="rev" />
-                                <field name="rif" />
-                                <field name="city" />
-                                <field name="country" />
-                                <field name="purchase_order_number" />
-                                <field name="requisition" />
-                                <field name="order_date" />
-                                <field name="delivery_date" />
                                 <field name="delivery_place" />
                                 <field name="worker_order" />
                             </group>
@@ -29,9 +19,6 @@
                                 <field name="approved_by" />
                                 <field name="notes" />
                                 <field name="transport" />
-                                <field name="sub_total" />
-                                <field name="iva" />
-                                <field name="total" />
                             </group>
                             <group>
                                 <field name="requires_quality_report" />
@@ -40,10 +27,6 @@
                                 <field name="requires_test_insitu" />
                                 <field name="requires_calibration_certificate" />
                                 <field name="is_applied" />
-                                <field name="currency" />
-                                <field name="currency_rate_usd" />
-                                <field name="currency_rate_eur" />
-                                <field name="currency_rate_usd_to_eur" />
                             </group>
                         </group>
                     </page>

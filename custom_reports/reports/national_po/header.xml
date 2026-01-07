@@ -27,7 +27,7 @@
                             <p>2. Proveedor: <t t-esc="doc.partner_id.name"/></p>
                             <p>
                                 <div 
-                                    t-field="o.partner_id" 
+                                    t-field="doc.partner_id" 
                                     t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'
                                 />
                             </p>
