@@ -17,5 +17,5 @@ class RequisitionReport(models.Model):
 
 
     def action_print_report(self):
-        return self.env.ref(self._get_xml_report_id()).report_action(self)
+        return self.env.ref(f'custom_reports.{self._get_xml_report_id()}').report_action(self)
     
