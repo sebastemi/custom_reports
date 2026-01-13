@@ -41,7 +41,6 @@
             <field name="report_name">custom_reports.report_material_request_order_document</field>
             <field name="report_file">custom_reports.report_material_request_order_document</field>
             <field name="binding_type">report</field>
-            <field name="binding_model_id" ref="requisitions.model_requisition"/>
             <field name="paperformat_id" ref="custom_reports.paperformat_material_request_order"/> 
             <field name="print_report_name">'Requisicion de Materiales - %s' % (object.name)</field>
         </record>

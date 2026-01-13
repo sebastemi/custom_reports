@@ -54,7 +54,7 @@
 
 
         'views/stock_picking.xml',
-        # 'views/requisition.xml',
+        'views/requisition.xml',
 
 
     ],
