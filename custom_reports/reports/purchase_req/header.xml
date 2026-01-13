@@ -27,18 +27,18 @@
                             <div class="col-6">
                                 <b>6. Nacional: 
                                     <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
-                                        <t t-if="doc.preq_type == 'NACIONAL'">
+                                        <!-- <t t-if="doc.preq_type == 'NACIONAL'">
                                             x
-                                        </t>
+                                        </t> -->
                                     </span>
                                 </b>
                             </div>
                             <div class="col-6">
                                 <b>Importado: 
                                     <span  class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
-                                        <t t-if="doc.preq_type == 'IMPORTADO'">
+                                        <!-- <t t-if="doc.preq_type == 'IMPORTADO'">
                                             x
-                                        </t>
+                                        </t> -->
                                     </span> 
                                 </b>
                             </div>
