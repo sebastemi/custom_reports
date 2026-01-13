@@ -54,7 +54,6 @@
 
 
         'views/stock_picking.xml',
-        'views/purchase_order.xml',
         # 'views/requisition.xml',
 
 
