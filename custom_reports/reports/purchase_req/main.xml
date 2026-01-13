@@ -16,7 +16,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <t t-foreach="doc.order_line" t-as="line">
+                            <t t-foreach="doc.line_ids" t-as="line">
                                 <tr>
                                     <td class="text-center" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
                                         
