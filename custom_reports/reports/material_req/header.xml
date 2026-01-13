@@ -27,7 +27,7 @@
                     <div class="col-6">
                         <div class="row">
                             <div class="col-6" style="text-align:right;"><p>1. Fecha de Solicitud:</p></div>
-                            <div class="col-6" style="border-bottom:1px solid #000;padding-left:5px;"><span t-field="doc.req_date" t-options='{"widget": "date", "format": "dd/MM/yyyy"}'/> </div>
+                            <div class="col-6" style="border-bottom:1px solid #000;padding-left:5px;"></div>
                         </div>
                     </div>
                 </div>
@@ -35,14 +35,14 @@
                     <div class="col-6">
                         <div class="row">
                             <div class="col-4" style="text-align:right;"><p>2. Cliente:</p></div>
-                            <div class="col-8" style="border-bottom:1px solid #000;padding-left:5px;"> <t t-esc="doc.req_client"/></div>
+                            <div class="col-8" style="border-bottom:1px solid #000;padding-left:5px;"></div>
                         </div>
                     </div>
 
                     <div class="col-6">
                         <div class="row">
                             <div class="col-4" style="text-align:right;"><p>3. O/T:</p></div>
-                            <div class="col-8" style="border-bottom:1px solid #000;padding-left:5px;"> <t t-esc="doc.req_ot"/></div>
+                            <div class="col-8" style="border-bottom:1px solid #000;padding-left:5px;"></div>
                         </div>
                     </div>
                 </div>
@@ -50,13 +50,13 @@
                     <div class="col-6">
                         <div class="row">
                             <div class="col-4" style="text-align:right;"><p>4. Lanzamiento Nº:</p></div>
-                            <div class="col-8" style="border-bottom:1px solid #000;padding-left:5px;"> <t t-esc="doc.req_serial"/></div>
+                            <div class="col-8" style="border-bottom:1px solid #000;padding-left:5px;"> </div>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="row">
                             <div class="col-4" style="text-align:right;"><p>5. Fecha Requerida:</p></div>
-                            <div class="col-8" style="border-bottom:1px solid #000;padding-left:5px;"><span t-field="doc.req_expected_date" t-options='{"widget": "date", "format": "dd/MM/yyyy"}'/></div>
+                            <div class="col-8" style="border-bottom:1px solid #000;padding-left:5px;"></div>
                         </div>
                     </div>
 

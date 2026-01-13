@@ -52,15 +52,15 @@
                                     </td>
                                     <td>N/A</td>
                                     <td>
-                                        <span t-field="line.product_id.default_code"/>
+                                        
                                     </td>
                                     <td>
-                                        <span t-field="line.product_id.name"/>
+                                       
                                     </td>
                                     <td class="text-right">
-                                        <span t-field="line.product_qty"/>
+                                      
                                     </td>
-                                    <td class="text-center"> <span t-field="line.product_uom.name"/>
+                                    <td class="text-center">
                                     </td>
                                     <td></td>
                                     <td></td>

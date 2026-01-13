@@ -10,7 +10,7 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col-2">14. Observaciones:</div>
-                    <div class="col-10" style="border-bottom:1px solid #000;"><t t-esc="doc.req_notes"/></div>
+                    <div class="col-10" style="border-bottom:1px solid #000;"></div>
                 </div>
 
                 <div class="row mt-4">
@@ -20,7 +20,7 @@
                                 <p><strong>15. Elaborado Por:</strong></p>
                             </div>
                             <div class="col-6">
-                                <div style="border-bottom: 1px solid black;"><t t-esc="doc.req_received_by"/></div>
+                                <div style="border-bottom: 1px solid black;"></div>
                             </div>
                         </div>
                         <div class="row">
@@ -36,7 +36,7 @@
                                 <p><strong>16. Aprobado Por:</strong></p>
                             </div>
                             <div class="col-6">
-                                <div style="border-bottom: 1px solid black;"><t t-esc="doc.req_received_by"/></div>
+                                <div style="border-bottom: 1px solid black;"></div>
                             </div>
                         </div>
                         <div class="row">
@@ -54,7 +54,7 @@
                                 <p><strong>16. Recibido Por:</strong></p>
                             </div>
                             <div class="col-6">
-                                <div style="border-bottom: 1px solid black;"><t t-esc="doc.req_received_by"/></div>
+                                <div style="border-bottom: 1px solid black;"></div>
                             </div>
                         </div>
                         <div class="row">
