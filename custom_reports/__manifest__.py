@@ -14,7 +14,7 @@
     'category': 'Sales',
     'version': '0.1',
 
-    'depends': ['base','sale','stock','web','purchase'],
+    'depends': ['base','sale','stock','web','purchase','requisitions'],
 
     'data': [
         'reports/dispatch_order/header.xml',
