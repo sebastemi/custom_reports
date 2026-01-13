@@ -16,13 +16,13 @@
                 </div>
                 <div class="row" style="margin-top:50px;font-family:arial;">
                     <div class="col-6">
-                        <p><b>1. Lanzamiento / Requisición:</b> <t t-esc="doc.preq_serial"/></p>
-                        <p><b>2. OT / Destino:</b> <t t-esc="doc.preq_ot"/></p>
-                        <p><b>3. Cliente:</b> <t t-esc="doc.preq_client"/></p>
+                        <p><b>1. Lanzamiento / Requisición:</b> </p>
+                        <p><b>2. OT / Destino:</b></p>
+                        <p><b>3. Cliente:</b> </p>
                     </div>
                     <div class="col-6">
-                        <p><b>4. Fecha de Elaboración:</b> <span t-field="doc.preq_date" t-options='{"widget": "date", "format": "dd/MM/yyyy"}'/></p>
-                        <p><b>5. Fecha Requerida:</b> <span t-field="doc.preq_expected_date" t-options='{"widget": "date", "format": "dd/MM/yyyy"}'/></p>
+                        <p><b>4. Fecha de Elaboración:</b> </p>
+                        <p><b>5. Fecha Requerida:</b> </p>
                         <div class="row">
                             <div class="col-6">
                                 <b>6. Nacional: 

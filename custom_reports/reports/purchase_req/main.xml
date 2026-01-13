@@ -19,13 +19,13 @@
                             <t t-foreach="doc.order_line" t-as="line">
                                 <tr>
                                     <td class="text-center" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
-                                        <t t-esc="line_index + 1"/>
+                                        
                                     </td>
                                     <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
-                                        <t t-esc="line.product_id.default_code"/>
+                                        
                                     </td>
                                     <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
-                                        <t t-esc="line.product_id.name"/>
+                                        
                                         <div class="row" style="margin-top:5px">
                                             <div class="col-2">
                                                 <p>RC: 
@@ -66,14 +66,14 @@
                                         </div>
                                     </td>
                                     <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
-                                        <t t-esc="'{:.2f}'.format(line.product_qty)"/>
+                                        
                                     </td>
                                     <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
-                                        <t t-esc="line.product_uom.name"/>
+                                        
                                     </td>
                                     <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}"></td>
                                     <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
-                                        <t t-esc="doc.preq_po"/>
+                                        
                                     </td>
                                 </tr>
                             </t>
