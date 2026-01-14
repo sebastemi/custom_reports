@@ -9,15 +9,6 @@
                             border-collapse: collapse;
                             border: 1px solid #ccc;
                         }
-                        .report-table th, .report-table td {
-                            padding: 4px; /* Un padding base para todas las celdas */
-                            vertical-align: middle; /* Alineación vertical para todas */
-                            border: 1px solid #ccc; /* Un borde base para todas */
-                        }
-                        .report-table thead th {
-                            background-color: #f2f2f2; /* Color de fondo para encabezados */
-                            font-weight: bold;
-                        }
                         .text-center { text-align: center; }
                         .text-right { text-align: right; }
                     </style>
@@ -25,19 +16,19 @@
                     <table class="report-table" style="table-layout:fixed;">
                         <thead>
                             <tr style="height: 0; line-height: 0; padding: 0; margin: 0; border: none;">
-                                <th style="width: 5%;"></th>
-                                <th style="width: 5%;"></th>   
-                                <th style="width: 12%;"></th> 
-                                <th style="width: 33%;"></th>  
-                                <th style="width: 7%;"></th>   
-                                <th style="width: 8%;"></th>   
-                                <th style="width: 2%;"></th>   
-                                <th style="width: 2%;"></th>   
-                                <th style="width: 2%;"></th>   
-                                <th style="width: 2%;"></th>   
-                                <th style="width: 2%;"></th>   
-                                <th style="width: 2%;"></th>   
-                                <th style="width: 18%;"></th>  
+                                <th style="width: 5%; border: none !important; padding: 0 !important; height: 0 !important;"></th>
+                                <th style="width: 5%; border: none !important; padding: 0 !important; height: 0 !important;"></th>   
+                                <th style="width: 12%; border: none !important; padding: 0 !important; height: 0 !important;"></th> 
+                                <th style="width: 33%; border: none !important; padding: 0 !important; height: 0 !important;"></th>  
+                                <th style="width: 7% ;border: none !important; padding: 0 !important; height: 0 !important;"></th>   
+                                <th style="width: 8%; border: none !important; padding: 0 !important; height: 0 !important;"></th>   
+                                <th style="width: 2% ;border: none !important; padding: 0 !important; height: 0 !important;"></th>   
+                                <th style="width: 2%; border: none !important; padding: 0 !important; height: 0 !important;"></th>   
+                                <th style="width: 2%;border: none !important; padding: 0 !important; height: 0 !important;"></th>   
+                                <th style="width: 2%;border: none !important; padding: 0 !important; height: 0 !important;"></th>   
+                                <th style="width: 2%;border: none !important; padding: 0 !important; height: 0 !important;"></th>   
+                                <th style="width: 2%;border: none !important; padding: 0 !important; height: 0 !important;"></th>   
+                                <th style="width: 18%;border: none !important; padding: 0 !important; height: 0 !important;"></th>  
                             </tr>
                             <tr>
                                 <th colspan="6" style="border: none; border-bottom:1px solid #ccc;"></th>
