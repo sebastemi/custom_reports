@@ -19,13 +19,13 @@
                             <t t-foreach="doc.line_ids" t-as="line">
                                 <tr>
                                     <td class="text-center" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
-                                        
+                                        <span t-esc="line_index + 1"/>
                                     </td>
                                     <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
-                                        
+                                        <span t-esc="line.product_id.default_code"/>
                                     </td>
                                     <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
-                                        
+                                        <span t-esc="line.product_id.name"/>
                                         <div class="row" style="margin-top:5px">
                                             <div class="col-2">
                                                 <p>RC: 
@@ -66,10 +66,10 @@
                                         </div>
                                     </td>
                                     <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
-                                        
+                                        <span t-esc="'{:.2f}'.format(line.qty)"/>
                                     </td>
                                     <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
-                                        
+                                        <span t-esc="line.uom_id.name"/>
                                     </td>
                                     <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}"></td>
                                     <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">

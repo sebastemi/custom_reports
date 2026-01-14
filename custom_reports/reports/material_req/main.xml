@@ -33,7 +33,8 @@
                                 <th style="width: 8%;">6. Item</th>
                                 <th style="width: 8%;">7. Nivel</th>
                                 <th style="width: 15%;">8. Código</th>
-                                <th style="width: 24%;">9. Descripción del Material</th> <th style="width: 8%;">10. Cant.</th>
+                                <th style="width: 24%;">9. Descripción del Material</th> 
+                                <th style="width: 8%;">10. Cant.</th>
                                 <th style="width: 10%;">11. Unid.</th>
                                 <th style="width: 2%;">C</th>
                                 <th style="width: 1%;">CC</th>
@@ -52,15 +53,16 @@
                                     </td>
                                     <td>N/A</td>
                                     <td>
-                                        
+                                        <span t-esc="line.product_id.default_code"/>
                                     </td>
                                     <td>
-                                       
+                                        <span t-esc="line.product_id.name"/>
                                     </td>
                                     <td class="text-right">
-                                      
+                                        <span t-esc="'{:.2f}'.format(line.qty)"/>
                                     </td>
                                     <td class="text-center">
+                                        <span t-esc="line.uom_id.name"/>
                                     </td>
                                     <td></td>
                                     <td></td>

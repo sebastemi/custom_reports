@@ -20,7 +20,8 @@
                                 <p><strong>15. Elaborado Por:</strong></p>
                             </div>
                             <div class="col-6">
-                                <div style="border-bottom: 1px solid black;"></div>
+                                <div style="border-bottom: 1px solid black;">
+                                </div>
                             </div>
                         </div>
                         <div class="row">

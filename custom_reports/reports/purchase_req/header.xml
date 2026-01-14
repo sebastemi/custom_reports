@@ -16,13 +16,13 @@
                 </div>
                 <div class="row" style="margin-top:50px;font-family:arial;">
                     <div class="col-6">
-                        <p><b>1. Lanzamiento / Requisición:</b> </p>
-                        <p><b>2. OT / Destino:</b></p>
-                        <p><b>3. Cliente:</b> </p>
+                        <p><b>1. Lanzamiento / Requisición:</b> <span t-esc="doc.name"/></p>
+                        <p><b>2. OT / Destino:</b> <span t-esc="doc.management_id.name"/></p>
+                        <p><b>3. Cliente:</b> <span t-esc="doc.management_id.name"/> </p>
                     </div>
                     <div class="col-6">
-                        <p><b>4. Fecha de Elaboración:</b> </p>
-                        <p><b>5. Fecha Requerida:</b> </p>
+                        <p><b>4. Fecha de Elaboración:</b>  <span t-field="doc.create_date" t-options='{"format": "dd/MM/yyyy"}'/></p>
+                        <p><b>5. Fecha Requerida:</b> <span t-field="doc.scheduled_date" t-options='{"format": "dd/MM/yyyy"}'/></p>
                         <div class="row">
                             <div class="col-6">
                                 <b>6. Nacional: 
