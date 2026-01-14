@@ -10,6 +10,7 @@
                             border: 1px solid #ccc;
                         }
                         .report-table th, .report-table td {
+                            padding: 4px; /* Un padding base para todas las celdas */
                             vertical-align: middle; /* Alineación vertical para todas */
                             border: 1px solid #ccc; /* Un borde base para todas */
                         }
@@ -29,47 +30,47 @@
                                 <th colspan="1" style="border: none; border-bottom:1px solid #ccc;"></th>
                             </tr>
                             <tr class="text-center">
-                                <th>6. Item</th>
-                                <th>7. Nivel</th>
-                                <th>8. Código</th>
-                                <th>9. Descripción del Material</th> 
-                                <th>10. Cant.</th>
-                                <th>11. Unid.</th>
-                                <th>C</th>
-                                <th>CC</th>
-                                <th>CG</th>
-                                <th>PP</th>
-                                <th>PS</th>
-                                <th>NA</th>
-                                <th>13. Material Recibido Por</th>
+                                <th style="width: 8%;">6. Item</th>
+                                <th style="width: 8%;">7. Nivel</th>
+                                <th style="width: 15%;">8. Código</th>
+                                <th style="width: 24%;">9. Descripción del Material</th> 
+                                <th style="width: 8%;">10. Cant.</th>
+                                <th style="width: 10%;">11. Unid.</th>
+                                <th style="width: 2%;">C</th>
+                                <th style="width: 1%;">CC</th>
+                                <th style="width: 1%;">CG</th>
+                                <th style="width: 1%;">PP</th>
+                                <th style="width: 1%;">PS</th>
+                                <th style="width: 1%;">NA</th>
+                                <th style="width: 20%;">13. Material Recibido Por</th>
                             </tr>
                         </thead>
                         <tbody>
                             <t t-foreach="doc.product_ids" t-as="line">
                                 <tr>
-                                    <td class="text-center">
+                                    <td class="text-center" style="width: 8%">
                                         <span t-esc="line_index + 1"/>
                                     </td>
-                                    <td>N/A</td>
-                                    <td>
+                                    <td style="width: 8%;">N/A</td>
+                                    <td style="width: 15%">
                                         <span t-esc="line.name.default_code"/>
                                     </td>
-                                    <td>
+                                    <td style="width: 24%">
                                         <span t-esc="line.name.name"/>
                                     </td>
-                                    <td class="text-right">
+                                    <td class="text-right" style="width: 8%">
                                         <span t-esc="'{:.2f}'.format(line.qty)"/>
                                     </td>
-                                    <td class="text-center">
+                                    <td class="text-center" style="width: 10%">
                                         <span t-esc="line.uom_id.name"/>
                                     </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td style="width: 2%;"></td>
+                                    <td style="width: 2%;"></td>
+                                    <td style="width: 2%;"></td>
+                                    <td style="width: 2%;"></td>
+                                    <td style="width: 2%;"></td>
+                                    <td style="width: 2%;"></td>
+                                    <td style="width: 2%;"></td>
                                 </tr>
                             </t>
                         </tbody>
