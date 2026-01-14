@@ -53,10 +53,10 @@
                                     </td>
                                     <td>N/A</td>
                                     <td>
-                                        <span t-esc="line.product_id.default_code"/>
+                                        <span t-esc="line.name.default_code"/>
                                     </td>
                                     <td>
-                                        <span t-esc="line.product_id.name"/>
+                                        <span t-esc="line.name.name"/>
                                     </td>
                                     <td class="text-right">
                                         <span t-esc="'{:.2f}'.format(line.qty)"/>
