@@ -26,8 +26,8 @@
                     <div class="col-6"></div>
                     <div class="col-6">
                         <div class="row">
-                            <div class="col-6" style="text-align:right;"><p>1. Fecha de Solicitud:</p></div>
-                            <div class="col-6" style="border-bottom:1px solid #000;padding-left:5px;">
+                            <div class="col-6" style="text-align:right;font-size:12px;"><p>1. Fecha de Solicitud:</p></div>
+                            <div class="col-6" style="border-bottom:1px solid #000;padding-left:5px;font-size:12px;">
                                 <span t-field="doc.create_date" t-options='{"format": "dd/MM/yyyy"}'/>
                             </div>
                         </div>
@@ -36,8 +36,8 @@
                 <div class="row px-4 mt-2" >
                     <div class="col-6">
                         <div class="row">
-                            <div class="col-4" style="text-align:right;"><p>2. Cliente:</p></div>
-                            <div class="col-8" style="border-bottom:1px solid #000;padding-left:5px;">
+                            <div class="col-4" style="text-align:right;font-size:12px;"><p>2. Cliente:</p></div>
+                            <div class="col-8" style="border-bottom:1px solid #000;padding-left:5px;font-size:12px;">
                                 <span t-esc="doc.project_id.analytic_account_id.partner_id.name"/>
                             </div>
                         </div>
@@ -45,8 +45,8 @@
 
                     <div class="col-6">
                         <div class="row">
-                            <div class="col-4" style="text-align:right;"><p>3. O/T:</p></div>
-                            <div class="col-8" style="border-bottom:1px solid #000;padding-left:5px;">
+                            <div class="col-4" style="text-align:right;font-size:12px;"><p>3. O/T:</p></div>
+                            <div class="col-8" style="border-bottom:1px solid #000;padding-left:5px;font-size:12px;">
                                 <span t-esc="doc.project_id.name"/>
                             </div>
                         </div>
@@ -55,16 +55,16 @@
                 <div class="row px-4 mt-2" >
                     <div class="col-6">
                         <div class="row">
-                            <div class="col-4" style="text-align:right;"><p>4. Lanzamiento Nº:</p></div>
-                            <div class="col-8" style="border-bottom:1px solid #000;padding-left:5px;">
+                            <div class="col-4" style="text-align:right;font-size:12px;"><p>4. Lanzamiento Nº:</p></div>
+                            <div class="col-8" style="border-bottom:1px solid #000;padding-left:5px;font-size:12px;">
                                 <span t-esc="doc.name"/>
                             </div>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="row">
-                            <div class="col-4" style="text-align:right;"><p>5. Fecha Requerida:</p></div>
-                            <div class="col-8" style="border-bottom:1px solid #000;padding-left:5px;">
+                            <div class="col-4" style="text-align:right;font-size:12px;"><p>5. Fecha Requerida:</p></div>
+                            <div class="col-8" style="border-bottom:1px solid #000;padding-left:5px;font-size:12px;">
                                 <span t-field="doc.scheduled_date" t-options='{"format": "dd/MM/yyyy"}'/>
                             </div>
                         </div>
