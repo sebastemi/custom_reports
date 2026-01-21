@@ -1,7 +1,7 @@
 <odoo>
     <data>
         <template id="report_purchase_request_order_header">
-            <div class="header">
+            <div class="header" style="font-size:12px;">
                 <div class="row">
                     <div style="width:20%;" >
                         <img 

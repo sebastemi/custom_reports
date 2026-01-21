@@ -2,7 +2,7 @@
     <data>
         <template id="report_purchase_request_order_footer">
             <div class="footer">
-                <div class="container" style="font-family:arial;margin-top:100px;">
+                <div class="container" style="font-family:arial;margin-top:100px;font-size:12px;">
                     <div style="display:-webkit-box;display:-webkit-flex;display:flex;" >
                         <div style="width:25%;">
                             <span>15.Elaborado Por: </span>
@@ -23,7 +23,7 @@
                             </span>
                         </div>
                         <div style="width:25%;">
-                            <span>Recibido Por Compras: </span>
+                            <span>18. Recibido Por Compras: </span>
                             <span class="d-inline-block" style="border-bottom:1px solid #000;width:150px;font-size:12px;">
                                
                             </span>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="row mt-4">
                         <div style="width:15%;">
-                            <p>18. Observaciones:</p>
+                            <p>19. Observaciones:</p>
                         </div>
                         <div style="border-bottom:1px solid #000;width:85%;">
                             <div style="display:table-cell;vertical-align: bottom;">
@@ -50,7 +50,7 @@
                         </p>
                     </div>
                     <div class="row mt-2">
-                        <span>19. Pág <span class="page"/> de <span class="topage"/></span>
+                        <span>20. Pág <span class="page"/> de <span class="topage"/></span>
                     </div>
                     <div class="row mt-4">
                         <p>TGIN-F01 / Rev. 0</p>
