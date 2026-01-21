@@ -77,6 +77,67 @@
                                     </td>
                                 </tr>
                             </t>
+                            <t t-foreach="doc.service_ids" t-as="line">
+                                <tr>
+                                    <td class="text-center" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                        <span t-esc="line_index + 1"/>
+                                    </td>
+                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                        <span t-esc="line.name.default_code"/>
+                                    </td>
+                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                        <span t-esc="line.name.name"/>
+                                        <div class="row" style="margin-top:5px">
+                                            <div class="col-2">
+                                                <p>RC: 
+                                                    <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="col-2">
+                                                <p>PP: 
+                                                    <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="col-2">
+                                                <p>CG: 
+                                                    <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="col-2">
+                                                <p>PS: 
+                                                    <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="col-2">
+                                                <p>CC: 
+                                                    <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="col-2">
+                                                <p>NA: 
+                                                    <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                        <span t-esc="'{:.2f}'.format(line.qty)"/>
+                                    </td>
+                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                        <span t-esc="line.uom_id.name"/>
+                                    </td>
+                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}"></td>
+                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                        
+                                    </td>
+                                </tr>
+                            </t>
                         </tbody>
                     </table>
                 </div>
