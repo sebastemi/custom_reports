@@ -9,6 +9,7 @@
                     <group string="Datos para Impresión" name="print_data">
                         <group>
                             <field name="delivery_place" />
+                            <field name="payment_conditions" />
                             <field name="worker_order" />
                             <field name="reviewed_by_id" />
                             <field name="approved_by_id" />
