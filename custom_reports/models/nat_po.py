@@ -21,9 +21,9 @@ class NationalPurshaseOrder(models.Model):
     worker_order = fields.Char('Orden de trabajo')
     payment_conditions = fields.Char('Condiciones de Pago')
     created_by = fields.Char('Elaborado Por')
-    reviewed_by = fields.Char('Revisado Por')
-    approved_by = fields.Char('Aprobado Por')
-    notes = fields.Text('Observaciones')
+    # reviewed_by = fields.Char('Revisado Por')
+    # approved_by = fields.Char('Aprobado Por')
+    # notes = fields.Text('Observaciones')
     transport = fields.Selection(TRANSPORTS ,'transporte')
     sub_total = fields.Monetary('Subtotal')
     iva = fields.Monetary('IVA')
@@ -38,4 +38,8 @@ class NationalPurshaseOrder(models.Model):
     currency_rate_usd = fields.Float('Tasa USD')
     currency_rate_eur = fields.Float('Tasa EUR')
     currency_rate_usd_to_eur = fields.Float('Conversion USD a EUR')
+    annotations = fields.Text('Observaciones')
+    reviewed_by_id = fields.Many2one('res.users','Revisado Por')
+    approved_by_id = fields.Many2one('res.users','Aprobado Por')
+
 

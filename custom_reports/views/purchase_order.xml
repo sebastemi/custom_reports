@@ -5,67 +5,18 @@
             <field name="model">purchase.order</field>
             <field name="inherit_id" ref="purchase.purchase_order_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//notebook" position="inside">
-                    <page string="Datos para Impresion">
+                <xpath expr="//page[@name='purchase_delivery_invoice']" position="inside">
+                    <group string="Datos para Impresión" name="print_data">
                         <group>
-                            <group>
-                                <field name="delivery_place" />
-                                <field name="worker_order" />
-                            </group>
-                            <group>
-                                <field name="payment_conditions" />
-                                <field name="created_by" />
-                                <field name="reviewed_by" />
-                                <field name="approved_by" />
-                                <field name="notes" />
-                                <field name="transport" />
-                            </group>
-                            <group>
-                                <field name="requires_quality_report" />
-                                <field name="requires_test_protocol" />
-                                <field name="requires_warranty_certificate" />
-                                <field name="requires_test_insitu" />
-                                <field name="requires_calibration_certificate" />
-                                <field name="is_applied" />
-                            </group>
+                            <field name="delivery_place" />
+                            <field name="worker_order" />
+                            <field name="reviewed_by_id" />
+                            <field name="approved_by_id" />
                         </group>
-                    </page>
-                    <page string="Info Requisicion">
                         <group>
-                            <group>
-                                <field name="req_date" />
-                                <field name="req_expected_date" />
-                                <field name="req_ot" />
-                                <field name="req_client" />
-                            </group>
-                            <group>
-                                <field name="req_serial" />
-                                <field name="req_created_by" />
-                                <field name="req_received_by" />
-                                <field name="req_approved_by" />
-                                <field name="req_notes" />
-                            </group>
-                        </group>    
-                    </page>
-                    <page string="Info Requisicion Compras">
-                        <group>
-                            <group>
-                                <field name="preq_date" />
-                                <field name="preq_expected_date" />
-                                <field name="preq_ot" />
-                                <field name="preq_client" />
-                                <field name="preq_type" />
-                            </group>
-                            <group>
-                                <field name="preq_serial" />
-                                <field name="preq_created_by" />
-                                <field name="preq_received_by" />
-                                <field name="preq_approved_by" />
-                                <field name="preq_notes" />
-                                <field name="preq_po" />
-                            </group>
-                        </group>    
-                    </page>
+                            <field name="annotations" />
+                        </group>
+                    </group>
                 </xpath>
             </field>
         </record>
