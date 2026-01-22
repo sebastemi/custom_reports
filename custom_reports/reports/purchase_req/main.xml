@@ -6,26 +6,26 @@
                     <table style="width:100%;border-collapse:collapse;">
                         <thead>
                             <tr>
-                                <th>7. Nº</th>
-                                <th>8. Código</th>
-                                <th>9. Descripción</th>
-                                <th>10. Cant.</th>
-                                <th>11. U/M</th>
-                                <th>12. Proveedor Seleccionado</th>
-                                <th>13. O/C</th>
+                                <th style="padding:2px;">7. Nº</th>
+                                <th style="padding:2px;">8. Código</th>
+                                <th style="padding:2px;">9. Descripción</th>
+                                <th style="padding:2px;">10. Cant.</th>
+                                <th style="padding:2px;">11. U/M</th>
+                                <th style="padding:2px;">12. Proveedor Seleccionado</th>
+                                <th style="padding:2px;">13. O/C</th>
 
                             </tr>
                         </thead>
                         <tbody>
                             <t t-foreach="doc.product_ids" t-as="line">
                                 <tr>
-                                    <td class="text-center" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                    <td class="text-center" style="padding:2px;">
                                         <span t-esc="line_index + 1"/>
                                     </td>
-                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                    <td style="padding:2px;" >
                                         <span t-esc="line.name.default_code"/>
                                     </td>
-                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                    <td style="padding:2px;" >
                                         <span t-esc="line.name.name"/>
                                         <div class="row" style="margin-top:5px">
                                             <div class="col-2">
@@ -66,27 +66,27 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                    <td style="padding:2px;" >
                                         <span t-esc="'{:.2f}'.format(line.qty)"/>
                                     </td>
-                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                    <td style="padding:2px;" >
                                         <span t-esc="line.uom_id.name"/>
                                     </td>
-                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}"></td>
-                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                    <td style="padding:2px;" ></td>
+                                    <td style="padding:2px;" >
                                         
                                     </td>
                                 </tr>
                             </t>
                             <t t-foreach="doc.service_ids" t-as="line">
                                 <tr>
-                                    <td class="text-center" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                    <td class="text-center" >
                                         <span t-esc="len(doc.product_ids) + line_index + 1"/>
                                     </td>
-                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                    <td  >
                                         <span t-esc="line.name.default_code"/>
                                     </td>
-                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                    <td  >
                                         <span t-esc="line.name.name"/>
                                         <div class="row" style="margin-top:5px">
                                             <div class="col-2">
@@ -127,14 +127,14 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                    <td  >
                                         <span t-esc="'{:.2f}'.format(line.qty)"/>
                                     </td>
-                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                    <td  >
                                         <span t-esc="line.uom_id.name"/>
                                     </td>
-                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}"></td>
-                                    <td  t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}">
+                                    <td  ></td>
+                                    <td  >
                                         
                                     </td>
                                 </tr>
