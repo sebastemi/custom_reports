@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="row mt-4">
-                        <div class="" style="border-bottom:1px solid #000;">
+                        <div class="" style="border-bottom:1px solid #000;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
                             <p>19. Observaciones:  <t t-esc="doc.description.replace('\n', ' ') if doc.description else ''"/></p>
                         </div>
                     </div>
