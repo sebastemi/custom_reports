@@ -33,7 +33,9 @@
                         <div class="">
                             <p>19. Observaciones:</p>
                         </div>
-                        <t t-esc="doc.description"/>
+                        <div>
+                            <t t-esc="doc.description"/>
+                        </div>
                         <div style="border-bottom:1px solid #000;">
                         </div>
                     </div>
