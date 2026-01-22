@@ -31,7 +31,7 @@
                     </div>
                     <div class="row mt-4">
                         <div class="" style="border-bottom:1px solid #000;">
-                            <p>19. Observaciones:  <span t-esc="html_cache_cleanup(doc.notes).replace('\n', ' ') if doc.notes else ''"/></p>
+                            <p>19. Observaciones:  <span t-esc="html_cache_cleanup(doc.description).replace('\n', ' ') if doc.description else ''"/></p>
                         </div>
                     </div>
 
