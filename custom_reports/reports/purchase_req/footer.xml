@@ -30,12 +30,10 @@
                         </div>
                     </div>
                     <div class="row mt-4">
-                        <div class="col-2">
-                            <p>19. Observaciones:</p>
-                        </div>
-                        <div class="col-10" style="border-bottom:1px solid #000;width:85%;">
+                        <span>19. Observaciones:</span>
+                        <span class="d-inline-block" style="border-bottom:1px solid #000;width:85%;">
                             <t t-esc="doc.description"/>
-                        </div>
+                        </span>
                     </div>
                     <div class="row mt-4">
                         <p style="font-size:12px;">
