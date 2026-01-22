@@ -71,17 +71,17 @@
                 <hr/>
                 <div style="display:-webkit-box;display:-webkit-flex;display:flex;">
                     <div style="width:50%;">
-                        <p style="margin:0px;">Condiciones de Pago: <t t-esc="doc.notes"/></p>
+                        <p style="margin:0px;">Condiciones de Pago: <span t-field="doc.notes"/></p>
                         <p style="margin:0px;">Elaborado Por: <t t-esc="doc.user_id.name"/></p>
                         <p style="margin:0px;">Revisado Por: <t t-esc="doc.reviewed_by_id.name"/></p>
                         <p style="margin:0px;">Autorizado Por: <t t-esc="doc.approved_by_id.name"/></p>
-                        <p style="margin:0px;">Observaciones: <t t-esc="doc.notes"/></p>
+                        <p style="margin:0px;">Observaciones: </p>
                     </div>
                     <div style="width:50%;display:-webkit-box;display:-webkit-flex;display:flex;font-size:12px;">
                         <div style="width:50%; -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;text-align:right;">
-                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">Sub-Total: <t t-esc="doc.currency"/></p>
-                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">IVA: <t t-esc="doc.currency"/></p>
-                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">Total: <t t-esc="doc.currency"/></p>
+                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">Sub-Total: <t t-esc="doc.currency_id.name"/></p>
+                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">IVA: <t t-esc="doc.currency_id.name"/></p>
+                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">Total: <t t-esc="doc.currency_id.name"/></p>
                         </div>
                         <div style="width:50%; -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;text-align:right;">
                             <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;"><span t-field="doc.amount_untaxed" t-options='{"widget": "float", "precision": 2}'/></p>
