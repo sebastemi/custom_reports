@@ -3,26 +3,26 @@
         <template id="report_purchase_request_order_footer">
             <div class="footer">
                 <div class="container" style="font-family:arial;margin-top:100px;font-size:12px;">
-                    <div style="display:-webkit-box;display:-webkit-flex;display:flex;" >
-                        <div style="width:25%;">
+                    <div class="row">
+                        <div class="col-4">
                             <span>15.Elaborado Por: </span>
                             <span class="d-inline-block" style="border-bottom:1px solid #000;width:150px;font-size:12px;">
                                 <t t-esc="doc.create_uid.name"/>
                             </span>
                         </div>
-                        <div style="width:25%;">
+                        <div class="col-4">
                             <span>16. Revisado Por: </span>
                             <span class="d-inline-block" style="border-bottom:1px solid #000;width:150px;font-size:12px;">
                                 <t t-esc="doc.reviewed_by_id.name"/>
                             </span>
                         </div>
-                        <div style="width:25%;">
+                        <div class="col-4">
                             <span>17. Aprobado Por: </span>
                             <span class="d-inline-block" style="border-bottom:1px solid #000;width:150px;font-size:12px;">
                                 <t t-esc="doc.approved_by_id.name"/>
                             </span>
                         </div>
-                        <div style="width:25%;">
+                        <div class="col-4">
                             <span>18. Recibido Por Compras: </span>
                             <span class="d-inline-block" style="border-bottom:1px solid #000;width:150px;font-size:12px;">
                                 <t t-esc="doc.received_by_id.name"/>
