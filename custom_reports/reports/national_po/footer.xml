@@ -71,10 +71,10 @@
                 <hr/>
                 <div style="display:-webkit-box;display:-webkit-flex;display:flex;">
                     <div style="width:50%;">
-                        <p style="margin:0px;">Condiciones de Pago: <t t-esc="doc.payment_conditions"/></p>
-                        <p style="margin:0px;">Elaborado Por: <t t-esc="doc.created_by"/></p>
-                        <p style="margin:0px;">Revisado Por: <t t-esc="doc.reviewed_by"/></p>
-                        <p style="margin:0px;">Autorizado Por: <t t-esc="doc.approved_by"/></p>
+                        <p style="margin:0px;">Condiciones de Pago: <t t-esc="doc.notes"/></p>
+                        <p style="margin:0px;">Elaborado Por: <t t-esc="doc.user_id.name"/></p>
+                        <p style="margin:0px;">Revisado Por: <t t-esc="doc.reviewed_by_id.name"/></p>
+                        <p style="margin:0px;">Autorizado Por: <t t-esc="doc.approved_by_id.name"/></p>
                         <p style="margin:0px;">Observaciones: <t t-esc="doc.notes"/></p>
                     </div>
                     <div style="width:50%;display:-webkit-box;display:-webkit-flex;display:flex;font-size:12px;">

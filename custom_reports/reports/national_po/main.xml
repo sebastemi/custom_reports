@@ -68,7 +68,7 @@
                 <div class="row">
                     <div class="col-4"></div>
                     <div class="col-6"  style="white-space:pre-line;">
-                        <t t-esc="doc.notes"/>
+                        <t t-esc="doc.annotations"/>
                     </div>
                 </div>
 

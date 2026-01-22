@@ -49,7 +49,7 @@
                                             <p>REV.</p>
                                         </div>
                                     </div>
-                                    <p style="margin:0;padding:0;">Requisición/Lanz Nro.: <t t-esc="doc.origin"/></p>
+                                    <p style="margin:0;padding:0;">Requisición/Lanz Nro.: <t t-esc="doc.requisition_id.name"/></p>
                                     <p style="margin:0;padding:0;">Fecha de la Orden: <span t-field="doc.date_order" t-options='{"format": "dd/MM/yyyy"}' /></p>
                                     <p style="margin:0;padding:0;">Fecha de Entrega: <span t-field="doc.date_planned" t-options='{"format": "dd/MM/yyyy"}' /></p>
                                     <p style="margin:0;padding:0;">Lugar de Entrega: <t t-esc="doc.delivery_place"/></p>
