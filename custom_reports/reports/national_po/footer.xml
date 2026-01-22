@@ -1,7 +1,7 @@
 <odoo>
     <data>
         <template id="report_national_purchase_order_footer">
-            <div class="footer" style="font-size:13px;margin-top:20px;font-family:arial;letter-spacing:1px;">
+            <div class="footer" style="font-size:10px;margin-top:20px;font-family:arial;letter-spacing:1px;">
                 <t t-set="tasa" t-value="'Undefined'"/>
                 <t t-if="doc.currency == 'USD'">
                     <t t-set="tasa" t-value="1"/>
@@ -30,8 +30,8 @@
                         <p style="text-align:justify;">
                             1.El número de esta orden deberá aparecer en la
                             orden de entrega y/o factura. <br/>
-                            2. Los materiales solicitados en la presente orden de
-                            compra deben ser entregados con sus respectiva
+                            2. Los materiales solicitados en la presente orden
+                            de compra deben ser entregados con sus respectiva
                             orden de entrega. <br/>
                             3. Cuando la factura original no sea entregada
                             con la mercancía, esta debe ser enviada a las
@@ -71,134 +71,123 @@
                 <hr/>
                 <div style="display:-webkit-box;display:-webkit-flex;display:flex;">
                     <div style="width:50%;">
-                        <p style="margin:0px;">18. Condiciones de Pago: <t t-esc="doc.payment_conditions"/></p>
-                        <p style="margin:0px;">19. Elaborado Por: <t t-esc="doc.created_by"/></p>
-                        <p style="margin:0px;">20. Revisado Por: <t t-esc="doc.reviewed_by"/></p>
-                        <p style="margin:0px;">21. Autorizado Por: <t t-esc="doc.approved_by"/></p>
-                        <p style="margin:0px;">22. Observaciones: <t t-esc="doc.notes"/></p>
+                        <p style="margin:0px;">Condiciones de Pago: <t t-esc="doc.payment_conditions"/></p>
+                        <p style="margin:0px;">Elaborado Por: <t t-esc="doc.created_by"/></p>
+                        <p style="margin:0px;">Revisado Por: <t t-esc="doc.reviewed_by"/></p>
+                        <p style="margin:0px;">Autorizado Por: <t t-esc="doc.approved_by"/></p>
+                        <p style="margin:0px;">Observaciones: <t t-esc="doc.notes"/></p>
                     </div>
-                    <div style="width:50%;display:-webkit-box;display:-webkit-flex;display:flex;">
-                    <div style="width:50%; -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;text-align:right;">
-                        <p style="display:inline-block;margin:0px;width:100%;">23. Sub-Total: <t t-esc="doc.currency"/></p>
-                        <p style="display:inline-block;margin:0px;width:100%;">24. IVA: <t t-esc="doc.currency"/></p>
-                        <p style="display:inline-block;margin:0px;width:100%;">25. Total: <t t-esc="doc.currency"/></p>
-                    </div>
-                    <div style="width:50%; -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;text-align:right;">
-                        <p style="display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.amount_untaxed)"/></p>
-                        <p style="display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.amount_tax)"/></p>
-                        <p style="display:inline-block;margin:0px;width:100%;"><t t-esc="'{:.2f}'.format(doc.amount_total)"/></p>
+                    <div style="width:50%;display:-webkit-box;display:-webkit-flex;display:flex;font-size:12px;">
+                        <div style="width:50%; -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;text-align:right;">
+                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">Sub-Total: <t t-esc="doc.currency"/></p>
+                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">IVA: <t t-esc="doc.currency"/></p>
+                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">Total: <t t-esc="doc.currency"/></p>
+                        </div>
+                        <div style="width:50%; -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;text-align:right;">
+                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;"><span t-field="doc.amount_untaxed" t-options='{"widget": "float", "precision": 2}'/></p>
+                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;"><span t-field="doc.amount_tax" t-options='{"widget": "float", "precision": 2}'/></p>
+                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;"><span t-field="doc.amount_total" t-options='{"widget": "float", "precision": 2}'/></p>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-            <div style="display:-webkit-box;display:-webkit-flex;display:flex;">
-                <div style="width:50%; -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;">
-                    <p style="display:inline-block;">26. Transporte:</p>
-                    <div style="display:-webkit-box;display:-webkit-flex;display:flex;float:right;margin-top:10px;">
-                    <div  style=" -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;">
+                <div class="row">
+                    <div style="width:50%; -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;">
+                        <span style="display:inline-block;margin-right:200px;">Transporte:</span>
                         <span>Proveedor: </span>
-                        <t t-if="doc.transport == 'PROVEEDOR'">
-                            <span style="display:inline-block;padding:1px 5px;border:1px solid #000;margin-left:5px;box-sizing: border-box;">X</span>
-                        </t>
-                        <t t-else="">
-                            <span style="display:inline-block;padding:8px 10px;border:1px solid #000;margin-left:5px;"></span>
-                        </t>
-                    </div>
-                    <div  style=" -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;margin-left:10px;">
+                        <span style="display:inline-block;padding:8px 10px;border:1px solid #000;margin-left:5px;margin-right:50px;"></span>
                         <span>Empresa: </span>
-                        <t t-if="doc.transport == 'EMPRESA'">
-                            <span style="display:inline-block;padding:1px 5px;border:1px solid #000;margin-left:5px;box-sizing: border-box;">X</span>
-                        </t>
-                        <t t-else="">
-                            <span style="display:inline-block;padding:8px 10px;border:1px solid #000;margin-left:5px;"></span>
-                        </t>
-                    </div>
+                        <span style="display:inline-block;padding:8px 10px;border:1px solid #000;margin-left:5px;"></span>
                     </div>
                 </div>
-                <div style="width:50%;-webkit-box-flex: 1;-webkit-flex: 1;flex: 1;">
-                    <table style="float: right;padding-right: 100px;border:1px solid #FFF;">
-                        <tbody > 
-                            <tr style="padding:10px 0px;">
-                                <td>
-                                    <span>Requiere Reporte de Calidad:</span>
-                                </td>
-                                <td>
-                                    <t t-if="doc.requires_quality_report">
-                                        <span style="display:inline-block;padding:0px 6px;border:1px solid #000;margin:5px 0px;margin-left:5px;">X</span>
-                                    </t>
-                                    <t t-else="">
-                                        <span style="display:inline-block;padding:10px;border:1px solid #000;margin-left:5px;"></span>
-                                    </t>
-                                </td>
-                            </tr>
-                            <tr style="padding:10px 0px;">
-                                <td>
-                                    <span>Requiere Protocolo de Prueba</span>
-                                </td>
-                                <td>
-                                    <t t-if="doc.requires_test_protocol">
-                                        <span style="display:inline-block;padding:0px 6px;border:1px solid #000;margin:5px 0px;margin-left:5px;">X</span>
-                                    </t>
-                                    <t t-else="">
-                                        <span style="display:inline-block;padding:10px;border:1px solid #000;margin-left:5px;"></span>
-                                    </t>
-                                </td>
-                            </tr>
-                            <tr style="padding:10px 0px;">
-                                <td>
-                                    <span>Requiere Certificado de Garantia</span>
-                                </td>
-                                <td>
-                                    <t t-if="doc.requires_warranty_certificate">
-                                        <span style="display:inline-block;padding:0px 6px;border:1px solid #000;margin:5px 0px;margin-left:5px;">X</span>
-                                    </t>
-                                    <t t-else="">
-                                        <span style="display:inline-block;padding:10px;border:1px solid #000;margin-left:5px;"></span>
-                                    </t>
-                                </td>
-                            </tr>
-                            <tr style="padding:10px 0px;">
-                                <td>
-                                    <span>Requiere Pruebas en Sitio</span>
-                                </td>
-                                <td>
-                                    <t t-if="doc.requires_test_insitu">
-                                        <span style="display:inline-block;padding:0px 6px;border:1px solid #000;margin:5px 0px;margin-left:5px;">X</span>
-                                    </t>
-                                    <t t-else="">
-                                        <span style="display:inline-block;padding:10px;border:1px solid #000;margin-left:5px;"></span>
-                                    </t>
-                                </td>
-                            </tr>
-                            <tr style="padding:10px 0px;">
-                                <td>
-                                    <span>Requiere Certificado de Calibración</span>
-                                </td>
-                                <td>
-                                    <t t-if="doc.requires_calibration_certificate">
-                                        <span style="display:inline-block;padding:0px 6px;border:1px solid #000;margin:5px 0px;margin-left:5px;">X</span>
-                                    </t>
-                                    <t t-else="">
-                                        <span style="display:inline-block;padding:10px;border:1px solid #000;margin-left:5px;"></span>
-                                    </t>
-                                </td>
-                            </tr>
-                            <tr style="padding:10px 0px;">
-                                <td>
-                                    <span>No Aplica</span>
-                                </td>
-                                <td>
-                                    <t t-if="doc.is_applied">
-                                        <span style="display:inline-block;padding:0px 6px;border:1px solid #000;margin:5px 0px;margin-left:5px;">X</span>
-                                    </t>
-                                    <t t-else="">
-                                        <span style="display:inline-block;padding:10px;border:1px solid #000;margin-left:5px;"></span>
-                                    </t>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <div class="row">
+                    <div class="col-8">
+                    
+                    </div>
+                    <div class="col-4">
+                        <table style="border:1px solid #FFF;width:100%;">
+                            <tbody > 
+                                <tr >
+                                    <td >
+                                        <span>Requiere Reporte de Calidad:</span>
+                                    </td>
+                                    <td>
+                                        <t t-if="doc.requires_quality_report">
+                                            <span style="display:inline-block;padding:0px 6px;border:1px solid #000;margin:5px 0px;margin-left:5px;">X</span>
+                                        </t>
+                                        <t t-else="">
+                                            <span style="display:inline-block;padding:10px;border:1px solid #000;margin-left:4px;"></span>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td>
+                                        <span>Requiere Protocolo de Prueba</span>
+                                    </td>
+                                    <td>
+                                        <t t-if="doc.requires_test_protocol">
+                                            <span style="display:inline-block;padding:0px 6px;border:1px solid #000;margin:5px 0px;margin-left:5px;">X</span>
+                                        </t>
+                                        <t t-else="">
+                                            <span style="display:inline-block;padding:10px;border:1px solid #000;margin-left:4px;"></span>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td>
+                                        <span>Requiere Certificado de Garantia</span>
+                                    </td>
+                                    <td>
+                                        <t t-if="doc.requires_warranty_certificate">
+                                            <span style="display:inline-block;padding:0px 6px;border:1px solid #000;margin:5px 0px;margin-left:5px;">X</span>
+                                        </t>
+                                        <t t-else="">
+                                            <span style="display:inline-block;padding:10px;border:1px solid #000;margin-left:4px;"></span>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td>
+                                        <span>Requiere Pruebas en Sitio</span>
+                                    </td>
+                                    <td>
+                                        <t t-if="doc.requires_test_insitu">
+                                            <span style="display:inline-block;padding:0px 6px;border:1px solid #000;margin:5px 0px;margin-left:5px;">X</span>
+                                        </t>
+                                        <t t-else="">
+                                            <span style="display:inline-block;padding:10px;border:1px solid #000;margin-left:4px;"></span>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td>
+                                        <span>Requiere Certificado de Calibración</span>
+                                    </td>
+                                    <td>
+                                        <t t-if="doc.requires_calibration_certificate">
+                                            <span style="display:inline-block;padding:0px 6px;border:1px solid #000;margin:5px 0px;margin-left:5px;">X</span>
+                                        </t>
+                                        <t t-else="">
+                                            <span style="display:inline-block;padding:10px;border:1px solid #000;margin-left:4px;"></span>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td>
+                                        <span>No Aplica</span>
+                                    </td>
+                                    <td>
+                                        <t t-if="doc.is_applied">
+                                            <span style="display:inline-block;padding:0px 6px;border:1px solid #000;margin:5px 0px;margin-left:5px;">X</span>
+                                        </t>
+                                        <t t-else="">
+                                            <span style="display:inline-block;padding:10px;border:1px solid #000;margin-left:4px;"></span>
+                                        </t>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div>
                     <strong style="font-weight: lighter;">TGLO-F02 / Rev. 0</strong>

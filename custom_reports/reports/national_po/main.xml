@@ -11,59 +11,65 @@
             <t t-else="">
                 <t t-set="tasa" t-value="doc.currency_rate_usd"/>
             </t>
-            <div class="container">
-                <div class="row" style="font-family:Arial;letter-spacing:2px;">
-                    <table style="width:100%;border-collapse: collapse;border:1px solid #FFF;font-size:11px;">
-                        <thead style="font-size:10px;">
+            <div class="container" style="font-family:'Arial Narrow', Arial ;font-stretch: condensed;font-size:12px;letter-spacing:1px;">
+                <div class="row" style="">
+                    <table style="width:100%;border-collapse: collapse;border:1px solid #FFF;">
+                        <thead>
                             <tr>
-                                <th style="padding:1px;white-spacing:nowrap;">11.Reng.</th>
-                                <th style="padding:1px;white-spacing:nowrap;">12.Artículo</th>
-                                <th style="padding:1px;white-spacing:nowrap;">13.Descripción</th>
-                                <th style="padding:1px;text-align:right;white-spacing:nowrap;">14.Cantidad</th>
-                                <th style="padding:1px;white-spacing:nowrap;"></th>
-                                <th style="padding:1px;text-align:right;white-spacing:nowrap;">15.Precio</th>
-                                <th style="padding:1px;text-align:right;white-spacing:nowrap;">16.Desc.</th>
-                                <th style="padding:1px;text-align:right;white-spacing:nowrap;">17.Total</th>
+                                <th style="padding:2px;white-spacing:nowrap;font-weight:normal;padding-bottom:10px;">Reng.</th>
+                                <th style="padding:2px;text-align:center;white-spacing:nowrap;font-weight:normal;padding-bottom:10px;">Artículo</th>
+                                <th style="padding:2px;white-spacing:nowrap;font-weight:normal;padding-bottom:10px;">Descripción</th>
+                                <th style="padding:2px;text-align:right;white-spacing:nowrap;font-weight:normal;padding-bottom:10px;">Cantidad</th>
+                                <th style="padding:4px;white-spacing:nowrap;font-weight:normal;padding-bottom:10px;"></th>
+                                <th style="padding:2px;text-align:right;white-spacing:nowrap;font-weight:normal;padding-bottom:10px;">Precio</th>
+                                <th style="padding:2px;text-align:right;white-spacing:nowrap;font-weight:normal;padding-bottom:10px;">Desc.</th>
+                                <th style="padding:2px;text-align:right;white-spacing:nowrap;font-weight:normal;padding-bottom:10px;">Total</th>
                             </tr>
                         </thead>
                         <tbody>
                             <t t-foreach="doc.order_line" t-as="line">
                                 <tr>
-                                    <td style="padding:5px;text-align:center;width:2%;">
+                                    <td style="padding:2px;text-align:center;width:2%;padding-bottom:10px;">
                                         <t t-esc="line_index + 1"/>
                                     </td>
 
-                                    <td style="padding:5px;width:20%;">
+                                    <td style="padding:2px;width:15%;text-align:center;padding-bottom:10px;">
                                         <t t-esc="line.product_id.default_code"/>
                                     </td>
 
-                                    <td style="padding:5px;width:30%;">
+                                    <td style="padding:2px;width:35%;line-height: 1.4;padding-bottom:10px;">
                                         <t t-esc="line.product_id.name"/>
                                     </td>
 
-                                    <td style="padding:5px;text-align:right;width:10%;">
+                                    <td style="padding:2px;text-align:right;width:10%;padding-bottom:10px;">
                                         <t t-esc="'{:.2f}'.format(line.product_qty)"/>
                                     </td>
 
-                                    <td style="padding:5px;width:5%;">
+                                    <td style="padding-left:4px;width:5%;padding-bottom:10px;">
                                         <t t-esc="line.product_uom.name"/>
                                     </td>
 
-                                    <td style="padding:5px;text-align:right;width:10%;">
-                                        <t t-esc="'{:.2f}'.format(line.price_unit)"/>
+                                    <td style="padding:2px;text-align:right;width:10%;padding-bottom:10px;">
+                                       <span t-field="line.price_unit" t-options='{"widget": "float", "precision": 2}'/>
                                     </td>
 
-                                    <td style="padding:5px;text-align:right;width:10%;">
-                                        <t t-esc="'{:.2f}'.format(line.discount)"/>
+                                    <td style="padding:2px;text-align:right;width:10%;padding-bottom:10px;">
+                                        <span t-field="line.discount" t-options='{"widget": "float", "precision": 2}'/>
                                     </td>
 
-                                    <td style="padding:5px;text-align:right;width:10%;">
-                                        <t t-esc="'{:.2f}'.format(line.price_subtotal)"/>
+                                    <td style="padding:2px;text-align:right;width:13%;padding-bottom:10px;">
+                                        <span t-field="line.price_subtotal" t-options='{"widget": "float", "precision": 2}'/>
                                     </td>
                                 </tr>
                             </t>
                         </tbody>
                     </table>
+                </div>
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-6"  style="white-space:pre-line;">
+                        <t t-esc="doc.notes"/>
+                    </div>
                 </div>
 
             </div>
