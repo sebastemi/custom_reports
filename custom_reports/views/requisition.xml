@@ -25,9 +25,13 @@
 
                 <xpath expr="//notebook" position="inside">
                     <page name="print_info" string="Datos para Impresión">
-                        <field name="reviewed_by_id" />
-                        <field name="approved_by_id" />
-                        <field name="received_by_id" />
+                        <group>
+                            <group>
+                                <field name="reviewed_by_id" />
+                                <field name="approved_by_id" />
+                                <field name="received_by_id" />
+                            </group>
+                        </group>
                     </page>
                 </xpath>
             </field>
