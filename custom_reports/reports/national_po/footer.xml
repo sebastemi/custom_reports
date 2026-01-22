@@ -116,7 +116,7 @@
                                             <span style="display:inline-block;padding:0px 6px;border:1px solid #000;margin:5px 0px;margin-left:5px;">X</span>
                                         </t>
                                         <t t-else="">
-                                            <span style="display:inline-block;padding:10px;border:1px solid #000;margin-left:4px;"></span>
+                                            <span style="display:inline-block;padding:6px;border:1px solid #000;margin-left:4px;"></span>
                                         </t>
                                     </td>
                                 </tr>
@@ -129,7 +129,7 @@
                                             <span style="display:inline-block;padding:0px 6px;border:1px solid #000;margin:5px 0px;margin-left:5px;">X</span>
                                         </t>
                                         <t t-else="">
-                                            <span style="display:inline-block;padding:10px;border:1px solid #000;margin-left:4px;"></span>
+                                            <span style="display:inline-block;padding:6px;border:1px solid #000;margin-left:4px;"></span>
                                         </t>
                                     </td>
                                 </tr>
@@ -142,7 +142,7 @@
                                             <span style="display:inline-block;padding:0px 6px;border:1px solid #000;margin:5px 0px;margin-left:5px;">X</span>
                                         </t>
                                         <t t-else="">
-                                            <span style="display:inline-block;padding:10px;border:1px solid #000;margin-left:4px;"></span>
+                                            <span style="display:inline-block;padding:6px;border:1px solid #000;margin-left:4px;"></span>
                                         </t>
                                     </td>
                                 </tr>
@@ -155,7 +155,7 @@
                                             <span style="display:inline-block;padding:0px 6px;border:1px solid #000;margin:5px 0px;margin-left:5px;">X</span>
                                         </t>
                                         <t t-else="">
-                                            <span style="display:inline-block;padding:10px;border:1px solid #000;margin-left:4px;"></span>
+                                            <span style="display:inline-block;padding:6px;border:1px solid #000;margin-left:4px;"></span>
                                         </t>
                                     </td>
                                 </tr>
@@ -168,7 +168,7 @@
                                             <span style="display:inline-block;padding:0px 6px;border:1px solid #000;margin:5px 0px;margin-left:5px;">X</span>
                                         </t>
                                         <t t-else="">
-                                            <span style="display:inline-block;padding:10px;border:1px solid #000;margin-left:4px;"></span>
+                                            <span style="display:inline-block;padding:6px;border:1px solid #000;margin-left:4px;"></span>
                                         </t>
                                     </td>
                                 </tr>
@@ -181,7 +181,7 @@
                                             <span style="display:inline-block;padding:0px 6px;border:1px solid #000;margin:5px 0px;margin-left:5px;">X</span>
                                         </t>
                                         <t t-else="">
-                                            <span style="display:inline-block;padding:10px;border:1px solid #000;margin-left:4px;"></span>
+                                            <span style="display:inline-block;padding:6px;border:1px solid #000;margin-left:4px;"></span>
                                         </t>
                                     </td>
                                 </tr>
