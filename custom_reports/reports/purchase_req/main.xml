@@ -66,10 +66,10 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td style="padding:2px;" >
+                                    <td class="text-center" style="padding:2px;" >
                                         <span t-esc="'{:.2f}'.format(line.qty)"/>
                                     </td>
-                                    <td style="padding:2px;" >
+                                    <td class="text-center" style="padding:2px;" >
                                         <span t-esc="line.uom_id.name"/>
                                     </td>
                                     <td style="padding:2px;" ></td>
@@ -83,10 +83,10 @@
                                     <td class="text-center" >
                                         <span t-esc="len(doc.product_ids) + line_index + 1"/>
                                     </td>
-                                    <td  >
+                                    <td  class="text-center" style="padding:2px;">
                                         <span t-esc="line.name.default_code"/>
                                     </td>
-                                    <td  >
+                                    <td  style="padding:2px;">
                                         <span t-esc="line.name.name"/>
                                         <div class="row" style="margin-top:5px">
                                             <div class="col-2">
@@ -127,14 +127,14 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td  >
+                                    <td class="text-center" style="padding:2px;">
                                         <span t-esc="'{:.2f}'.format(line.qty)"/>
                                     </td>
-                                    <td  >
+                                    <td class="text-center" style="padding:2px;">
                                         <span t-esc="line.uom_id.name"/>
                                     </td>
-                                    <td  ></td>
-                                    <td  >
+                                    <td style="padding:2px;" ></td>
+                                    <td  style="padding:2px;">
                                         
                                     </td>
                                 </tr>

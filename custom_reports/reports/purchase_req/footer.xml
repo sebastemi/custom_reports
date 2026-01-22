@@ -33,9 +33,9 @@
                         <div>
                             <p>19. Observaciones:</p>
                         </div>
-                        <span class="d-inline-block" style="border-bottom:1px solid #000;width:100%;font-size:12px;"> 
+                        <div style="border-bottom:1px solid #000;">
                             <t t-esc="doc.description"/>
-                        </span>
+                        </div>
                     </div>
                     <div class="row mt-4">
                         <p style="font-size:12px;">
