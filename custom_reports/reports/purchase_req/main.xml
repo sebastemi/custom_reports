@@ -22,7 +22,7 @@
                                     <td class="text-center" style="padding:2px;">
                                         <span t-esc="line_index + 1"/>
                                     </td>
-                                    <td style="padding:2px;" >
+                                    <td  class="text-center" style="padding:2px;" >
                                         <span t-esc="line.name.default_code"/>
                                     </td>
                                     <td style="padding:2px;" >
