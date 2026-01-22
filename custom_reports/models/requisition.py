@@ -5,6 +5,10 @@ class RequisitionReport(models.Model):
 
 
     state_id_name = fields.Char(related='state_id.name')
+    reviewed_by_id = fields.Many2one('res.users','Revisado Por')
+    approved_by_id = fields.Many2one('res.users','Aprobado Por')
+    received_by_id = fields.Many2one('res.users','Recibido Por')
+
 
     def _get_xml_report_id(self):
 

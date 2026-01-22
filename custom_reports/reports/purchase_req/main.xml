@@ -3,7 +3,7 @@
         <template id="report_purchase_request_order_main">
             <div class="container">
                 <div class="row" style="font-family:Arial;font-size:12px;">
-                    <table class="table">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>7. Nº</th>
