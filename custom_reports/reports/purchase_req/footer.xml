@@ -33,10 +33,11 @@
                         <div>
                             <p>19. Observaciones:</p>
                         </div>
-                        <div style="border-bottom:1px solid #000;">
-                            <t t-esc="doc.description"/>
-                        </div>
                     </div>
+                    <div class="row" style="border-bottom:1px solid #000;">
+                        <t t-esc="doc.description"/>
+                    </div>
+
                     <div class="row mt-4">
                         <p style="font-size:12px;">
                             <b>RC:</b> Reporte de calidad 
