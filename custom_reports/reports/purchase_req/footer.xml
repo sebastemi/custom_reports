@@ -31,7 +31,8 @@
                     </div>
                     <div class="row mt-4">
                         <div class="" style="border-bottom:1px solid #000;">
-                            <p>19. Observaciones:  <span t-esc="html_cache_cleanup(doc.description).replace('\n', ' ') if doc.description else ''"/></p>
+                            <t t-set="clean_text" t-value="doc.description and ''.join(doc.description.splitlines()) or ''"/>
+                            <p>19. Observaciones:  <span t-esc="clean_text"/></p>
                         </div>
                     </div>
 
