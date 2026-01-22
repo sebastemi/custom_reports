@@ -32,7 +32,7 @@
                     <div class="row mt-4">
                         <div class="" style="border-bottom:1px solid #000;">
                             <t t-set="clean_text" t-value="doc.description and ''.join(doc.description.splitlines().replace) or ''"/>
-                            <p>19. Observaciones: <span t-esc="(doc.description or '').striptags().replace('\n', ' ').replace('\r', ' ')"/></p>
+                            <p>19. Observaciones: <span t-esc="' '.join((doc.description or '').striptags().split())"/></p>
                         </div>
                     </div>
 
