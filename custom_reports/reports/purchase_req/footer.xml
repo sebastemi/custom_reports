@@ -31,10 +31,7 @@
                     </div>
                     <div class="row mt-4">
                         <div class="">
-                            <p>19. Observaciones:</p>
-                        </div>
-                        <div>
-                            <t t-esc="doc.description"/>
+                            <p>19. Observaciones:  <t t-esc="doc.description"/></p>
                         </div>
                         <div style="border-bottom:1px solid #000;">
                         </div>
