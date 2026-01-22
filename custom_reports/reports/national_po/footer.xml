@@ -71,7 +71,7 @@
                 <hr/>
                 <div style="display:-webkit-box;display:-webkit-flex;display:flex;">
                     <div style="width:50%;">
-                        <p style="margin:0px;">Condiciones de Pago: <span t-field="doc.notes"/></p>
+                        <p style="margin:0px;">Condiciones de Pago: <span t-esc="doc.notes" style="display: inline; white-space: pre-line;"/></p>
                         <p style="margin:0px;">Elaborado Por: <t t-esc="doc.user_id.name"/></p>
                         <p style="margin:0px;">Revisado Por: <t t-esc="doc.reviewed_by_id.name"/></p>
                         <p style="margin:0px;">Autorizado Por: <t t-esc="doc.approved_by_id.name"/></p>
