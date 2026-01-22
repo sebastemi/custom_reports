@@ -6,13 +6,13 @@
                     <table style="width:100%;border-collapse:collapse;">
                         <thead>
                             <tr>
-                                <th style="padding:2px;">7. Nº</th>
-                                <th style="padding:2px;">8. Código</th>
-                                <th style="padding:2px;">9. Descripción</th>
-                                <th style="padding:2px;">10. Cant.</th>
-                                <th style="padding:2px;">11. U/M</th>
-                                <th style="padding:2px;">12. Proveedor Seleccionado</th>
-                                <th style="padding:2px;">13. O/C</th>
+                                <th style="padding:5px;">7. Nº</th>
+                                <th style="padding:5px;">8. Código</th>
+                                <th style="padding:5px;">9. Descripción</th>
+                                <th style="padding:5px;">10. Cant.</th>
+                                <th style="padding:5px;">11. U/M</th>
+                                <th style="padding:5px;">12. Proveedor Seleccionado</th>
+                                <th style="padding:5px;">13. O/C</th>
 
                             </tr>
                         </thead>
