@@ -32,7 +32,7 @@
                     <div class="row mt-4">
                         <div>
                             <p>19. Observaciones:</p>
-                            <p class="d-inline-block" style="border-bottom:1px solid #000;">
+                            <p class="d-inline-block" style="border-bottom:1px solid #000;width:200px;">
                                 <t t-esc="doc.description"/>
                             </p>
 
