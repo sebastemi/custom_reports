@@ -21,10 +21,11 @@
                     <div class="col-6">
                         <div class="row">
                             <div class="col-4">
-                                <p style="font-size:12px"><strong>15. Elaborado Por:</strong> <t t-esc="doc.create_uid.name"/></p>
+                                <p style="font-size:12px"><strong>15. Elaborado Por:</strong> </p>
                             </div>
                             <div class="col-6" style="border-bottom: 1px solid black;">
                                 <div style="font-size:12px">
+                                    <t t-esc="doc.created_by_id.name"/>
                                 </div>
                             </div>
                         </div>
@@ -38,10 +39,12 @@
                     <div class="col-6">
                         <div class="row">
                             <div class="col-4">
-                                <p style="font-size:12px"><strong>16. Aprobado Por:</strong> <t t-esc="doc.approved_by_id.name"/></p>
+                                <p style="font-size:12px"><strong>16. Aprobado Por:</strong> </p>
                             </div>
                             <div class="col-6" style="border-bottom: 1px solid black;">
-                                <div></div>
+                                <div style="font-size:12px">
+                                    <t t-esc="doc.approved_by_id.name"/>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
@@ -56,11 +59,12 @@
                     <div class="col-6">
                         <div class="row">
                             <div class="col-4">
-                                <p style="font-size:12px"><strong>16. Recibido Por:</strong>  <t t-esc="doc.received_by_id.name"/></p>
+                                <p style="font-size:12px"><strong>16. Recibido Por:</strong>  </p>
                             </div>
                             <div class="col-6" style="border-bottom: 1px solid black;">
-                                <div></div>
-                                <div></div>
+                                <div style="font-size:12px">
+                                    <t t-esc="doc.received_by_id.name"/>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
