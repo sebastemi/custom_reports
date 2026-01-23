@@ -31,7 +31,12 @@
                     </div>
                     <div class="row mt-4">
                         <div class="" style="border-bottom:1px solid #000;">
-                            <p>19. Observaciones: <span t-esc="' '.join((doc.description).striptags().split())"/></p>
+                    
+                            <p>19. Observaciones: 
+                                <t t-if="doc.description">
+                                    <span t-esc="' '.join((doc.description).striptags().split())"/>
+                                </t>
+                            </p>
                         </div>
                     </div>
 
