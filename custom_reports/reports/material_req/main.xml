@@ -79,6 +79,33 @@
                                     <td></td>
                                 </tr>
                             </t>
+                            <t t-foreach="doc.service_ids" t-as="line">
+                                <tr>
+                                    <td class="text-center" style="padding:5px;">
+                                        <span t-esc="len(doc.product_ids) + line_index + 1"/>
+                                    </td>
+                                    <td style="padding:5px;">N/A</td>
+                                    <td style="padding:5px;">
+                                        <span t-esc="line.name.default_code"/>
+                                    </td>
+                                    <td style="padding:5px;">
+                                        <span t-esc="line.name.name"/>
+                                    </td>
+                                    <td class="text-right" style="padding:5px;">
+                                        <span t-esc="'{:.2f}'.format(line.qty)"/>
+                                    </td>
+                                    <td class="text-left" style="padding:5px;">
+                                        <span t-esc="line.uom_id.name"/>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </t>
                         </tbody>
                     </table>              
                 </div>
