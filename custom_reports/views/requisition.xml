@@ -9,6 +9,17 @@
                     <field name="state_id_name" invisible="1"/>
                     <button string="Imprimir" name="action_print_report" type="object" class="btn-secondary"/>
                 </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page name="print_info" string="Datos para Impresión">
+                        <group>
+                            <group>
+                                <field name="approved_by_id" />
+                                <field name="received_by_id" />
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+
             </field>
         </record>
         

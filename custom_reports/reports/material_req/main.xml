@@ -36,38 +36,38 @@
                                 <th colspan="1" style="border: none; border-bottom:1px solid #ccc;"></th>
                             </tr>
                             <tr class="text-center">
-                                <th>6. Item</th>
-                                <th>7. Nivel</th>
-                                <th>8. Código</th>
-                                <th>9. Descripción del Material</th> 
-                                <th>10. Cant.</th>
-                                <th>11. Unid.</th>
-                                <th>C</th>
-                                <th>CC</th>
-                                <th>CG</th>
-                                <th>PP</th>
-                                <th>PS</th>
-                                <th>NA</th>
-                                <th>13. Material Recibido Por</th>
+                                <th style="padding:5px;">6. Item</th>
+                                <th style="padding:5px;">7. Nivel</th>
+                                <th style="padding:5px;">8. Código</th>
+                                <th style="padding:5px;">9. Descripción del Material</th> 
+                                <th style="padding:5px;">10. Cant.</th>
+                                <th style="padding:5px;">11. Unid.</th>
+                                <th style="padding:5px;">C</th>
+                                <th style="padding:5px;">CC</th>
+                                <th style="padding:5px;">CG</th>
+                                <th style="padding:5px;">PP</th>
+                                <th style="padding:5px;">PS</th>
+                                <th style="padding:5px;">NA</th>
+                                <th style="padding:5px;">13. Material Recibido Por</th>
                             </tr>
                         </thead>
                         <tbody>
                             <t t-foreach="doc.product_ids" t-as="line">
                                 <tr>
-                                    <td class="text-center">
+                                    <td class="text-center" style="padding:5px;">
                                         <span t-esc="line_index + 1"/>
                                     </td>
-                                    <td>N/A</td>
-                                    <td>
+                                    <td style="padding:5px;">N/A</td>
+                                    <td style="padding:5px;">
                                         <span t-esc="line.name.default_code"/>
                                     </td>
-                                    <td>
+                                    <td style="padding:5px;">
                                         <span t-esc="line.name.name"/>
                                     </td>
-                                    <td class="text-right">
+                                    <td class="text-right" style="padding:5px;">
                                         <span t-esc="'{:.2f}'.format(line.qty)"/>
                                     </td>
-                                    <td class="text-center">
+                                    <td class="text-left" style="padding:5px;">
                                         <span t-esc="line.uom_id.name"/>
                                     </td>
                                     <td></td>

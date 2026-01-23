@@ -10,14 +10,16 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col-2" style="font-size:12px">14. Observaciones:</div>
-                    <div class="col-10" style="border-bottom:1px solid #000;font-size:12px;"></div>
+                    <div class="col-10" style="border-bottom:1px solid #000;font-size:12px;">
+                        <span t-esc="' '.join((doc.description or '').striptags().split())"/>
+                    </div>
                 </div>
 
                 <div class="row mt-4">
                     <div class="col-6">
                         <div class="row">
                             <div class="col-4">
-                                <p style="font-size:12px"><strong>15. Elaborado Por:</strong></p>
+                                <p style="font-size:12px"><strong>15. Elaborado Por:</strong> <t t-esc="doc.create_uid.name"/></p>
                             </div>
                             <div class="col-6" style="border-bottom: 1px solid black;">
                                 <div style="font-size:12px">
@@ -34,7 +36,7 @@
                     <div class="col-6">
                         <div class="row">
                             <div class="col-4">
-                                <p style="font-size:12px"><strong>16. Aprobado Por:</strong></p>
+                                <p style="font-size:12px"><strong>16. Aprobado Por:</strong> <t t-esc="doc.approved_by_id.name"/></p>
                             </div>
                             <div class="col-6" style="border-bottom: 1px solid black;">
                                 <div></div>
@@ -52,7 +54,7 @@
                     <div class="col-6">
                         <div class="row">
                             <div class="col-4">
-                                <p style="font-size:12px"><strong>16. Recibido Por:</strong></p>
+                                <p style="font-size:12px"><strong>16. Recibido Por:</strong>  <t t-esc="doc.received_by_id.name"/></p>
                             </div>
                             <div class="col-6" style="border-bottom: 1px solid black;">
                                 <div></div>
