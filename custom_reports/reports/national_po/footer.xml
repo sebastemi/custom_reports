@@ -72,7 +72,7 @@
                 <div style="display:-webkit-box;display:-webkit-flex;display:flex;">
                     <div style="width:50%;">
                         <p style="margin:0px;">Condiciones de Pago: <t t-esc="doc.payment_conditions"/></p>
-                        <p style="margin:0px;">Elaborado Por: <t t-esc="doc.user_id.name"/></p>
+                        <p style="margin:0px;">Elaborado Por: <t t-esc="doc.created_by_id.name"/></p>
                         <p style="margin:0px;">Revisado Por: <t t-esc="doc.reviewed_by_id.name"/></p>
                         <p style="margin:0px;">Autorizado Por: <t t-esc="doc.approved_by_id.name"/></p>
                         <p style="margin:0px;">Observaciones: </p>
