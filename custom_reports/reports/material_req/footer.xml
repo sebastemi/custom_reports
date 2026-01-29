@@ -25,8 +25,14 @@
                             </div>
                             <div class="col-6" style="border-bottom: 1px solid black;">
                                 <div style="font-size:12px">
-                                    <span t-esc="doc.create_uid.employee_id.primer_nombre"/> 
-                                    <span t-esc="doc.create_uid.employee_id.primer_apellido"/>
+                                    <t t-set="parts" t-value="doc.create_uid.employee_id.name.split(' ')"/>
+                                    
+                                    <t t-if="len(parts) >= 3">
+                                        <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="doc.create_uid.employee_id.name"/>
+                                    </t>    
                                 </div>
                             </div>
                         </div>
@@ -44,8 +50,14 @@
                             </div>
                             <div class="col-6" style="border-bottom: 1px solid black;">
                                 <div style="font-size:12px">
-                                    <t t-esc="doc.approved_by_id.employee_id.primer_nombre"/> 
-                                    <t t-esc="doc.approved_by_id.employee_id.primer_apellido"/>
+                                    <t t-set="parts" t-value="doc.approved_by_id.employee_id.name.split(' ')"/>
+                                    
+                                    <t t-if="len(parts) >= 3">
+                                        <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="doc.create_uid.employee_id.name"/>
+                                    </t>    
                                 </div>
                             </div>
                         </div>
@@ -65,8 +77,14 @@
                             </div>
                             <div class="col-6" style="border-bottom: 1px solid black;">
                                 <div style="font-size:12px">
-                                    <t t-esc="doc.received_by_id.employee_id.primer_nombre"/> 
-                                    <t t-esc="doc.received_by_id.employee_id.sprimer_apellido"/>
+                                    <t t-set="parts" t-value="doc.received_by_id.employee_id.name.split(' ')"/>
+                                    
+                                    <t t-if="len(parts) >= 3">
+                                        <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="doc.create_uid.employee_id.name"/>
+                                    </t>    
                                 </div>
                             </div>
                         </div>
