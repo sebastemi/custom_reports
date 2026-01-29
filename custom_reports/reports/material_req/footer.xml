@@ -25,7 +25,8 @@
                             </div>
                             <div class="col-6" style="border-bottom: 1px solid black;">
                                 <div style="font-size:12px">
-                                    <t t-esc="doc.create_uid.name"/>
+                                    <span t-esc="doc.create_uid.employee_id.primer_nombre"/> 
+                                    <span t-esc="doc.create_uid.employee_id.primer_apellido"/>
                                 </div>
                             </div>
                         </div>
@@ -43,7 +44,8 @@
                             </div>
                             <div class="col-6" style="border-bottom: 1px solid black;">
                                 <div style="font-size:12px">
-                                    <t t-esc="doc.approved_by_id.name"/>
+                                    <t t-esc="doc.approved_by_id.primer_nombre"/> 
+                                    <t t-esc="doc.approved_by_id.primer_apellido"/>
                                 </div>
                             </div>
                         </div>
@@ -63,7 +65,8 @@
                             </div>
                             <div class="col-6" style="border-bottom: 1px solid black;">
                                 <div style="font-size:12px">
-                                    <t t-esc="doc.received_by_id.name"/>
+                                    <t t-esc="doc.received_by_id.primer_nombre"/> 
+                                    <t t-esc="doc.received_by_id.primer_apellido"/>
                                 </div>
                             </div>
                         </div>
