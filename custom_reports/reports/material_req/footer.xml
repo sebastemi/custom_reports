@@ -44,8 +44,8 @@
                             </div>
                             <div class="col-6" style="border-bottom: 1px solid black;">
                                 <div style="font-size:12px">
-                                    <t t-esc="doc.approved_by_id.primer_nombre"/> 
-                                    <t t-esc="doc.approved_by_id.primer_apellido"/>
+                                    <t t-esc="doc.approved_by_id.employee_id.primer_nombre"/> 
+                                    <t t-esc="doc.approved_by_id.employee_id.primer_apellido"/>
                                 </div>
                             </div>
                         </div>
@@ -65,8 +65,8 @@
                             </div>
                             <div class="col-6" style="border-bottom: 1px solid black;">
                                 <div style="font-size:12px">
-                                    <t t-esc="doc.received_by_id.primer_nombre"/> 
-                                    <t t-esc="doc.received_by_id.primer_apellido"/>
+                                    <t t-esc="doc.received_by_id.employee_id.primer_nombre"/> 
+                                    <t t-esc="doc.received_by_id.employee_id.primer_apellido"/>
                                 </div>
                             </div>
                         </div>
