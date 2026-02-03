@@ -23,7 +23,7 @@
         <record id="paperformat_material_request_order" model="report.paperformat">
             <field name="name">Formato Requisicion de Materiales</field>
             <field name="default" eval="False"/> 
-            <field name="format">A4</field> 
+            <field name="format">Letter</field> 
             <field name="orientation">Portrait</field>
             <field name="margin_top">80</field> 
             <field name="margin_bottom">70</field>

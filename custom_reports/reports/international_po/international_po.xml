@@ -23,7 +23,7 @@
         <record id="paperformat_international_purchase_order" model="report.paperformat">
             <field name="name">Formato Orden de Compras Internacional</field>
             <field name="default" eval="False"/> 
-            <field name="format">A4</field> 
+            <field name="format">Letter</field> 
             <field name="orientation">Portrait</field>
             <field name="margin_top">130</field> 
             <field name="margin_bottom">110</field>

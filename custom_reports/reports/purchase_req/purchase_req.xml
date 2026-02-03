@@ -23,7 +23,7 @@
         <record id="paperformat_purchase_request_order" model="report.paperformat">
             <field name="name">Formato Requisicion de Compras</field>
             <field name="default" eval="False"/> 
-            <field name="format">A4</field> 
+            <field name="format">Letter</field> 
             <field name="orientation">Landscape</field>
             <field name="margin_top">70</field> 
             <field name="margin_bottom">60</field>

@@ -23,7 +23,7 @@
         <record id="paperformat_national_purchase_order" model="report.paperformat">
             <field name="name">Formato Orden de Compra Nacional</field>
             <field name="default" eval="False"/> 
-            <field name="format">A4</field> 
+            <field name="format">Letter</field> 
             <field name="orientation">Portrait</field>
             <field name="margin_top">80</field> 
             <field name="margin_bottom">160</field>
