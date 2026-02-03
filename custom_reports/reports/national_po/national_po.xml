@@ -26,7 +26,7 @@
             <field name="format">Letter</field> 
             <field name="orientation">Portrait</field>
             <field name="margin_top">80</field> 
-            <field name="margin_bottom">160</field>
+            <field name="margin_bottom">140</field>
             <field name="margin_left">7</field>
             <field name="margin_right">7</field>
             <field name="header_line" eval="False"/> 
