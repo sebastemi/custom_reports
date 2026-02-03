@@ -48,7 +48,8 @@
                                     <td style="padding-left:2px;width:10%;padding-bottom:10px;">
                                         <t t-esc="line.product_uom.name"/>
                                     </td>
-                                    
+
+
 
                                     <td style="padding:2px;text-align:right;width:10%;padding-bottom:10px;">
                                        <span t-field="line.price_unit" t-options='{"widget": "float", "precision": 2}'/>
