@@ -86,7 +86,7 @@
                         <div style="width:50%; -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;text-align:right;">
                             <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;"><span t-field="doc.amount_untaxed" t-options='{"widget": "float", "precision": 2}'/></p>
                             <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">
-                                <t t-set="tax_iva" t-value="sum(doc.order_line.mapped('tax_ids').filtered(lambda t: 'IVA' in t.name.upper()).mapped(lambda t: doc.currency_id.round(doc.amount_untaxed * (t.amount / 100.0))))"/>
+                                <t t-set="tax_iva" t-value="sum(doc.order_line.mapped('taxes_id').filtered(lambda t: 'IVA' in t.name.upper()).mapped(lambda t: doc.currency_id.round(doc.amount_untaxed * (t.amount / 100.0))))"/>
                                 <t t-set="total_iva" t-value="0.0"/>
                                 <t t-foreach="doc.amount_by_group" t-as="tax_group">
                                     <t t-if="'IVA' in tax_group[0].upper()">
