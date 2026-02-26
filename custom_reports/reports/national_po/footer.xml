@@ -100,9 +100,9 @@
                                     </t>
                                 </t>
                             </t>
-                            
+
                             <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">
-                                <span t-esc="iva_pagar" t-options='{"widget": "float", "precision": 2}'/>
+                                <span t-esc="iva_puro - retencion_iva" t-options='{"widget": "float", "precision": 2}'/>
                             </p>
                             <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;"><span t-field="doc.amount_total" t-options='{"widget": "float", "precision": 2}'/></p>
                         </div>
