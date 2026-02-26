@@ -86,17 +86,21 @@
                         <div style="width:50%; -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;text-align:right;">
                             <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;"><span t-field="doc.amount_untaxed" t-options='{"widget": "float", "precision": 2}'/></p>
                             
-                            <t t-set="iva_pagar" t-value="0.0"/>
+                            <t t-set="iva_puro" t-value="0.0"/>
+                            <t t-set="retencion_iva" t-value="0.0"/>
                             
                             <t t-foreach="doc.order_line" t-as="line">
                                 <t t-foreach="line.taxes_id" t-as="tax">
-                                    <t t-if="'IVA' in tax.name.upper() and 'NO DEDUCIBLE' not in tax.name.upper()">
-                                        <t t-set="tax_line_amount" t-value="line.price_subtotal * (tax.amount / 100.0)"/>
-                                        <t t-set="iva_pagar" t-value="iva_pagar + tax_line_amount"/>
+                                    <t t-if="'IVA' in tax.name.upper() and 'RET' not in tax.name.upper() and 'NO DEDUCIBLE' not in tax.name.upper()">
+                                        <t t-set="iva_puro" t-value="iva_puro + (line.price_subtotal * (tax.amount / 100.0))"/>
+                                    </t>
+                                    
+                                    <t t-if="'RET' in tax.name.upper() and 'IVA' in tax.name.upper()">
+                                        <t t-set="retencion_iva" t-value="retencion_iva + abs(line.price_subtotal * (tax.amount / 100.0))"/>
                                     </t>
                                 </t>
-                            </t>                    
-
+                            </t>
+                            
                             <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">
                                 <span t-esc="iva_pagar" t-options='{"widget": "float", "precision": 2}'/>
                             </p>
