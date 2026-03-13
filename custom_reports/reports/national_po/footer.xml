@@ -107,7 +107,7 @@
                                 <span t-esc="monto_solo_iva" t-options='{"widget": "float", "precision": 2}'/>
                                 <!-- <span t-esc="doc.amount_tax" t-options='{"widget": "float", "precision": 2}'/> -->
                             </p>
-                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">\
+                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">
                                 <t t-set="monto_total" t-value="doc.amount_untaxed + monto_solo_iva"/>
                                 <span t-esc="monto_total" t-options='{"widget": "float", "precision": 2}'/>
                             </p>
