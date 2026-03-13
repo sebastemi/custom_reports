@@ -87,12 +87,12 @@
                             <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;"><span t-field="doc.amount_untaxed" t-options='{"widget": "float", "precision": 2}'/></p>
                             
                             <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">
-                            <t t-set="monto_solo_iva" t-value="0.0"/>
+                                <t t-set="monto_solo_iva" t-value="0.0"/>
                                 <t t-if="doc.tax_totals">
                                     <t t-foreach="doc.tax_totals.get('subtotals', [])" t-as="subtotal">
                                         <t t-foreach="doc.tax_totals.get('groups_by_subtotal', {}).get(subtotal['name'], [])" t-as="tax_group">
                                             
-                                            <t t-if="'IVA' in tax_group['tax_group_name'].upper()">
+                                            <t t-if="'IVA' in tax_group['tax_group_name'].upper() and 'RET' not in tax_group['tax_group_name'].upper()">
                                                 <t t-set="monto_solo_iva" t-value="monto_solo_iva + tax_group['tax_group_amount']"/>
                                             </t>
                                             
