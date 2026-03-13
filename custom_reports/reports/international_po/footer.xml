@@ -70,15 +70,15 @@
                             </td>
                             <td style="border:1px solid #000;text-align:center;padding-top:0px;">
                                 <p>29. PREPARED:</p>
-                                <p><t t-esc="doc.created_by"/></p>
+                                <p><t t-esc="doc.created_by_id.name"/></p>
                             </td>
                             <td style="border:1px solid #000;text-align:center;padding-top:0px;">
                                 <p>30. REVISED BY:</p>
-                                <p><t t-esc="doc.reviewed_by"/></p>
+                                <p><t t-esc="doc.reviewed_by_id.name"/></p>
                             </td>
                             <td style="border:1px solid #000;text-align:center;padding-top:0px;">
                                 <p>31. AUTORIZED BY:</p>
-                                <p><t t-esc="doc.approved_by"/></p>
+                                <p><t t-esc="doc.approved_by_id.name"/></p>
                             </td>
                         </tr>
                     </tbody>
