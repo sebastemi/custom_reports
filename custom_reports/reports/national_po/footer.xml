@@ -83,9 +83,9 @@
                             <t t-if="currency_name == 'VES'">
                                 <t t-set="currency_name" t-value="'Bs'"/>
                             </t>
-                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">Sub-Total: <t t-esc="doc.currency_id.name"/></p>
-                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">IVA: <t t-esc="doc.currency_id.name"/></p>
-                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">Total: <t t-esc="doc.currency_id.name"/></p>
+                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">Sub-Total: <t t-esc="currency_name"/></p>
+                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">IVA: <t t-esc="currency_name"/></p>
+                            <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;">Total: <t t-esc="currency_name"/></p>
                         </div>
                         <div style="width:50%; -webkit-box-flex: 1;-webkit-flex: 1;flex: 1;text-align:right;">
                             <p style="display:inline-block;margin:0px;width:100%;margin-bottom:10px;"><span t-field="doc.amount_untaxed" t-options='{"widget": "float", "precision": 2}'/></p>
