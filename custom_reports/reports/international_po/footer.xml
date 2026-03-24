@@ -79,25 +79,58 @@
                 <table style="width:100%;border:1px solid #000;border-collapse:collapse;">
                     <tbody>
                         <tr>
-                            <td style="border:1px solid #000;text-align:center;padding-top:0px;">
+                            <td style="border:1px solid #000;text-align:center;padding:0px 5px;">
                                 <p>JOB NUMBER</p>
                                 <p><t t-esc="doc.worker_order"/></p>
                             </td>
-                            <td style="border:1px solid #000;text-align:center;padding-top:0px;">
+                            <td style="border:1px solid #000;text-align:center;padding:0px 5px;">
                                 <p>REQUISITION NUMBER</p>
                                 <p><t t-esc="doc.origin"/></p>
                             </td>
-                            <td style="border:1px solid #000;text-align:center;padding-top:0px;">
+                            <td style="border:1px solid #000;text-align:center;padding:0px 5px;">
                                 <p>PREPARED:</p>
-                                <p><t t-esc="doc.created_by_id.name"/></p>
+                                <p>
+                                    <t t-if="doc.created_by_id">
+                                        <t t-set="parts" t-value="doc.created_by_id.name.split(' ')"/>
+                                        
+                                        <t t-if="len(parts) >= 3">
+                                            <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-esc="doc.created_by_id.name"/>
+                                        </t>    
+                                    </t>
+                                </p>
                             </td>
-                            <td style="border:1px solid #000;text-align:center;padding-top:0px;">
+                            <td style="border:1px solid #000;text-align:center;padding:0px 5px;">
                                 <p>REVISED BY:</p>
-                                <p><t t-esc="doc.reviewed_by_id.name"/></p>
+                                <p>
+                                    <t t-if="doc.reviewed_by_id">
+                                        <t t-set="parts" t-value="doc.reviewed_by_id.name.split(' ')"/>
+                                        
+                                        <t t-if="len(parts) >= 3">
+                                            <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-esc="doc.reviewed_by_id.name"/>
+                                        </t>    
+                                    </t>
+                                </p>
                             </td>
-                            <td style="border:1px solid #000;text-align:center;padding-top:0px;">
+                            <td style="border:1px solid #000;text-align:center;padding:0px 5px;">
                                 <p>AUTORIZED BY:</p>
-                                <p><t t-esc="doc.approved_by_id.name"/></p>
+                                <p>
+                                    <t t-if="doc.approved_by_id">
+                                        <t t-set="parts" t-value="doc.approved_by_id.name.split(' ')"/>
+                                        
+                                        <t t-if="len(parts) >= 3">
+                                            <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-esc="doc.approved_by_id.name"/>
+                                        </t>    
+                                    </t>
+                                </p>
                             </td>
                         </tr>
                     </tbody>

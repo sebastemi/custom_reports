@@ -45,7 +45,7 @@
                                 <td style="border-right:1px solid #000;width:75%;padding-left:10px;width:75%;vertical-align: middle;">
                                     <span>
                                         ADDRESS: 
-                                        <span t-esc="(doc.partner_id.contact_address or '').replace('\n', ' ')"/>
+                                        <span style="font-size:11px;" t-esc="(doc.partner_id.contact_address or '').replace('\n', ' ')"/>
                                     </span>                
                                 </td>
                                 <td style="width:25%;padding-left:10px;vertical-align: middle;">
@@ -64,7 +64,7 @@
                                     <p>ORDER TERMS: </p>
                                 </td>
                                 <td style="width:20%;padding-left:10px;vertical-align: middle;">
-                                    <p>DATE: <span t-field="doc.date_order" t-options='{"widget": "date", "format": "dd/MM/yyyy"}'/></p>
+                                    <p>DATE: <span t-field="doc.date_order" t-options='{"widget": "date", "format": "MM/dd/yyyy"}'/></p>
                                 </td>
                             </tr>
                         </tbody>
