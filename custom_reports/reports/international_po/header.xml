@@ -8,13 +8,13 @@
                             <tr>
                                 <td style="padding:2px 0px 1px 2px;">
                                     <img 
-                                        t-attf-src="/custom_reports/static/src/bw_logo.jpg" 
+                                        t-attf-src="/custom_reports/static/src/color_logo.jpg" 
                                         alt="Logo de la empresa" 
                                         style="width:80px;"
                                     />
                                 </td>
                                 <td style="width:40%;text-align:center;border:1px solid #fff;border-top:1px solid #000;vertical-align: middle;"> 
-                                    <h1 style="display:inline;font-size:20px;"><b style="display:inline;">PURCHASE ORDER</b></h1>
+                                    <h1 class="font-arial-narrow" style="display:inline;font-size:20px;"><b style="display:inline;">PURCHASE ORDER</b></h1>
                                 </td>
                                 <td style="width:30%;text-align:right;padding-right:5px;vertical-align: middle;">
                                     <span style="display:inline;border:1px solid #fff;">
@@ -31,7 +31,7 @@
                                     <p>SUPPLIER: <t t-esc="doc.partner_id.name"/></p>
                                 </td>
                                 <td style="border-right:1px solid #000;width:25%;padding-left:10px;vertical-align: middle;">
-                                    <p style="">ATT: </p>
+                                    <p style="">ATT: <t t-esc="doc.att"/></p>
                                 </td>
                                 <td style="width:25%;padding-left:10px;vertical-align: middle;">
                                     <p style="">ORDER Nº. <t t-esc="doc.name"/></p>
@@ -61,7 +61,7 @@
                                     <p>PURCHASER: TEMI, C.A.</p>
                                 </td>
                                 <td style="border-right:1px solid #000;width:40%;padding-left:10px;vertical-align: middle;">
-                                    <p>ORDER TERMS: </p>
+                                    <p>ORDER TERMS: <t t-esc="doc.order_terms"/></p>
                                 </td>
                                 <td style="width:20%;padding-left:10px;vertical-align: middle;">
                                     <p>DATE: <span t-field="doc.date_order" t-options='{"widget": "date", "format": "MM/dd/yyyy"}'/></p>
@@ -88,7 +88,7 @@
                                     <p>SHIPPING MARK: <t t-esc="doc.delivery_place"/></p>
                                 </td>
                                 <td style="width:25%;padding-left:10px;vertical-align: middle;">
-                                    <p>INSURANCE: </p>
+                                    <p>INSURANCE: <t t-esc="doc.insurance"/></p>
                                 </td>
                             </tr>
                         </tbody>
@@ -96,8 +96,8 @@
                     <table style="width:100%;border-collapse:collapse;border:1px solid #000;">
                         <tbody>
                             <tr>
-                                <td style="border-right:1px solid #000;width:40%;padding-left:10px;vertical-align: middle;">
-                                    <p>TYPE OF PACKING: </p>
+                                <td style="border-right:1px solid #000;width:40%;padding-left:10px;">
+                                    <p>TYPE OF PACKING: <t t-esc="doc.type_of_packing"/></p>
                                 </td>
                                 <td style="width:60%;padding-left:10px;vertical-align: middle;">
                                 

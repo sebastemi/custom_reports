@@ -42,5 +42,7 @@ class NationalPurshaseOrder(models.Model):
     created_by_id = fields.Many2one('res.users','Elaborado Por')
     reviewed_by_id = fields.Many2one('res.users','Revisado Por')
     approved_by_id = fields.Many2one('res.users','Aprobado Por')
-
-
+    order_terms = fields.Text('Terminos de Orden')
+    insuranse = fields.Char(string='Seguro')
+    att = fields.Char(string='ATT')
+    type_of_packing = fields.Char(string='Tipo de Empaquetamiento')
