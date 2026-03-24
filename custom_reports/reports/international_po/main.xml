@@ -11,7 +11,7 @@
             <t t-else="">
                 <t t-set="tasa" t-value="1"/>
             </t>
-            <div>
+            <div class="font-courier">
                 <table style="width:100%;border:1px solid #000;border-collapse:collapse;">
                     <thead >
                         <tr style="height:20px;margin:0px;padding:0px;">

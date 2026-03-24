@@ -13,8 +13,7 @@
             </t>
 
             <div class="footer" style="font-family:Courier !important;">
-                <div class="row" style="height:50px;"></div>
-                <div style=" display:-webkit-box;display:-webkit-flex;;display:flex;border:1px solid #000;margin-bottom:10px;">
+                <div class="font-courier" style=" display:-webkit-box;display:-webkit-flex;;display:flex;border:1px solid #000;margin-bottom:10px;">
                     <div style="width:50%;padding-left:10px;padding-top:10px;">
                         <p>FORWARDER ADDRESS</p>
                         <p><t t-esc="doc.supplier_direction"/></p>

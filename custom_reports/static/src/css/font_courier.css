@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Courier';
+    /* En Windows, basta con poner el nombre exacto de la fuente instalada */
+    src: url('/custom_reports/static/src/fonts/courier/CourierPrime-Regular.ttf') format('truetype'); 
+}
+
+.font-courier{
+    font-family:'Courier', Arial, sans-serif;
+}

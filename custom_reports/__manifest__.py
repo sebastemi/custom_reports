@@ -63,7 +63,8 @@
     'auto_install': False,
     'assets': {
         'web.report_assets_common': [
-            'custom_reports/static/src/css/report_variables.css'
+            'custom_reports/static/src/css/report_variables.css',
+            'custom_reports/static/src/css/font_courier.css',
         ]
     }
 }
