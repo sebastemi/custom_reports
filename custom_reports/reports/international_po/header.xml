@@ -8,13 +8,13 @@
                             <tr>
                                 <td style="padding:2px 0px 1px 2px;">
                                     <img 
-                                        t-attf-src="/custom_reports/static/src/color_logo.webp" 
+                                        t-attf-src="/custom_reports/static/src/color_logo.jpg" 
                                         alt="Logo de la empresa" 
                                         style="width:80px;"
                                     />
                                 </td>
                                 <td style="width:40%;text-align:center;border:1px solid #fff;border-top:1px solid #000;vertical-align: middle;"> 
-                                    <h1 class="font-arial-narrow" style="display:inline;font-size:20px;"><b style="display:inline;">PURCHASE ORDER</b></h1>
+                                    <h1 class="font-arial-narrow" style="display:inline;font-size:16px;"><b style="display:inline;">PURCHASE ORDER</b></h1>
                                 </td>
                                 <td style="width:30%;text-align:right;padding-right:5px;vertical-align: middle;">
                                     <span style="display:inline;border:1px solid #fff;">
