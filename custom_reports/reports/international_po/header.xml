@@ -2,7 +2,7 @@
     <data>
         <template id="report_international_purchase_order_header">
             <div class="header" style="font-size:14px;letter-spacing:1px;">
-                <div class="row font-courier">
+                <div class="font-courier">
                     <table style="width:100%;border-collapse:collapse;border:1px solid #000;border-bottom:1px solid #fff;">
                         <tbody>
                             <tr>
