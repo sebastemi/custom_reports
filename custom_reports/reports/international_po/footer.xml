@@ -85,7 +85,7 @@
                             </td>
                             <td style="border:1px solid #000;text-align:center;padding:0px 5px;">
                                 <p style="margin:0;padding:0">REQUISITION NUMBER</p>
-                                <p style="margin:0;padding:0"> <t t-esc="doc.origin"/></p>
+                                <p style="margin:0;padding:0"> <t t-esc="doc.requisition_id.name"/></p>
                             </td>
                             <td style="border:1px solid #000;text-align:center;padding:0px 5px;">
                                 <p style="margin:0;padding:0">PREPARED:</p>
