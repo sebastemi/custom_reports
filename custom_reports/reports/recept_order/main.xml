@@ -35,13 +35,13 @@
                                     <t t-esc="line.product_id.name"/>
                                 </td>
                                 <td style="text-align:right;padding:5px;border:1px solid #000;">
-                                    <t t-esc="'{:.2f}'.format(line.move_id.product_uom_qty)"/> <t t-esc="doc.product_uom_id.name"/>
+                                    <t t-esc="'{:.2f}'.format(line.move_id.product_uom_qty)"/> <t t-esc="line.product_uom_id.name"/>
                                 </td>
                                 <td style="text-align:right;padding:5px;border:1px solid #000;">
-                                    <t t-esc="'{:.2f}'.format(line.quantity)"/> <t t-esc="doc.product_uom_id.name"/>
+                                    <t t-esc="'{:.2f}'.format(line.quantity)"/> <t t-esc="line.product_uom_id.name"/>
                                 </td>
                                 <td style="text-align:right;padding:5px;border:1px solid #000;"> 
-                                    <t t-esc="'{:.2f}'.format(line.move_id.product_uom_qty - line.quantity)"/> <t t-esc="doc.product_uom_id.name"/>
+                                    <t t-esc="'{:.2f}'.format(line.move_id.product_uom_qty - line.quantity)"/> <t t-esc="line.product_uom_id.name"/>
                                 </td>
                                 <td style="padding:5px;border:1px solid #000;"></td>
                                 <td style="padding:5px;border:1px solid #000;"></td>
