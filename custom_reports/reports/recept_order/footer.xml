@@ -1,7 +1,7 @@
 <odoo>
     <data>
         <template id="report_recept_order_footer">
-            <div class="footer" style="font-family:arial;">
+            <div class="footer" style="font-family:arial;font-size:12px;">
                 <table class="table-borderless w-100">
                     <tbody>
                         <tr>
@@ -23,7 +23,9 @@
                 <div class="row mt-4">
                     <span>Observaciones: </span>
                     <span class="d-inline-block" style="border-bottom:1px solid #000;width:700px">
-                        <span t-field="doc.note"/>
+                        <t t-if="doc.note">
+                            <span t-esc="' '.join((doc.note or '').striptags().split())"/>
+                        </t>
                     </span>
                 </div>
                 <div class="row mt-4">

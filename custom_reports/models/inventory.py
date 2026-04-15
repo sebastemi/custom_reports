@@ -7,7 +7,7 @@ class InventoryReport(models.Model):
     _inherit = 'stock.picking'
 
     control_index = fields.Char()
-    delivery_order = fields.Char()
+    delivery_order = fields.Char(string="Nota de entrega")
     delivery_date = fields.Date()
     company_name = fields.Char()
     company_address = fields.Text()
@@ -23,6 +23,8 @@ class InventoryReport(models.Model):
     subtotal = fields.Monetary(currency_field='currency_id')
     iva = fields.Monetary(currency_field='currency_id')
     total = fields.Monetary(currency_field='currency_id')
+    invoice = fields.Char(string="Factura")
+
 
     @api.depends('total', 'currency_id') 
     def _compute_spell_amount(self):

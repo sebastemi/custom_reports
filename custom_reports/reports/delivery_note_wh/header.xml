@@ -1,24 +1,21 @@
 <odoo>
     <data >
         <template id="report_delivery_note_wh_order_header">
-            <div class="header" style="font-family:arial;">
-                <div class="row" style="margin-top:10px;">
-                    <div style="width:20%;" >
-                        <img 
-                            t-attf-src="/custom_reports/static/src/bw_logo.jpg" 
-                            alt="Logo de la empresa" 
-                            style="width:150px;"
-                        />
+            <div class="header" style="font-family:arial;font-size:12px;">
+                <div class="row" style="margin-top:20px;">
+                    <div class="text-center" style="width:20%;" >
+                        <div>
+                            <img 
+                                t-attf-src="/custom_reports/static/src/logo.png" 
+                                alt="Logo de la empresa" 
+                                style="width:150px;"
+                            />
+                        </div>
+                        <span>R.I.F: J-07508517-5</span>
                     </div>
                     <div class="text-center" style="width:70%;display:table;margin-top:20px;">
-                        <div class="col-3" style="display:table-cell;vertical-align: middle;text-align:center;">
-                            <div style="border-bottom: 3px solid black; margin-top: 10px; margin-bottom: 10px;"></div>
-                        </div>
                         <div class="col-6" style="display:table-cell;vertical-align: bottom;text-align:center;">
                             <b style="font-family:arial;display:inline-block;font-size:20px;">NOTA DE ENTREGA ENTRE ALMACEN</b>
-                        </div>
-                        <div class="col-3" style="display:table-cell;vertical-align: middle;text-align:center;">
-                            <div style="border-bottom: 3px solid black; margin-top: 10px; margin-bottom: 10px;"></div>
                         </div>
                     </div>
                 </div>
@@ -27,17 +24,17 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <div style="border:1px solid #000;height:50px;padding:10px;width:600px;">
-                                        1. ORIGEN
-                                        <p><t t-esc="doc.location_id.name"/></p>
+                                    <div style="border:1px solid #000;padding:10px;width:600px;border-radius:10px;">
+                                        <p>1. ORIGEN</p>
+                                        <p><t t-esc="doc.location_id.location_id.name"/> - <t t-esc="doc.location_id.name"/></p>
                                     </div>
                                 </td>
                                 <td>
                                 </td>
                                 <td>
-                                    <div style="border:1px solid #000;height:50px;padding:10px;width:600px;">
-                                        2. DESTINO
-                                        <p><t t-esc="doc.location_dest_id.name"/></p>
+                                    <div style="border:1px solid #000;padding:10px;width:600px;border-radius:10px;">
+                                        <p>2. DESTINO</p>
+                                        <p><t t-esc="doc.location_dest_id.location_id.name"/> - <t t-esc="doc.location_dest_id.name"/></p>
                                     </div>
                                 </td>
                             </tr>
@@ -50,12 +47,15 @@
                             3. Nro. Nota de Entrega: <t t-esc="doc.name"/>
                         </div>
                         <div class="mt-4">
-                            4. Fecha de Entrega: <span t-field="doc.delivery_date" t-options="{'widget': 'date', 'format': 'dd/MM/yyyy'}"/>
+                            5. Fecha de Entrega: <span t-field="doc.scheduled_date" t-options="{'widget': 'date', 'format': 'dd/MM/yyyy'}"/>
                         </div>
                     </div>
                     <div class="col-6">
                         <div>
-                            5. Observación: 
+                            4. Observación:
+                            <t t-if="doc.note">
+                              <span t-esc="' '.join((doc.note or '').striptags().split())"/>
+                            </t>
                         </div>
                     </div>
                 </div>

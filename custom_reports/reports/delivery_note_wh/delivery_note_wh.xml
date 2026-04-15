@@ -25,7 +25,7 @@
             <field name="default" eval="False"/> 
             <field name="format">Letter</field> 
             <field name="orientation">Landscape</field>
-            <field name="margin_top">70</field> 
+            <field name="margin_top">80</field> 
             <field name="margin_bottom">50</field>
             <field name="margin_left">7</field>
             <field name="margin_right">7</field>

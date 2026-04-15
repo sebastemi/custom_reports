@@ -2,46 +2,44 @@
     <data >
         <template id="report_delivery_note_wh_order_main">
             <div class="page"> 
-                <div class="row">
-                    <table class="table table-bordered" style="font-family:arial;">
+                <div class="row" style="font-size:12px;">
+                    <table class="table" style="font-family:arial;">
                         <thead>
                             <tr>
-                                <th>6. Cod. Articulo</th>
-                                <th>7. Descripcion</th>
-                                <th>8. Origen</th>
-                                <th>9. Destino</th>
-                                <th>10. Unidad</th>
-                                <th>11. Cantidad</th>
-                                <th>12. Numero de Lote</th>
+                                <th style="padding:5px;width:10%;">6. Cod. Articulo</th>
+                                <th style="padding:5px;width:40%;">7. Descripcion</th>
+                                <th style="padding:5px;width:10%;">8. Origen</th>
+                                <th style="padding:5px;width:10%;">9. Destino</th>
+                                <th style="padding:5px;width:10%;">10. Unidad</th>
+                                <th style="padding:5px;width:10%;">11. Cantidad</th>
+                                <th style="padding:5px;width:10%;">12. Numero de Lote</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <t t-foreach="doc.move_ids_without_package" t-as="line">
-                                <t t-foreach="line.move_line_ids" t-as="subline">
-                                    <tr>
-                                        <td>
-                                            <t t-esc="line.product_id.default_code"/>
-                                        </td>
-                                        <td>
-                                            <t t-esc="line.product_id.name"/>
-                                        </td>
-                                        <td>
-                                            <t t-esc="doc.location_id.name"/>
-                                        </td>
-                                        <td>
-                                            <t t-esc="doc.location_dest_id.name"/>
-                                        </td>
-                                        <td>
-                                            <t t-esc="subline.product_uom_id.name"/>
-                                        </td>
-                                        <td>
-                                            <t t-esc="'{:.2f}'.format(subline.quantity)"/>
-                                        </td>
-                                        <td>
-                                            <t t-esc="subline.lot_id.name"/>
-                                        </td>
-                                    </tr>
-                                </t>
+                            <t t-foreach="doc.move_ids" t-as="line">
+                                <tr>
+                                    <td style="padding:5px;text-align:center;">
+                                        <t t-esc="line.product_id.default_code"/>
+                                    </td>
+                                    <td  style="padding:5px;">
+                                        <t t-esc="line.product_id.name"/>
+                                    </td>
+                                    <td  style="padding:5px;text-align:right;">
+                                        <t t-esc="doc.location_id.location_id.name"/>
+                                    </td>
+                                    <td  style="padding:5px;text-align:right;">
+                                        <t t-esc="doc.location_dest_id.location_id.name"/>
+                                    </td>
+                                    <td style="padding:5px;text-align:right;">
+                                        <!-- <t t-esc="line.product_uom_id.name"/> -->
+                                    </td>
+                                    <td style="padding:5px;text-align:right;">
+                                        <t t-esc="'{:.2f}'.format(line.quantity)"/>
+                                    </td>
+                                    <td style="padding:5px;">
+                                        <!-- <t t-esc="line.lot_id.name"/> -->
+                                    </td>
+                                </tr>
                             </t>
                         </tbody>
                     </table>
