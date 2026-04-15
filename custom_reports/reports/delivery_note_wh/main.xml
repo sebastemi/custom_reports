@@ -3,7 +3,7 @@
         <template id="report_delivery_note_wh_order_main">
             <div class="page"> 
                 <div class="row" style="font-size:12px;">
-                    <table class="table" style="font-family:arial;">
+                    <table style="font-family:arial;width:100%;border-collapse:collapse;">
                         <thead>
                             <tr>
                                 <th style="padding:5px;width:10%;">6. Cod. Articulo</th>
@@ -16,7 +16,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <t t-foreach="doc.move_ids" t-as="line">
+                            <t t-foreach="doc.move_line_ids" t-as="line">
                                 <tr>
                                     <td style="padding:5px;text-align:center;">
                                         <t t-esc="line.product_id.default_code"/>
@@ -31,13 +31,13 @@
                                         <t t-esc="doc.location_dest_id.location_id.name"/>
                                     </td>
                                     <td style="padding:5px;text-align:right;">
-                                        <!-- <t t-esc="line.product_uom_id.name"/> -->
+                                        <t t-esc="line.product_uom_id.name"/>
                                     </td>
                                     <td style="padding:5px;text-align:right;">
                                         <t t-esc="'{:.2f}'.format(line.quantity)"/>
                                     </td>
                                     <td style="padding:5px;">
-                                        <!-- <t t-esc="line.lot_id.name"/> -->
+                                        <t t-esc="line.lot_id.name"/>
                                     </td>
                                 </tr>
                             </t>

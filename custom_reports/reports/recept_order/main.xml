@@ -23,7 +23,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <t t-foreach="doc.move_ids" t-as="line">
+                        <t t-foreach="doc.move_line_ids" t-as="line">
                             <tr>
                                 <td class="text-center" style="padding:5px;border:1px solid #000;">
                                     <t t-esc="line_index + 1"/>
@@ -35,19 +35,19 @@
                                     <t t-esc="line.product_id.name"/>
                                 </td>
                                 <td style="text-align:right;padding:5px;border:1px solid #000;">
-                                    <t t-esc="'{:.2f}'.format(line.product_uom_qty)"/>
+                                    <t t-esc="'{:.2f}'.format(line.product_uom_qty)"/> <t t-esc="doc.product_uom_id.name"/>
                                 </td>
                                 <td style="text-align:right;padding:5px;border:1px solid #000;">
-                                    <t t-esc="'{:.2f}'.format(line.quantity)"/>
+                                    <t t-esc="'{:.2f}'.format(line.quantity)"/> <t t-esc="doc.product_uom_id.name"/>
                                 </td>
                                 <td style="text-align:right;padding:5px;border:1px solid #000;"> 
-                                    <t t-esc="'{:.2f}'.format(line.product_uom_qty - line.quantity)"/>
+                                    <t t-esc="'{:.2f}'.format(line.product_uom_qty - line.quantity)"/> <t t-esc="doc.product_uom_id.name"/>
                                 </td>
                                 <td style="padding:5px;border:1px solid #000;"></td>
                                 <td style="padding:5px;border:1px solid #000;"></td>
                                 <td style="padding:5px;border:1px solid #000;"></td>
                                 <td style="padding:5px;border:1px solid #000;">
-                                    <!-- <t t-esc="line.lot_id.name"/> -->
+                                    <t t-esc="line.lot_id.name"/>
                                 </td>
                             </tr>
                         </t>

@@ -1,7 +1,7 @@
 <odoo>
     <data >
         <template id="report_delivery_note_wh_order_footer">
-            <div class="footer" style="font-family:arial;">
+            <div class="footer" style="font-family:arial;font-size:12px;">
                 <div style="margin-top:10px;">
                     <table class="table-borderless w-100">
                         <tbody>

@@ -30,13 +30,26 @@
                         <p>3. Nº de Informe de Recepción: <t t-esc="doc.name"/></p>
                         <p>4. Fecha de Entrega Solicitada: <span t-field="doc.scheduled_date" t-options='{"format": "dd/MM/yyyy"}'/></p>
                         <p>5. Fecha de Entrega Real: <span t-field="doc.date_done" t-options='{"format": "dd/MM/yyyy"}'/></p>
-                        <p>6. Recibido Por: <t t-esc="doc.user_id.name"/></p>
+                        <p>6. Recibido Por: 
+                            <t t-if="doc.received_by">
+                                <t t-set="parts" t-value="doc.received_by.name.split(' ')"/>
+                                
+                                <t t-if="len(parts) >= 3">
+                                    <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
+                                </t>
+                                <t t-else="">
+                                    <span t-esc="doc.received_by.name"/>
+                                </t>    
+                            </t>
+                        </p>
                     </div>
                     <div class="col-2"></div>
                     <div class="col-5" style="border:1px solid #000;border-radius:10px;padding-left:5px;padding-top:5px;">
                         <p>Datos del Proveedor</p>
-                        <p>7. Codigo: <t t-esc="doc.partner_id.vat"/></p>
-                        <p><t t-esc="doc.partner_id.name"/></p>
+                        <p>7. Codigo: 
+                            <t t-esc="doc.partner_id.vat"/>   
+                            <t t-esc="doc.partner_id.name"/>
+                        </p>
                         <p>8. Nº Nota de Entrega: <t t-esc="doc.delivery_order"/></p>
                         <p>9. Nº de Factura: <t t-esc="doc.invoice"/></p>
                     </div>

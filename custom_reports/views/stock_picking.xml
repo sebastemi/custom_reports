@@ -11,6 +11,7 @@
                             <group>
                                 <field name="delivery_order" />
                                 <field name="invoice" />
+                                <field name="received_by" />
                             </group>
                             <group>
                             </group>
