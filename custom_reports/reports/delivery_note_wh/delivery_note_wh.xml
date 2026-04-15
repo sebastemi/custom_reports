@@ -35,7 +35,7 @@
         </record>
 
         <record id="report_delivery_note_wh_order_custom" model="ir.actions.report">
-            <field name="name">Nota de entrega entre almacenes</field>
+            <field name="name">Nota de Entrega entre Almacenes</field>
             <field name="model">stock.picking</field>
             <field name="report_type">qweb-pdf</field>
             <field name="report_name">custom_reports.report_delivery_note_wh_order_document</field>
@@ -43,6 +43,7 @@
             <field name="binding_model_id" ref="model_stock_picking"/>
             <field name="binding_type">report</field>
             <field name="paperformat_id" ref="custom_reports.paperformat_delivery_note_wh_order"/> 
+            <field name="print_report_name">'Nota de Entrega - %s' % (object.name)</field>
         </record>
     </data>
 </odoo>
