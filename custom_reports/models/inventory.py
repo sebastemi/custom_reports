@@ -24,7 +24,7 @@ class InventoryReport(models.Model):
     iva = fields.Monetary(currency_field='currency_id')
     total = fields.Monetary(currency_field='currency_id')
     invoice = fields.Char(string="Factura")
-    received_by = fields.Many2one('res.user',string="Recibido por")
+    received_by = fields.Many2one('res.users',string="Recibido por")
 
 
 
