@@ -17,7 +17,7 @@ class NationalPurshaseOrder(models.Model):
     requisition = fields.Char('Requisicion')
     order_date = fields.Date('Fecha de orden')
     delivery_date = fields.Date('Fecha de entrega')
-    delivery_place = fields.Char('Lugar de Entrega')
+    delivery_place = fields.Char('Shipping Mark')
     worker_order = fields.Char('Orden de trabajo')
     payment_conditions = fields.Char('Condiciones de Pago')
     # created_by = fields.Char('Elaborado Por')
@@ -46,3 +46,4 @@ class NationalPurshaseOrder(models.Model):
     insurance = fields.Char(string='Seguro')
     att = fields.Char(string='ATT')
     type_of_packing = fields.Char(string='Tipo de Empaquetamiento')
+    regimen = fields.Char('Regimen')

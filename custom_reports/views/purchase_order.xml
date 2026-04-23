@@ -18,6 +18,7 @@
                             <field name="order_terms" />
                             <field name="att" />
                             <field name="type_of_packing" />
+                            <field name="regimen" />
                         </group>
                         <group>
                             <field name="annotations" />

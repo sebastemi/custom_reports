@@ -71,7 +71,9 @@
                         </tr>
                         <tr>
                             <td style="padding-left:5px;">
-                                <p style="margin: 2px;">NOTE: </p>
+                                <p style="margin: 2px;">NOTE: 
+                                    <span t-field="doc.regimen"/>
+                                </p>
                             </td>
                         </tr>
                     </tbody>
