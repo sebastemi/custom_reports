@@ -38,7 +38,7 @@ class NationalPurshaseOrder(models.Model):
     currency_rate_usd = fields.Float('Tasa USD')
     currency_rate_eur = fields.Float('Tasa EUR')
     currency_rate_usd_to_eur = fields.Float('Conversion USD a EUR')
-    annotations = fields.Text('Observaciones')
+    annotations = fields.Text('Note')
     created_by_id = fields.Many2one('res.users','Elaborado Por')
     reviewed_by_id = fields.Many2one('res.users','Revisado Por')
     approved_by_id = fields.Many2one('res.users','Aprobado Por')

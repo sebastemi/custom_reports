@@ -66,13 +66,15 @@
                         </tr>
                         <tr>
                             <td style="border:1px solid #000;padding-left:5px;">
-                                <p style="margin: 2px;">REGIMEN:</p>
+                                <p style="margin: 2px;">REGIMEN:
+                                    <span t-field="doc.regimen"/>
+                                </p>
                             </td>
                         </tr>
                         <tr>
                             <td style="padding-left:5px;">
                                 <p style="margin: 2px;">NOTE: 
-                                    <span t-field="doc.regimen"/>
+                                    <t t-esc="doc.annotations"/>
                                 </p>
                             </td>
                         </tr>
