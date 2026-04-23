@@ -45,7 +45,7 @@
                                 <td style="border-right:1px solid #000;width:75%;padding-left:10px;width:75%;vertical-align: middle;">
                                     <span>
                                         ADDRESS: 
-                                        <span style="font-size:12px;" t-esc="(doc.partner_id.contact_address or '').replace('\n', ' ')"/>
+                                        <span style="font-size:12px;" t-esc="(doc.partner_id.street or '').replace('\n', ' ')"/>
                                     </span>                
                                 </td>
                                 <td style="width:25%;padding-left:10px;vertical-align: middle;">
