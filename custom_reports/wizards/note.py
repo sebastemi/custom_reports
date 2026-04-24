@@ -7,4 +7,13 @@ class NoteWizard(models.TransientModel):
     description = fields.Text(string='Descripción')
 
     def action_save_note(self):
-        pass
+
+        model_name = self.env.context.get('model_name')
+        model_id = self.env.context.get('model_id')
+
+        if model_name and model_id:
+            model = self.env[model_name]
+            record = model.browse(model_id)
+            record.custom_note = self.description
+
+        return {'type': 'ir.actions.act_window_close'}

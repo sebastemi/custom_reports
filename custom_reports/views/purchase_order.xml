@@ -27,7 +27,7 @@
                 </xpath>
 
                 <xpath expr="//field[@name='order_line']/tree//field[@name='taxes_id']" position="before">
-                    <button icon="fa-sticky-note" name="action_open_note_wizard" type="object" class="oe_highlight"/>
+                    <button icon="fa-sticky-note" name="action_open_note_wizard" type="object"/>
                 </xpath>
             </field>
         </record>

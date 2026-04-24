@@ -47,5 +47,19 @@ class NationalPurshaseOrder(models.Model):
 class PuchaseOrderLine(models.Model):
     _inherit = 'purchase.order.line'
 
+    custom_note = fields.Text('Nota')
+
     def action_open_note_wizard(self):
-        pass
+
+        return {
+            'name': f'Notas de {self.product_id.name}',
+            'type': 'ir.actions.act_window',
+            'res_model': 'custom_reports.note_wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'default_description': self.custom_note,
+                'model_name': self._name,
+                'model_id': self.id,
+            },
+        }
