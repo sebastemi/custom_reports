@@ -40,7 +40,7 @@
                                     <td style="padding:2px;width:35%;line-height: 1.4;padding-bottom:10px;">
                                         <t t-esc="line.product_id.name"/>
                                         <t t-if="line.custom_note">
-                                            <br/><t t-esc="line.custom_note" />
+                                            <br/><pre/><t t-esc="line.custom_note" />
                                         </t>
                                     </td>
 
