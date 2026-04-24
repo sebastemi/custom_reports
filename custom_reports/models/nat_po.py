@@ -20,10 +20,6 @@ class NationalPurshaseOrder(models.Model):
     delivery_place = fields.Char('Shipping Mark')
     worker_order = fields.Char('Orden de trabajo')
     payment_conditions = fields.Char('Condiciones de Pago')
-    # created_by = fields.Char('Elaborado Por')
-    # reviewed_by = fields.Char('Revisado Por')
-    # approved_by = fields.Char('Aprobado Por')
-    # notes = fields.Text('Observaciones')
     transport = fields.Selection(TRANSPORTS ,'transporte')
     sub_total = fields.Monetary('Subtotal')
     iva = fields.Monetary('IVA')
@@ -47,3 +43,9 @@ class NationalPurshaseOrder(models.Model):
     att = fields.Char(string='ATT')
     type_of_packing = fields.Char(string='Tipo de Empaquetamiento')
     regimen = fields.Char('Regimen')
+
+class PuchaseOrderLine(models.Model):
+    _inherit = 'purchase.order.line'
+
+    def action_open_note_wizard(self):
+        pass

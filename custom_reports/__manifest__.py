@@ -52,10 +52,11 @@
         'reports/recept_order/footer.xml',
         'reports/recept_order/recept_order.xml',
 
+        'wizards/note.xml',
+
         'views/purchase_order.xml',
         'views/stock_picking.xml',
         'views/requisition.xml',
-
 
     ],
     'installable': True,
