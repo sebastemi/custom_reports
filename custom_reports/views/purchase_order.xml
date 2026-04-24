@@ -25,15 +25,8 @@
                         </group>
                     </group>
                 </xpath>
-            </field>
-        </record>
 
-        <record id="purchase_order_line_view_tree" model="ir.ui.view">
-            <field name="name">purchase.order.line.view.tree</field>
-            <field name="model">purchase.order.line</field>
-            <field name="inherit_id" ref="purchase.purchase_order_line_tree"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='taxes_id']" position="before">
+                <xpath expr="//field[@name='order_line']/tree//field[@name='taxes_id']" position="before">
                     <button string="" icon="fa-sticky-note" name="action_open_note_wizard" type="object" class="oe_highlight"/>
                 </xpath>
             </field>
