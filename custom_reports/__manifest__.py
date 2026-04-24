@@ -17,6 +17,8 @@
     'depends': ['base','sale','stock','web','purchase','requisitions'],
 
     'data': [
+        'security/ir.model.access.csv',
+
         'reports/dispatch_order/header.xml',
         'reports/dispatch_order/main.xml',
         'reports/dispatch_order/footer.xml',
