@@ -5,7 +5,7 @@
             <field name="model">custom_reports.note_wizard</field>
             <field name="arch" type="xml">
                 <form>
-                    <field name="note" placeholder="Ingresa una nota"/>
+                    <field name="description" placeholder="Ingresa una nota"/>
                     <footer>
                         <button string="Guardar" name="action_save_note" type="object" class="oe_highlight"/>
                         <button string="Descartar" special="cancel" type="object" class="btn-secondary"/>
