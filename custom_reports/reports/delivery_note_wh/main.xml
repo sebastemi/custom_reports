@@ -37,7 +37,7 @@
                                             <t t-esc="doc.location_dest_id.location_id.name"/>
                                         </td>
                                         <td style="padding:5px;text-align:right;">
-                                            <t t-esc="line.product_uom_id.name"/>
+                                            <t t-esc="line.product_uom.name"/>
                                         </td>
                                         <td style="padding:5px;text-align:right;">
                                             <t t-esc="'{:.2f}'.format(subline.quantity)"/>
