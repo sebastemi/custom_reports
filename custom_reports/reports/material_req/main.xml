@@ -63,6 +63,10 @@
                                     </td>
                                     <td style="padding:2px;">
                                         <span t-esc="line.name.name"/>
+                                        <t t-if="line.custom_note">
+                                            <div style="margin-top:3px;"/>
+                                            <t t-esc="line.custom_note" />
+                                        </t>
                                     </td>
                                     <td class="text-right" style="padding:2px;">
                                         <span t-esc="'{:.2f}'.format(line.qty)"/>

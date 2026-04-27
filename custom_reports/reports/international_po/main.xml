@@ -46,6 +46,10 @@
                                 </td>
                                 <td class="td-data border-right px-2" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }};  width:40%;">
                                    <t t-esc="line.product_id.name"/>
+                                    <t t-if="line.custom_note">
+                                        <div style="margin-top:3px;"/>
+                                        <t t-esc="line.custom_note" />
+                                    </t>
                                 </td>
                                 <td class="td-data border-right px-2" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }};  text-align:right; width:10%;">
                                    <t t-esc="'{:.2f}'.format(line.product_qty)"/>

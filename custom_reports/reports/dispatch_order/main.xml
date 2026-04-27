@@ -36,7 +36,13 @@
                             <t t-foreach="doc.move_ids_without_package" t-as="line" t-as-index="line_index">
                                 <tr>
                                     <td class="text-center" style="font-size:14px;"><span t-esc="line_index + 1"/></td>
-                                    <td style="font-size:14px;"><span t-field="line.product_id.name"/></td>
+                                    <td style="font-size:14px;">
+                                        <span t-field="line.product_id.name"/>
+                                        <t t-if="line.custom_note">
+                                            <div style="margin-top:3px;"/>
+                                            <t t-esc="line.custom_note" />
+                                        </t>
+                                    </td>
                                     <td style="font-size:14px;"><span t-field="line.product_id.default_code"/></td>
                                     <td style="font-size:14px;"><span t-field="line.quantity"/></td>
                                     <td style="font-size:14px;text-align:right;"></td>

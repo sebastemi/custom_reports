@@ -23,6 +23,11 @@
                                     </td>
                                     <td  style="padding:5px;">
                                         <t t-esc="line.product_id.name"/>
+                                        <t t-if="line.custom_note">
+                                            <div style="margin-top:3px;"/>
+                                            <t t-esc="line.custom_note" />
+                                        </t>
+
                                     </td>
                                     <td  style="padding:5px;text-align:right;">
                                         <t t-esc="doc.location_id.location_id.name"/>
