@@ -20,6 +20,12 @@
                     </page>
                 </xpath>
 
+                <xpath expr="//field[@name='product_ids']/tree//field[@name='analytic_account_id']" position="after">
+                    <field name="custom_note" readonly="1" optional="hide"/>
+                    <button icon="fa-sticky-note" name="action_open_note_wizard" type="object" invisible="not custom_note"/>
+                    <button icon="fa-sticky-note" name="action_open_note_wizard" type="object" class="text-info" invisible="custom_note"/>
+                </xpath>
+
             </field>
         </record>
         
@@ -44,6 +50,12 @@
                             </group>
                         </group>
                     </page>
+                </xpath>
+
+                <xpath expr="//field[@name='product_ids']/tree//field[@name='analytic_account_id']" position="after">
+                    <field name="custom_note" readonly="1" optional="hide"/>
+                    <button icon="fa-sticky-note" name="action_open_note_wizard" type="object" invisible="not custom_note"/>
+                    <button icon="fa-sticky-note" name="action_open_note_wizard" type="object" class="text-info" invisible="custom_note"/>
                 </xpath>
             </field>
         </record>

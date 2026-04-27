@@ -18,6 +18,12 @@
                         </group>
                     </page>
                 </xpath>
+
+                <xpath expr="//field[@name='move_ids_without_package']/tree//field[@name='lot_ids']" position="after">
+                    <field name="custom_note" readonly="1" optional="hide"/>
+                    <button icon="fa-sticky-note" name="action_open_note_wizard" type="object" invisible="not custom_note"/>
+                    <button icon="fa-sticky-note" name="action_open_note_wizard" type="object" class="text-info" invisible="custom_note"/>
+                </xpath>
             </field>
         </record>
         

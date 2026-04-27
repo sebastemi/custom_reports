@@ -23,3 +23,22 @@ class RequisitionReport(models.Model):
     def action_print_report(self):
         return self.env.ref(f'custom_reports.{self._get_xml_report_id()}').report_action(self)
     
+class RequisitionLineReport(models.Model):
+    _inherit='requisition.product.line'
+
+    custom_note = fields.Text('Nota')
+
+    def action_open_note_wizard(self):
+
+        return {
+            'name': f'Notas de {self.product_id.name}',
+            'type': 'ir.actions.act_window',
+            'res_model': 'custom_reports.note_wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'default_description': self.custom_note,
+                'model_name': self._name,
+                'model_id': self.id,
+            },
+        }

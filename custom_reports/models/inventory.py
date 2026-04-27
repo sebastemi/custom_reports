@@ -26,8 +26,6 @@ class InventoryReport(models.Model):
     invoice = fields.Char(string="Factura")
     received_by = fields.Many2one('res.users',string="Recibido por")
 
-
-
     @api.depends('total', 'currency_id') 
     def _compute_spell_amount(self):
         for record in self:
@@ -43,3 +41,23 @@ class InventoryReport(models.Model):
 
     def download(self):
         return self.env.ref('custom_reports.report_stock_picking_custom').report_action(self)
+    
+class InventoryLineReport(models.Model):
+    _inherit = 'stock.move'
+
+    custom_note = fields.Text('Nota')
+
+    def action_open_note_wizard(self):
+
+        return {
+            'name': f'Notas de {self.product_id.name}',
+            'type': 'ir.actions.act_window',
+            'res_model': 'custom_reports.note_wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'default_description': self.custom_note,
+                'model_name': self._name,
+                'model_id': self.id,
+            },
+        }
