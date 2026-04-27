@@ -31,7 +31,7 @@ class RequisitionLineReport(models.Model):
     def action_open_note_wizard(self):
 
         return {
-            'name': f'Notas de {self.product_id.name}',
+            'name': f'Notas de {self.name.name}',
             'type': 'ir.actions.act_window',
             'res_model': 'custom_reports.note_wizard',
             'view_mode': 'form',
