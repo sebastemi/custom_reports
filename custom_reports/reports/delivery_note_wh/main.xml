@@ -16,35 +16,37 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <t t-foreach="doc.move_line_ids" t-as="line">
-                                <tr>
-                                    <td style="padding:5px;text-align:center;">
-                                        <t t-esc="line.product_id.default_code"/>
-                                    </td>
-                                    <td  style="padding:5px;">
-                                        <t t-esc="line.product_id.name"/>
-                                        <t t-if="line.custom_note">
-                                            <div style="margin-top:3px;"/>
-                                            <t t-esc="line.custom_note" />
-                                        </t>
+                            <t t-foreach="doc.move_ids_without_package" t-as="line">
+                                <t t-foreach="line.move_line_ids" t-as="subline">
+                                    <tr>
+                                        <td style="padding:5px;text-align:center;">
+                                            <t t-esc="line.product_id.default_code"/>
+                                        </td>
+                                        <td  style="padding:5px;">
+                                            <t t-esc="line.product_id.name"/>
+                                            <t t-if="line.custom_note">
+                                                <div style="margin-top:3px;"/>
+                                                <t t-esc="line.custom_note" />
+                                            </t>
 
-                                    </td>
-                                    <td  style="padding:5px;text-align:right;">
-                                        <t t-esc="doc.location_id.location_id.name"/>
-                                    </td>
-                                    <td  style="padding:5px;text-align:right;">
-                                        <t t-esc="doc.location_dest_id.location_id.name"/>
-                                    </td>
-                                    <td style="padding:5px;text-align:right;">
-                                        <t t-esc="line.product_uom_id.name"/>
-                                    </td>
-                                    <td style="padding:5px;text-align:right;">
-                                        <t t-esc="'{:.2f}'.format(line.quantity)"/>
-                                    </td>
-                                    <td style="padding:5px;">
-                                        <t t-esc="line.lot_id.name"/>
-                                    </td>
-                                </tr>
+                                        </td>
+                                        <td  style="padding:5px;text-align:right;">
+                                            <t t-esc="doc.location_id.location_id.name"/>
+                                        </td>
+                                        <td  style="padding:5px;text-align:right;">
+                                            <t t-esc="doc.location_dest_id.location_id.name"/>
+                                        </td>
+                                        <td style="padding:5px;text-align:right;">
+                                            <t t-esc="line.product_uom_id.name"/>
+                                        </td>
+                                        <td style="padding:5px;text-align:right;">
+                                            <t t-esc="'{:.2f}'.format(subline.quantity)"/>
+                                        </td>
+                                        <td style="padding:5px;">
+                                            <t t-esc="subline.lot_id.name"/>
+                                        </td>
+                                    </tr>
+                                </t>
                             </t>
                         </tbody>
                     </table>

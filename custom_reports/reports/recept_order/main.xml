@@ -23,33 +23,35 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <t t-foreach="doc.move_line_ids" t-as="line">
-                            <tr>
-                                <td class="text-center" style="padding:5px;border:1px solid #000;">
-                                    <t t-esc="line_index + 1"/>
-                                </td>
-                                <td class="text-center" style="padding:5px;border:1px solid #000;">
-                                    <t t-esc="line.product_id.default_code"/>
-                                </td>
-                                <td style="padding:5px;border:1px solid #000;">
-                                    <t t-esc="line.product_id.name"/>
-                                </td>
-                                <td style="text-align:right;padding:5px;border:1px solid #000;">
-                                    <t t-esc="'{:.2f}'.format(line.move_id.product_uom_qty)"/> <t t-esc="line.product_uom_id.name"/>
-                                </td>
-                                <td style="text-align:right;padding:5px;border:1px solid #000;">
-                                    <t t-esc="'{:.2f}'.format(line.quantity)"/> <t t-esc="line.product_uom_id.name"/>
-                                </td>
-                                <td style="text-align:right;padding:5px;border:1px solid #000;"> 
-                                    <t t-esc="'{:.2f}'.format(line.move_id.product_uom_qty - line.quantity)"/> <t t-esc="line.product_uom_id.name"/>
-                                </td>
-                                <td style="padding:5px;border:1px solid #000;"></td>
-                                <td style="padding:5px;border:1px solid #000;"></td>
-                                <td style="padding:5px;border:1px solid #000;"></td>
-                                <td style="padding:5px;border:1px solid #000;">
-                                    <t t-esc="line.lot_id.name"/>
-                                </td>
-                            </tr>
+                        <t t-foreach="doc.move_ids_without_package" t-as="line">
+                            <t t-foreach="line.move_line_ids" t-as="subline">
+                                <tr>
+                                    <td class="text-center" style="padding:5px;border:1px solid #000;">
+                                        <t t-esc="subline_index + 1"/>
+                                    </td>
+                                    <td class="text-center" style="padding:5px;border:1px solid #000;">
+                                        <t t-esc="line.product_id.default_code"/>
+                                    </td>
+                                    <td style="padding:5px;border:1px solid #000;">
+                                        <t t-esc="line.product_id.name"/>
+                                    </td>
+                                    <td style="text-align:right;padding:5px;border:1px solid #000;">
+                                        <t t-esc="'{:.2f}'.format(line.move_id.product_uom_qty)"/> <t t-esc="line.product_uom_id.name"/>
+                                    </td>
+                                    <td style="text-align:right;padding:5px;border:1px solid #000;">
+                                        <t t-esc="'{:.2f}'.format(subline.quantity)"/> <t t-esc="subline.product_uom_id.name"/>
+                                    </td>
+                                    <td style="text-align:right;padding:5px;border:1px solid #000;"> 
+                                        <t t-esc="'{:.2f}'.format(line.move_id.product_uom_qty - subline.quantity)"/> <t t-esc="line.product_uom_id.name"/>
+                                    </td>
+                                    <td style="padding:5px;border:1px solid #000;"></td>
+                                    <td style="padding:5px;border:1px solid #000;"></td>
+                                    <td style="padding:5px;border:1px solid #000;"></td>
+                                    <td style="padding:5px;border:1px solid #000;">
+                                        <t t-esc="subline.lot_id.name"/>
+                                    </td>
+                                </tr>
+                            </t>
                         </t>
                     </tbody>
                 </table>
