@@ -9,6 +9,7 @@
                     <page string="Datos para Impresion">
                         <group>
                             <group>
+                                <field name="project_id" />
                                 <field name="delivery_order" />
                                 <field name="invoice" />
                                 <field name="received_by" />

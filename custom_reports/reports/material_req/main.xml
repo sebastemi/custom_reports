@@ -65,32 +65,32 @@
                                     <td class="text-left" style="padding:2px;border:1.5px solid #000;">
                                         <span t-esc="line.uom_id.name"/>
                                     </td>
-                                    <td style="border:1.5px solid #000;">
+                                    <td style="border:1.5px solid #000;text-align:center;">
                                         <t t-if="'C' in tags_ids">
                                             X
                                         </t>
                                     </td>
-                                    <td style="border:1.5px solid #000;">
+                                    <td style="border:1.5px solid #000;text-align:center;">
                                         <t t-if="'CC' in tags_ids">
                                             X
                                         </t>
                                     </td>
-                                    <td style="border:1.5px solid #000;">
+                                    <td style="border:1.5px solid #000;text-align:center;">
                                         <t t-if="'CG' in tags_ids">
                                             X
                                         </t>
                                     </td>
-                                    <td style="border:1.5px solid #000;">
+                                    <td style="border:1.5px solid #000;text-align:center;">
                                         <t t-if="'PP' in tags_ids">
                                             X
                                         </t>
                                     </td>
-                                    <td style="border:1.5px solid #000;">
+                                    <td style="border:1.5px solid #000;text-align:center;">
                                         <t t-if="'PS' in tags_ids">
                                             X
                                         </t>
                                     </td>
-                                    <td style="border:1.5px solid #000;">
+                                    <td style="border:1.5px solid #000;text-align:center;">
                                         <t t-if="'NA' in tags_ids">
                                             X
                                         </t>
@@ -117,32 +117,32 @@
                                     <td style="padding:2px;border:1.5px solid #000;vertical-align:middle;">
                                         <span t-esc="line.uom_id.name"/>
                                     </td>
-                                    <td style="border:1.5px solid #000;">
+                                    <td style="border:1.5px solid #000;text-align:center;">
                                         <t t-if="'C' in tags_ids">
                                             X
                                         </t>
                                     </td>
-                                    <td style="border:1.5px solid #000;">
+                                    <td style="border:1.5px solid #000;text-align:center;">
                                         <t t-if="'CC' in tags_ids">
                                             X
                                         </t>
                                     </td>
-                                    <td style="border:1.5px solid #000;">
+                                    <td style="border:1.5px solid #000;text-align:center;">
                                         <t t-if="'CG' in tags_ids">
                                             X
                                         </t>
                                     </td>
-                                    <td style="border:1.5px solid #000;">
+                                    <td style="border:1.5px solid #000;text-align:center;">
                                         <t t-if="'PP' in tags_ids">
                                             X
                                         </t>
                                     </td>
-                                    <td style="border:1.5px solid #000;">
+                                    <td style="border:1.5px solid #000;text-align:center;">
                                         <t t-if="'PS' in tags_ids">
                                             X
                                         </t>
                                     </td>
-                                    <td style="border:1.5px solid #000;">
+                                    <td style="border:1.5px solid #000;text-align:center;">
                                         <t t-if="'NA' in tags_ids">
                                             X
                                         </t>

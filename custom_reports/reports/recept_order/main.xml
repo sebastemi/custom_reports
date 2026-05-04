@@ -37,9 +37,10 @@
                                         <t t-esc="line.product_id.name"/> <br/>
                                         <span>
                                             Orden de Compra Nro.: <t t-esc="doc.origin"/> 
-                                            Linea: 
-                                            <t t-esc="line.extract_data(doc.project_id.name, True)"/>
-                                            
+                                            Linea: <field name="position_purchase_order" /> 
+                                            <t t-if="doc.project_id">
+                                                <t t-esc="line.extract_data(doc.project_id.name, True)"/>
+                                            </t>
                                         </span>
                                     </td>
                                     <td style="text-align:right;padding:5px;border:1px solid #000;">

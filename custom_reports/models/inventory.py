@@ -25,7 +25,7 @@ class InventoryReport(models.Model):
     total = fields.Monetary(currency_field='currency_id')
     invoice = fields.Char(string="Factura")
     received_by = fields.Many2one('res.users',string="Recibido por")
-    project_id = fields.Many2one('project.project',string="Proyecto")
+    project_id = fields.Many2one('project.project',string="Orden de Trabajo")
 
     @api.depends('total', 'currency_id') 
     def _compute_spell_amount(self):
