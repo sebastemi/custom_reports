@@ -48,7 +48,12 @@
                                             <t t-esc="'{:.2f}'.format(subline.quantity)"/>
                                         </td>
                                         <td style="padding:5px;">
-                                            <t t-esc="subline.lot_id.name"/>
+                                            <t t-if="subline.lot_id">
+                                                <t t-esc="subline.lot_id.name"/>
+                                            </t>
+                                            <t t-else="">
+                                               N/A
+                                            </t>
                                         </td>
                                     </tr>
                                 </t>
