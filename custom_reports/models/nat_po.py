@@ -17,7 +17,7 @@ class NationalPurshaseOrder(models.Model):
     requisition = fields.Char('Requisicion')
     order_date = fields.Date('Fecha de orden')
     delivery_date = fields.Date('Fecha de entrega')
-    delivery_place = fields.Char('Shipping Mark')
+    delivery_place = fields.Char('Shipping Mark / Lugar de Entrega')
     worker_order = fields.Char('Orden de trabajo')
     payment_conditions = fields.Char('Condiciones de Pago')
     transport = fields.Selection(TRANSPORTS ,'transporte')

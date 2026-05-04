@@ -45,6 +45,7 @@ class RequisitionLineReport(models.Model):
     _inherit='requisition.product.line'
 
     custom_note = fields.Text('Nota')
+    tag_ids = fields.Many2mny('requisition.tags')
 
     def action_open_note_wizard(self):
 
@@ -60,3 +61,10 @@ class RequisitionLineReport(models.Model):
                 'model_id': self.id,
             },
         }
+
+class RequisitionTags(models.Model):
+    _name = 'requisition.tags'
+    _description = 'Etiquetas de Requisición'
+
+    name = fields.Char('Nombre', required=True)
+    color = fields.Integer('Color')

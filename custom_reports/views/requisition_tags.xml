@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+        <record id="requisition_tags_view_tree" model="ir.ui.view">
+            <field name="name">requisition.tags.view.tree</field>
+            <field name="model">requisition.tags</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name" />
+                    <field name="color" widget="colorpicker" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="requisition_tags_action" model="ir.actions.act_window">
+            <field name="name">Etiquetas de Requisición</field>
+            <field name="res_model">requisition.tags</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem
+            id="requisition_tags_menu"
+            name="Etiquetas de Requisición"
+            action="requisition_tags_action"
+            parent="requisitions.requisitions_configuration_menu"
+            sequence="5" 
+        />
+        
+    </data>
+</odoo>

@@ -59,6 +59,7 @@
         'views/purchase_order.xml',
         'views/stock_picking.xml',
         'views/requisition.xml',
+        'views/requisition_tags.xml',
 
     ],
     'installable': True,
