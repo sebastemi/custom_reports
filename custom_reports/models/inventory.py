@@ -1,7 +1,7 @@
 from odoo import fields, api, models
 from num2words import num2words
 import math
-
+import re
 
 class InventoryReport(models.Model):
     _inherit = 'stock.picking'
@@ -13,7 +13,7 @@ class InventoryReport(models.Model):
     company_address = fields.Text()
     tin = fields.Char()
     tin_client = fields.Char()
-    work_order = fields.Char()
+    work_order = fields.Char(string)
     purshase_order = fields.Char()
     pay_conditions = fields.Char()
     pay_method = fields.Char()
@@ -25,6 +25,7 @@ class InventoryReport(models.Model):
     total = fields.Monetary(currency_field='currency_id')
     invoice = fields.Char(string="Factura")
     received_by = fields.Many2one('res.users',string="Recibido por")
+    project_id = fields.Many2one('project.project',string="Proyecto")
 
     @api.depends('total', 'currency_id') 
     def _compute_spell_amount(self):
@@ -37,7 +38,6 @@ class InventoryReport(models.Model):
                 record.spell_amount = f" {letter_amount.capitalize()} y {cents:02d} Centavos"
             else:
                 record.spell_amount = ""
-
 
     def download(self):
         return self.env.ref('custom_reports.report_stock_picking_custom').report_action(self)
@@ -66,6 +66,23 @@ class InventoryLineReport(models.Model):
                 'model_id': self.id,
             },
         }
+    
+    def extract_data(self, text: str, return_ot: bool) -> str:
+        """
+        Extrae la OT o el nombre del cliente de una cadena de texto.
+        """
+        # Regex: Captura "OT-algo", luego ignora espacios y el guion, y captura el resto.
+        patron = r'^(OT-[\w]+)\s*-\s*(.*)$'
+        match = re.match(patron, text, re.IGNORECASE)
+        
+        if not match:
+            return "Formato inválido"
+            
+        if return_ot:
+            return match.group(1) # Devuelve la OT
+        else:
+            return match.group(2) # Devuelve el nombre del cliente
+
 
     @api.depends('purchase_line_id', 'purchase_line_id.order_id.order_line')
     def _compute_position_purchase_order(self):
@@ -95,8 +112,8 @@ class InventoryLineReport(models.Model):
 class StockMoveLineReport(models.Model):
     _inherit = 'stock.move.line'
 
-    # position_purchase_order = fields.Integer(
-    #     related='move_id.posicion_orden_compra',
-    #     string='Fila en PO',
-    #     readonly=True
-    # )
+    position_purchase_order = fields.Integer(
+        related='move_id.posicion_orden_compra',
+        string='Fila en PO',
+        readonly=True
+    )

@@ -38,6 +38,7 @@
                                         <span>
                                             Orden de Compra Nro.: <t t-esc="doc.origin"/> 
                                             Linea: 
+                                            <t t-esc="line.extract_data(doc.project_id.name, True)"/>
                                             
                                         </span>
                                     </td>

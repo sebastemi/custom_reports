@@ -21,7 +21,7 @@
                                 <th style="width: 18%;border: none !important; padding: 0 !important; height: 0 !important;"></th>  
                             </tr>
                             <tr>
-                                <th colspan="6" style="border: 1.5px solid #fff; border-bottom:1.5px solid #000;"></th>
+                                <th colspan="6" style="border: 1.5px solid #fff; border-bottom:1.5px solid #000;border-right:1.5px solid #000;"></th>
                                 <th colspan="6" class="text-center" style="padding:5px;border:1.5px solid #000; ">12. Certificado Requerido</th>
                                 <th colspan="1" style="border: 1.5px solid #fff; border-bottom:1.5px solid #000;"></th>
                             </tr>
@@ -43,6 +43,7 @@
                         </thead>
                         <tbody>
                             <t t-foreach="doc.product_ids" t-as="line">
+                                <t t-set="tags_ids" t-value="line.tag_ids.mapped('name')"/>
                                 <tr>
                                     <td class="text-center" style="padding:2px;border:1.5px solid #000;">
                                         <span t-esc="line_index + 1"/>
@@ -64,16 +65,41 @@
                                     <td class="text-left" style="padding:2px;border:1.5px solid #000;">
                                         <span t-esc="line.uom_id.name"/>
                                     </td>
-                                    <td style="border:1.5px solid #000;"></td>
-                                    <td style="border:1.5px solid #000;"></td>
-                                    <td style="border:1.5px solid #000;"></td>
-                                    <td style="border:1.5px solid #000;"></td>
-                                    <td style="border:1.5px solid #000;"></td>
-                                    <td style="border:1.5px solid #000;"></td>
+                                    <td style="border:1.5px solid #000;">
+                                        <t t-if="'C' in tags_ids">
+                                            X
+                                        </t>
+                                    </td>
+                                    <td style="border:1.5px solid #000;">
+                                        <t t-if="'CC' in tags_ids">
+                                            X
+                                        </t>
+                                    </td>
+                                    <td style="border:1.5px solid #000;">
+                                        <t t-if="'CG' in tags_ids">
+                                            X
+                                        </t>
+                                    </td>
+                                    <td style="border:1.5px solid #000;">
+                                        <t t-if="'PP' in tags_ids">
+                                            X
+                                        </t>
+                                    </td>
+                                    <td style="border:1.5px solid #000;">
+                                        <t t-if="'PS' in tags_ids">
+                                            X
+                                        </t>
+                                    </td>
+                                    <td style="border:1.5px solid #000;">
+                                        <t t-if="'NA' in tags_ids">
+                                            X
+                                        </t>
+                                    </td>
                                     <td style="border:1.5px solid #000;"></td>
                                 </tr>
                             </t>
                             <t t-foreach="doc.service_ids" t-as="line">
+                                <t t-set="tags_ids" t-value="line.tag_ids.mapped('name')"/>
                                 <tr>
                                     <td class="text-center" style="padding:2px;border:1.5px solid #000;vertical-align:middle;">
                                         <span t-esc="len(doc.product_ids) + line_index + 1"/>
@@ -91,12 +117,36 @@
                                     <td style="padding:2px;border:1.5px solid #000;vertical-align:middle;">
                                         <span t-esc="line.uom_id.name"/>
                                     </td>
-                                    <td style="border:1.5px solid #000;"></td>
-                                    <td style="border:1.5px solid #000;"></td>
-                                    <td style="border:1.5px solid #000;"></td>
-                                    <td style="border:1.5px solid #000;"></td>
-                                    <td style="border:1.5px solid #000;"></td>
-                                    <td style="border:1.5px solid #000;"></td>
+                                    <td style="border:1.5px solid #000;">
+                                        <t t-if="'C' in tags_ids">
+                                            X
+                                        </t>
+                                    </td>
+                                    <td style="border:1.5px solid #000;">
+                                        <t t-if="'CC' in tags_ids">
+                                            X
+                                        </t>
+                                    </td>
+                                    <td style="border:1.5px solid #000;">
+                                        <t t-if="'CG' in tags_ids">
+                                            X
+                                        </t>
+                                    </td>
+                                    <td style="border:1.5px solid #000;">
+                                        <t t-if="'PP' in tags_ids">
+                                            X
+                                        </t>
+                                    </td>
+                                    <td style="border:1.5px solid #000;">
+                                        <t t-if="'PS' in tags_ids">
+                                            X
+                                        </t>
+                                    </td>
+                                    <td style="border:1.5px solid #000;">
+                                        <t t-if="'NA' in tags_ids">
+                                            X
+                                        </t>
+                                    </td>
                                     <td style="border:1.5px solid #000;"></td>
                                 </tr>
                             </t>
