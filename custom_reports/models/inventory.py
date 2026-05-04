@@ -101,13 +101,13 @@ class InventoryLineReport(models.Model):
                     # list(po_lines) convierte el recordset en una lista de Python
                     # .index() nos da la posición (empezando en 0, por eso sumamos 1)
                     posicion = list(po_lines).index(move.purchase_line_id) + 1
-                    move.posicion_orden_compra = posicion
+                    move.position_purchase_order = posicion
                 except ValueError:
                     # Por si acaso la línea fue eliminada de la orden de compra
-                    move.posicion_orden_compra = 0
+                    move.position_purchase_order = 0
             else:
                 # Si el movimiento es manual o viene de una venta/fabricación, es 0
-                move.posicion_orden_compra = 0
+                move.position_purchase_order = 0
 
 class StockMoveLineReport(models.Model):
     _inherit = 'stock.move.line'

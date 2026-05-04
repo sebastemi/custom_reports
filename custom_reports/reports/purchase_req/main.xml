@@ -18,6 +18,8 @@
                         </thead>
                         <tbody>
                             <t t-foreach="doc.product_ids" t-as="line">
+                                <t t-set="tags_ids" t-value="line.tag_ids.mapped('name')"/>
+
                                 <tr>
                                     <td class="text-center" style="padding:2px;">
                                         <span t-esc="line_index + 1"/>
@@ -35,36 +37,54 @@
                                             <div class="col-2">
                                                 <p>RC: 
                                                     <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                        <t t-if="'C' in tags_ids">
+                                                            X
+                                                        </t>
                                                     </span>
                                                 </p>
                                             </div>
                                             <div class="col-2">
                                                 <p>PP: 
                                                     <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                        <t t-if="'PP' in tags_ids">
+                                                            X
+                                                        </t>
                                                     </span>
                                                 </p>
                                             </div>
                                             <div class="col-2">
                                                 <p>CG: 
                                                     <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                        <t t-if="'CG' in tags_ids">
+                                                            X
+                                                        </t>
                                                     </span>
                                                 </p>
                                             </div>
                                             <div class="col-2">
                                                 <p>PS: 
                                                     <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                        <t t-if="'PS' in tags_ids">
+                                                            X
+                                                        </t>
                                                     </span>
                                                 </p>
                                             </div>
                                             <div class="col-2">
                                                 <p>CC: 
                                                     <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                        <t t-if="'CC' in tags_ids">
+                                                            X
+                                                        </t>
                                                     </span>
                                                 </p>
                                             </div>
                                             <div class="col-2">
                                                 <p>NA: 
                                                     <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                        <t t-if="'NA' in tags_ids">
+                                                            X
+                                                        </t>
                                                     </span>
                                                 </p>
                                             </div>
@@ -83,6 +103,8 @@
                                 </tr>
                             </t>
                             <t t-foreach="doc.service_ids" t-as="line">
+                                <t t-set="tags_ids" t-value="line.tag_ids.mapped('name')"/>
+
                                 <tr>
                                     <td class="text-center" >
                                         <span t-esc="len(doc.product_ids) + line_index + 1"/>
@@ -96,36 +118,54 @@
                                             <div class="col-2">
                                                 <p>RC: 
                                                     <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                        <t t-if="'C' in tags_ids">
+                                                            X
+                                                        </t>
                                                     </span>
                                                 </p>
                                             </div>
                                             <div class="col-2">
                                                 <p>PP: 
                                                     <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                        <t t-if="'PP' in tags_ids">
+                                                            X
+                                                        </t>
                                                     </span>
                                                 </p>
                                             </div>
                                             <div class="col-2">
                                                 <p>CG: 
                                                     <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                        <t t-if="'CG' in tags_ids">
+                                                            X
+                                                        </t>
                                                     </span>
                                                 </p>
                                             </div>
                                             <div class="col-2">
                                                 <p>PS: 
                                                     <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                        <t t-if="'PS' in tags_ids">
+                                                            X
+                                                        </t>
                                                     </span>
                                                 </p>
                                             </div>
                                             <div class="col-2">
                                                 <p>CC: 
                                                     <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                        <t t-if="'CC' in tags_ids">
+                                                            X
+                                                        </t>
                                                     </span>
                                                 </p>
                                             </div>
                                             <div class="col-2">
                                                 <p>NA: 
                                                     <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
+                                                        <t t-if="'NA' in tags_ids">
+                                                            X
+                                                        </t>
                                                     </span>
                                                 </p>
                                             </div>
