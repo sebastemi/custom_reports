@@ -13,7 +13,7 @@ class InventoryReport(models.Model):
     company_address = fields.Text()
     tin = fields.Char()
     tin_client = fields.Char()
-    work_order = fields.Char(string)
+    work_order = fields.Char()
     purshase_order = fields.Char()
     pay_conditions = fields.Char()
     pay_method = fields.Char()
