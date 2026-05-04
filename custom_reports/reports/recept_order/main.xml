@@ -33,7 +33,12 @@
                                         <t t-esc="line.product_id.default_code"/>
                                     </td>
                                     <td style="padding:5px;border:1px solid #000;">
-                                        <t t-esc="line.product_id.name"/>
+                                        <t t-esc="line.product_id.name"/> <br/>
+                                        <span>
+                                            Orden de Compra Nro.: <t t-esc="doc.origin"/> 
+                                            Linea: 
+                                            
+                                        </span>
                                     </td>
                                     <td style="text-align:right;padding:5px;border:1px solid #000;">
                                         <t t-esc="'{:.2f}'.format(line.product_uom_qty)"/> <t t-esc="line.product_uom.name"/>
@@ -48,7 +53,12 @@
                                     <td style="padding:5px;border:1px solid #000;"></td>
                                     <td style="padding:5px;border:1px solid #000;"></td>
                                     <td style="padding:5px;border:1px solid #000;">
-                                        <t t-esc="subline.lot_id.name"/>
+                                        <t t-if="subline.lot_id">
+                                            <t t-esc="subline.lot_id.name"/>
+                                        </t>
+                                        <t t-else="">
+                                            N/A
+                                        </t>
                                     </td>
                                 </tr>
                             </t>

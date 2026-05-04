@@ -7,13 +7,35 @@
                         <tr>
                             <td style="width:30%;">
                                 <div  style="border-bottom: 1px solid black;margin:0px 50px;height:20px;">
-                                    <span></span>
+                                    <span>P/
+                                        <t t-if="doc.create_uid">
+                                            <t t-set="parts" t-value="doc.create_uid.name.split(' ')"/>
+                                            
+                                            <t t-if="len(parts) >= 3">
+                                                <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
+                                            </t>
+                                            <t t-else="">
+                                                <span t-esc="doc.create_uid.name"/>
+                                            </t>    
+                                        </t>
+                                    </span>
                                 </div>
                                 <p class="text-center">18. Nombre y Firma del Almacenista</p>
                             </td>
                             <td style="width:30%;">
                                 <div  style="border-bottom: 1px solid black;margin:0px 50px;height:20px;">
-                                    <span></span>
+                                    <span>
+                                        <t t-if="doc.received_by">
+                                            <t t-set="parts" t-value="doc.received_by.name.split(' ')"/>
+                                            
+                                            <t t-if="len(parts) >= 3">
+                                                <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
+                                            </t>
+                                            <t t-else="">
+                                                <span t-esc="doc.received_by.name"/>
+                                            </t>    
+                                        </t>
+                                    </span>
                                 </div>
                                 <p class="text-center">19. Nombre y Firma del Inspector</p>
                             </td>

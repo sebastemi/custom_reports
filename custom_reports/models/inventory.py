@@ -46,6 +46,11 @@ class InventoryLineReport(models.Model):
     _inherit = 'stock.move'
 
     custom_note = fields.Text('Nota')
+    position_purchase_order = fields.Integer(
+        string='Fila en Orden de Compra',
+        compute='_compute_position_purchase_order',
+        help='Indica el número de fila que ocupa este producto en la Orden de Compra original.'
+    )
 
     def action_open_note_wizard(self):
 
@@ -61,3 +66,37 @@ class InventoryLineReport(models.Model):
                 'model_id': self.id,
             },
         }
+
+    @api.depends('purchase_line_id', 'purchase_line_id.order_id.order_line')
+    def _compute_position_purchase_order(self):
+        for move in self:
+            # 1. Verificamos si este movimiento realmente viene de una compra
+            if move.purchase_line_id and move.purchase_line_id.order_id:
+                
+                # 2. Traemos todas las líneas de esa Orden de Compra.
+                # Las ordenamos por 'sequence' (como las acomodó el usuario) y luego por 'id'
+                po_lines = move.purchase_line_id.order_id.order_line.sorted(
+                    key=lambda l: (l.sequence, l.id)
+                )
+                
+                # 3. Buscamos el índice de nuestra línea dentro de esa lista
+                try:
+                    # list(po_lines) convierte el recordset en una lista de Python
+                    # .index() nos da la posición (empezando en 0, por eso sumamos 1)
+                    posicion = list(po_lines).index(move.purchase_line_id) + 1
+                    move.posicion_orden_compra = posicion
+                except ValueError:
+                    # Por si acaso la línea fue eliminada de la orden de compra
+                    move.posicion_orden_compra = 0
+            else:
+                # Si el movimiento es manual o viene de una venta/fabricación, es 0
+                move.posicion_orden_compra = 0
+
+class StockMoveLineReport(models.Model):
+    _inherit = 'stock.move.line'
+
+    position_purchase_order = fields.Integer(
+        related='move_id.posicion_orden_compra',
+        string='Fila en PO',
+        readonly=True
+    )

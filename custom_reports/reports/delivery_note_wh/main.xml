@@ -3,7 +3,7 @@
         <template id="report_delivery_note_wh_order_main">
             <div class="page"> 
                 <div class="row" style="font-size:12px;">
-                    <table style="font-family:arial;width:100%;border-collapse:collapse;">
+                    <table style="font-family:arial;width:100%;border-collapse:collapse;border:1.5px solid #000;">
                         <thead>
                             <tr>
                                 <th style="padding:5px;width:10%;">6. Cod. Articulo</th>
@@ -34,7 +34,12 @@
                                             <t t-esc="doc.location_id.location_id.name"/>
                                         </td>
                                         <td  style="padding:5px;text-align:right;">
-                                            <t t-esc="doc.location_dest_id.location_id.name"/>
+                                            <t t-if="doc.location_dest_id.location_id.name == 'Virtual Locations'">
+                                                <t t-esc="doc.location_dest_id.name"/>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-esc="doc.location_dest_id.location_id.name"/>
+                                            </t>
                                         </td>
                                         <td style="padding:5px;text-align:right;">
                                             <t t-esc="line.product_uom.name"/>
