@@ -45,7 +45,7 @@ class RequisitionLineReport(models.Model):
     _inherit='requisition.product.line'
 
     custom_note = fields.Text('Nota')
-    tag_ids = fields.Many2mny('requisition.tags')
+    tag_ids = fields.Many2many('requisition.tags')
 
     def action_open_note_wizard(self):
 
