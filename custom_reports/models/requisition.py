@@ -24,8 +24,7 @@ class RequisitionReport(models.Model):
     def action_print_report(self):
         return self.env.ref(f'custom_reports.{self._get_xml_report_id()}').report_action(self)
     
-    @api.model
-    def extract_data(text: str, return_ot: bool) -> str:
+    def extract_data(self, text: str, return_ot: bool) -> str:
         """
         Extrae la OT o el nombre del cliente de una cadena de texto.
         """
