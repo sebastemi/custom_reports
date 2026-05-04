@@ -2,7 +2,7 @@
     <data>
         <template id="report_material_request_order_main">
             <div class="container">
-                <div class="row" style="font-family:Arial;font-size:10px;letter-spacing:2px;">
+                <div class="row" style="font-size:10px;">
                     <table class="report-table" style="table-layout:fixed;border-collapse: collapse;width: 100%;">
                         <thead>
                             <tr style="height: 0; line-height: 0; padding: 0; margin: 0; border: none;">
@@ -21,9 +21,9 @@
                                 <th style="width: 18%;border: none !important; padding: 0 !important; height: 0 !important;"></th>  
                             </tr>
                             <tr>
-                                <th colspan="6" style="border: none; border-bottom:1.5px solid #000;"></th>
-                                <th colspan="6" class="text-center">12. Certificado Requerido</th>
-                                <th colspan="1" style="border: none; border-bottom:1.5px solid #000;"></th>
+                                <th colspan="6" style="border: 1.5px solid #fff;; border-bottom:1.5px solid #000;"></th>
+                                <th colspan="6" class="text-center" style="padding:5px;">12. Certificado Requerido</th>
+                                <th colspan="1" style="border: 1.5px solid #fff;; border-bottom:1.5px solid #000;"></th>
                             </tr>
                             <tr class="text-center">
                                 <th style="padding:2px;">6. Item</th>
@@ -32,12 +32,12 @@
                                 <th style="padding:2px;">9. Descripción del Material</th> 
                                 <th style="padding:2px;">10. Cant.</th>
                                 <th style="padding:2px;">11. Unid.</th>
-                                <th style="padding:2px;">C</th>
-                                <th style="padding:2px;">CC</th>
-                                <th style="padding:2px;">CG</th>
-                                <th style="padding:2px;">PP</th>
-                                <th style="padding:2px;">PS</th>
-                                <th style="padding:2px;">NA</th>
+                                <th style="">C</th>
+                                <th style="">CC</th>
+                                <th style="">CG</th>
+                                <th style="">PP</th>
+                                <th style="">PS</th>
+                                <th style="">NA</th>
                                 <th style="padding:2px;">13. Material Recibido Por</th>
                             </tr>
                         </thead>
@@ -47,18 +47,18 @@
                                     <td class="text-center" style="padding:2px;border:1.5px solid #000;">
                                         <span t-esc="line_index + 1"/>
                                     </td>
-                                    <td style="padding:2px;border:1.5px solid #000;">N/A</td>
-                                    <td style="padding:2px;border:1.5px solid #000;">
+                                    <td class="text-center" style="padding:2px;border:1.5px solid #000;">N/A</td>
+                                    <td  style="padding:2px;padding-left:5px;border:1.5px solid #000;">
                                         <span t-esc="line.name.default_code"/>
                                     </td>
-                                    <td style="padding:2px;border:1.5px solid #000;">
+                                    <td style="padding:2px;padding-left:5px;border:1.5px solid #000;">
                                         <span t-esc="line.name.name"/>
                                         <t t-if="line.custom_note">
                                             <div style="margin-top:3px;"/>
                                             <t t-esc="line.custom_note" />
                                         </t>
                                     </td>
-                                    <td class="text-right" style="padding:2px;border:1.5px solid #000;">
+                                    <td style="padding:2px;border:1.5px solid #000;text-align:right;">
                                         <span t-esc="'{:.2f}'.format(line.qty)"/>
                                     </td>
                                     <td class="text-left" style="padding:2px;border:1.5px solid #000;">
@@ -75,20 +75,20 @@
                             </t>
                             <t t-foreach="doc.service_ids" t-as="line">
                                 <tr>
-                                    <td class="text-center" style="padding:2px;border:1.5px solid #000;">
+                                    <td class="text-center" style="padding:2px;border:1.5px solid #000;vertical-align:middle;">
                                         <span t-esc="len(doc.product_ids) + line_index + 1"/>
                                     </td>
-                                    <td style="padding:2px;border:1.5px solid #000;">N/A</td>
-                                    <td style="padding:2px;border:1.5px solid #000;">
+                                    <td class="text-center" style="padding:2px;border:1.5px solid #000;vertical-align:middle;">N/A</td>
+                                    <td style="padding:2px;padding-left:5px;border:1.5px solid #000;vertical-align:middle;">
                                         <span t-esc="line.name.default_code"/>
                                     </td>
-                                    <td style="padding:2px;border:1.5px solid #000;">
+                                    <td style="padding:2px;padding-left:5px;border:1.5px solid #000;">
                                         <span t-esc="line.name.name"/>
                                     </td>
-                                    <td class="text-right" style="padding:2px;border:1.5px solid #000;">
+                                    <td style="padding:2px;border:1.5px solid #000;text-align:right;vertical-align:middle;">
                                         <span t-esc="'{:.2f}'.format(line.qty)"/>
                                     </td>
-                                    <td class="text-left" style="padding:2px;border:1.5px solid #000;">
+                                    <td style="padding:2px;border:1.5px solid #000;vertical-align:middle;">
                                         <span t-esc="line.uom_id.name"/>
                                     </td>
                                     <td style="border:1.5px solid #000;"></td>

@@ -23,11 +23,13 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <t t-set="item_counter" t-value="1"/>
                         <t t-foreach="doc.move_ids_without_package" t-as="line">
+                            <t t-set="item_counter" t-value="item_counter + 1"/>
                             <t t-foreach="line.move_line_ids" t-as="subline">
                                 <tr>
                                     <td class="text-center" style="padding:5px;border:1px solid #000;">
-                                        <t t-esc="subline_index + 1"/>
+                                        <t t-esc="item_counter"/>
                                     </td>
                                     <td class="text-center" style="padding:5px;border:1px solid #000;">
                                         <t t-esc="line.product_id.default_code"/>
@@ -61,6 +63,7 @@
                                         </t>
                                     </td>
                                 </tr>
+                                <t t-set="item_counter" t-value="item_counter + 1"/>
                             </t>
                         </t>
                     </tbody>
