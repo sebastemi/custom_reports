@@ -113,7 +113,7 @@ class StockMoveLineReport(models.Model):
     _inherit = 'stock.move.line'
 
     position_purchase_order = fields.Integer(
-        related='move_id.posicion_orden_compra',
+        related='move_id.position_purchase_order',
         string='Fila en PO',
         readonly=True
     )
