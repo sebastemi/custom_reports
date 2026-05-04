@@ -24,6 +24,14 @@
                     <field name="custom_note" readonly="1" optional="hide"/>
                     <button icon="fa-sticky-note" name="action_open_note_wizard" type="object" invisible="not custom_note"/>
                     <button icon="fa-sticky-note" name="action_open_note_wizard" type="object" class="text-info" invisible="custom_note"/>
+                    <field name="tags"  widget="many2many_tags"/>
+                </xpath>
+
+                <xpath expr="//field[@name='service_ids']/tree//field[@name='analytic_account_id']" position="after">
+                    <field name="custom_note" readonly="1" optional="hide"/>
+                    <button icon="fa-sticky-note" name="action_open_note_wizard" type="object" invisible="not custom_note"/>
+                    <button icon="fa-sticky-note" name="action_open_note_wizard" type="object" class="text-info" invisible="custom_note"/>
+                    <field name="tag_ids"  widget="many2many_tags"/>
                 </xpath>
 
             </field>
@@ -56,14 +64,14 @@
                     <field name="custom_note" readonly="1" optional="hide"/>
                     <button icon="fa-sticky-note" name="action_open_note_wizard" type="object" invisible="not custom_note"/>
                     <button icon="fa-sticky-note" name="action_open_note_wizard" type="object" class="text-info" invisible="custom_note"/>
-                    <field name="tag_ids" />
+                    <field name="tag_ids"  widget="many2many_tags" />
                 </xpath>
 
                 <xpath expr="//field[@name='service_ids']/tree//field[@name='analytic_account_id']" position="after">
                     <field name="custom_note" readonly="1" optional="hide"/>
                     <button icon="fa-sticky-note" name="action_open_note_wizard" type="object" invisible="not custom_note"/>
                     <button icon="fa-sticky-note" name="action_open_note_wizard" type="object" class="text-info" invisible="custom_note"/>
-                    <field name="tag_ids" />
+                    <field name="tag_ids" widget="many2many_tags"/>
                 </xpath>
 
             </field>
