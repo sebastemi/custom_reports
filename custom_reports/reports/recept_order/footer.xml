@@ -18,6 +18,9 @@
                                                 <span t-esc="doc.create_uid.name"/>
                                             </t>    
                                         </t>
+                                        <t t-else="">
+                                            <t t-esc="' '"/>
+                                        </t>
                                     </span>
                                 </div>
                                 <p class="text-center">18. Nombre y Firma del Almacenista</p>
@@ -34,6 +37,9 @@
                                             <t t-else="">
                                                 <span t-esc="doc.received_by.name"/>
                                             </t>    
+                                        </t>
+                                        <t t-else="">
+                                            <t t-esc="' '"/>
                                         </t>
                                     </span>
                                 </div>

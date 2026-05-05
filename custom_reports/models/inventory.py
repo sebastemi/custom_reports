@@ -13,7 +13,7 @@ class InventoryReport(models.Model):
     company_address = fields.Text()
     tin = fields.Char()
     tin_client = fields.Char()
-    work_order = fields.Char()
+    work_order = fields.Char('Orden de trabajo')
     purshase_order = fields.Char()
     pay_conditions = fields.Char()
     pay_method = fields.Char()
@@ -48,7 +48,6 @@ class InventoryReport(models.Model):
             # Verificamos si la recepción viene de una compra
             if picking.purchase_id and picking.purchase_id.invoice_ids:
                 # Buscamos facturas de proveedor (in_invoice) que no estén canceladas
-                # l10n_ve_document_number es el campo estándar para Nro Control en Venezuela
                 # Si no usas localización, puedes usar 'ref'
                 invoice = picking.purchase_id.invoice_ids.filtered(
                     lambda m: m.move_type == 'in_invoice' and m.state != 'cancel'
@@ -60,6 +59,20 @@ class InventoryReport(models.Model):
                     control_number = getattr(inv, 'supplier_invoice_number', '')
             
             picking.invoice = control_number
+
+    def get_work_order(self):
+        if self.project_id:
+            return self.project_id.name
+        
+        lines_with_analytic_account = self.move_ids_without_package.filtered(lambda move: move.analytic_account_id)
+        if lines_with_analytic_account:
+            return lines_with_analytic_account[0].analytic_account_id.name
+        
+        if self.purchase_id:
+            return self.purchase_id.worker_order
+        
+        return ''
+        
 
 class InventoryLineReport(models.Model):
     _inherit = 'stock.move'
@@ -101,7 +114,6 @@ class InventoryLineReport(models.Model):
             return match.group(1) # Devuelve la OT
         else:
             return match.group(2) # Devuelve el nombre del cliente
-
 
     @api.depends('purchase_line_id', 'purchase_line_id.order_id.order_line')
     def _compute_position_purchase_order(self):

@@ -34,12 +34,15 @@
                                         <t t-esc="line.product_id.default_code"/>
                                     </td>
                                     <td style="padding:5px;border:1px solid #000;">
-                                        <t t-esc="line.product_id.name"/> <br/>
+                                        <t t-esc="line.product_id.name"/> <br/><br/>
                                         <span>
                                             Orden de Compra Nro.: <t t-esc="doc.origin"/> 
-                                            Linea: <field name="position_purchase_order" /> 
+                                            Linea: <t t-esc="subline.position_purchase_order"/> 
                                             <t t-if="doc.project_id">
                                                 <t t-esc="line.extract_data(doc.project_id.name, True)"/>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-esc="doc.work_order"/>
                                             </t>
                                         </span>
                                     </td>

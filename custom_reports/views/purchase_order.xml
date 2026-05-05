@@ -10,7 +10,6 @@
                         <group>
                             <field name="delivery_place" />
                             <field name="payment_conditions" />
-                            <field name="worker_order" />
                             <field name="created_by_id" />
                             <field name="reviewed_by_id" />
                             <field name="approved_by_id" />
