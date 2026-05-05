@@ -64,12 +64,9 @@ class InventoryReport(models.Model):
         if self.project_id:
             return self.project_id.name
         
-        lines_with_analytic_account = self.move_ids_without_package.filtered(lambda move: move.analytic_account_id)
-        if lines_with_analytic_account:
-            return lines_with_analytic_account[0].analytic_account_id.name
-        
         if self.purchase_id:
-            return self.purchase_id.worker_order
+            lines_with_analytic_account = self.purchase_id.order_line.filtered(lambda line: line.analytic_account_id)
+            return lines_with_analytic_account[0].analytic_account_id.name if lines_with_analytic_account else self.purchase_id.worker_order
         
         return ''
         
