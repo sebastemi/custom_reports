@@ -57,7 +57,7 @@ class InventoryReport(models.Model):
                 if invoice:
                     # Intentamos obtener el nro de control (localización VE) o la referencia
                     inv = invoice[0] # Tomamos la primera encontrada
-                    control_number = getattr(inv, 'supply_invoice_number', inv.ref or '')
+                    control_number = getattr(inv, 'supplier_invoice_number', '')
             
             picking.invoice = control_number
 
