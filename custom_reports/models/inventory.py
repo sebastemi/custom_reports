@@ -23,9 +23,8 @@ class InventoryReport(models.Model):
     subtotal = fields.Monetary(currency_field='currency_id')
     iva = fields.Monetary(currency_field='currency_id')
     total = fields.Monetary(currency_field='currency_id')
-    invoice = fields.Char(string="Factura")
+    invoice = fields.Char(string="Factura", compute='_compute_invoice_control_number', store=False)
     received_by = fields.Many2one('res.users',string="Recibido por")
-    project_id = fields.Many2one('project.project',string="Orden de Trabajo")
 
     @api.depends('total', 'currency_id') 
     def _compute_spell_amount(self):
@@ -42,6 +41,26 @@ class InventoryReport(models.Model):
     def download(self):
         return self.env.ref('custom_reports.report_stock_picking_custom').report_action(self)
     
+    @api.depends('purchase_id.invoice_ids', 'purchase_id.invoice_ids.state')
+    def _compute_invoice_control_number(self):
+        for picking in self:
+            control_number = ''
+            # Verificamos si la recepción viene de una compra
+            if picking.purchase_id and picking.purchase_id.invoice_ids:
+                # Buscamos facturas de proveedor (in_invoice) que no estén canceladas
+                # l10n_ve_document_number es el campo estándar para Nro Control en Venezuela
+                # Si no usas localización, puedes usar 'ref'
+                invoice = picking.purchase_id.invoice_ids.filtered(
+                    lambda m: m.move_type == 'in_invoice' and m.state != 'cancel'
+                )
+                
+                if invoice:
+                    # Intentamos obtener el nro de control (localización VE) o la referencia
+                    inv = invoice[0] # Tomamos la primera encontrada
+                    control_number = getattr(inv, 'supply_invoice_number', inv.ref or '')
+            
+            picking.invoice = control_number
+
 class InventoryLineReport(models.Model):
     _inherit = 'stock.move'
 
@@ -108,6 +127,8 @@ class InventoryLineReport(models.Model):
             else:
                 # Si el movimiento es manual o viene de una venta/fabricación, es 0
                 move.position_purchase_order = 0
+
+    def get_invoice_numbers(self):
 
 class StockMoveLineReport(models.Model):
     _inherit = 'stock.move.line'
