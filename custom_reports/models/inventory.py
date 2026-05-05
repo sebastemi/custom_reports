@@ -128,8 +128,6 @@ class InventoryLineReport(models.Model):
                 # Si el movimiento es manual o viene de una venta/fabricación, es 0
                 move.position_purchase_order = 0
 
-    def get_invoice_numbers(self):
-
 class StockMoveLineReport(models.Model):
     _inherit = 'stock.move.line'
 
