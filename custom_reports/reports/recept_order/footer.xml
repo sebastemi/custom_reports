@@ -5,8 +5,9 @@
                 <table class="table-borderless w-100">
                     <tbody>
                         <tr>
-                            <td style="width:30%;">
-                                <div  style="border-bottom: 1px solid black;margin:0px 50px;height:20px;">
+                            <td style="width:30%; vertical-align: bottom;">
+                                
+                                <div style="border-bottom: 1px solid black; margin:0px 50px; min-height:20px;">
                                     <span>P/
                                         <t t-if="doc.create_uid">
                                             <t t-set="parts" t-value="doc.create_uid.name.split(' ')"/>
@@ -19,14 +20,16 @@
                                             </t>    
                                         </t>
                                         <t t-else="">
-                                            <t t-esc="' '"/>
+                                            &amp;nbsp;
                                         </t>
                                     </span>
                                 </div>
-                                <p class="text-center">18. Nombre y Firma del Almacenista</p>
+                                <p class="text-center mb-0 mt-1">18. Nombre y Firma del Almacenista</p>
                             </td>
-                            <td style="width:30%;">
-                                <div  style="border-bottom: 1px solid black;margin:0px 50px;height:20px;">
+                            
+                            <td style="width:30%; vertical-align: bottom;">
+                                
+                                <div style="border-bottom: 1px solid black; margin:0px 50px; min-height:20px;">
                                     <span>
                                         <t t-if="doc.received_by">
                                             <t t-set="parts" t-value="doc.received_by.name.split(' ')"/>
@@ -39,18 +42,19 @@
                                             </t>    
                                         </t>
                                         <t t-else="">
-                                            <t t-esc="' '"/>
+                                            &amp;nbsp;
                                         </t>
                                     </span>
                                 </div>
-                                <p class="text-center">19. Nombre y Firma del Inspector</p>
+                                <p class="text-center mb-0 mt-1">19. Nombre y Firma del Inspector</p>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+                
                 <div class="row mt-4">
                     <span>Observaciones: </span>
-                    <span class="d-inline-block" style="border-bottom:1px solid #000;width:700px">
+                    <span class="d-inline-block" style="border-bottom:1px solid #000; width:700px; min-height:18px;">
                         <t t-if="doc.note">
                             <span t-esc="' '.join((doc.note or '').striptags().split())"/>
                         </t>
