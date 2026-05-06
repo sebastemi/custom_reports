@@ -9,14 +9,14 @@
                                 
                                 <div style="border-bottom: 1px solid black; margin:0px 50px; min-height:20px;">
                                     <span>P/
-                                        <t t-if="doc.create_uid">
-                                            <t t-set="parts" t-value="doc.create_uid.name.split(' ')"/>
+                                        <t t-if="doc.user_id">
+                                            <t t-set="parts" t-value="doc.user_id.name.split(' ')"/>
                                             
                                             <t t-if="len(parts) >= 3">
                                                 <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
                                             </t>
                                             <t t-else="">
-                                                <span t-esc="doc.create_uid.name"/>
+                                                <span t-esc="doc.user_id.name"/>
                                             </t>    
                                         </t>
                                         <t t-else="">
