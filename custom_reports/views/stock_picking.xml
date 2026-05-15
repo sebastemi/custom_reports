@@ -13,7 +13,7 @@
                                 <field name="delivery_order" />
                                 <field name="invoice" />
                                 <field name="received_by" />
-                                <field name="work_order" help="USa este campo para que aparezca la Orden de Trabajo en el reporte, si no se colocó"/>
+                                <!-- <field name="work_order" help="USa este campo para que aparezca la Orden de Trabajo en el reporte, si no se colocó"/> -->
                             </group>
                             <group>
                             </group>

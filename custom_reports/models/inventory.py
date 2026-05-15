@@ -64,24 +64,11 @@ class InventoryReport(models.Model):
         # Si en la orden de compra esta la Ot, la traemos de una vez.
         if self.project_id:
             return self.project_id.name
-                
-        lines_with_analytic = self.purchase_id.order_line.filtered(lambda l: l.analytic_distribution)
-        if lines_with_analytic:
-            # 2. Tomamos el diccionario JSON de la primera línea encontrada
-            dist_dict = lines_with_analytic[0].analytic_distribution
-            
-            if dist_dict:
-                # 3. Extraemos el primer ID del diccionario (Ej: "5")
-                # Usamos list(keys()) porque los diccionarios pueden tener más de una cuenta
-                account_id_str = list(dist_dict.keys())[0]
-                
-                # 4. Buscamos el objeto real en la base de datos convirtiendo el texto a entero
-                analytic_account = self.env['account.analytic.account'].browse(int(account_id_str))
-                
-                if analytic_account.exists():
-                    return analytic_account.name
-                    
-        return self.purchase_id.worker_order
+
+        if self.purchase_id:
+            return self.purchase_id.worker_order    
+                     
+        return False
         
 
 class InventoryLineReport(models.Model):
