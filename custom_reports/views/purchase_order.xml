@@ -38,7 +38,7 @@
         <record id="national_purchase_order_report_view_tree" model="ir.ui.view">
             <field name="name">national_purchase_order_report_view_tree</field>
             <field name="model">purchase.order</field>
-            <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+            <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='activity_ids']" position="after">
                     <field name="worker_order" />
