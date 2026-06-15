@@ -23,6 +23,7 @@
                         <group>
                             <field name="revision" />
                             <field name="annotations" />
+                            <field name="wo_showed" />
                         </group>
                     </group>
                 </xpath>
