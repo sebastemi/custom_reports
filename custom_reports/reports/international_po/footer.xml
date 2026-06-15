@@ -56,12 +56,7 @@
                     <tbody>
                         <tr>
                             <td style="border:1px solid #000;padding-left:5px;">
-                                <p style="margin: 2px;">SEND (02) ORIGINAL COMMERCIAL INVOICE IN SPANISH AND PACKING LIST TO: TEMI, C.A.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="border:1px solid #000;padding-left:5px;">
-                                <p style="margin: 2px;">SEND (01) ORIGINAL COMMERCIAL INVOICE IN SPANISH AND PACKING LIST TO: MANARU.MOLINA@GRUPOTEMI.COM</p>
+                                <p style="margin: 2px;">SEND (01) ORIGINAL COMMERCIAL INVOICE IN SPANISH AND PACKING LIST TO: TEMI, C.A.</p>
                             </td>
                         </tr>
                         <tr>
@@ -85,7 +80,14 @@
                         <tr>
                             <td style="border:1px solid #000;text-align:center;padding:0px 5px;">
                                 <p style="margin:0;padding:0">JOB NUMBER</p>
-                                <p style="margin:0;padding:0"><t t-esc="doc.worker_order"/></p>
+                                <p style="margin:0;padding:0">
+                                    <t t-if="doc.wo_showed == 'ot'">
+                                        <t t-esc="doc.worker_order"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="doc.wo_showed"/>
+                                    </t>
+                                </p>
                             </td>
                             <td style="border:1px solid #000;text-align:center;padding:0px 5px;">
                                 <p style="margin:0;padding:0">REQUISITION NUMBER</p>
@@ -140,7 +142,7 @@
                     </tbody>
                 </table>
 
-                <p style="width:80%;padding-left:10px;font-family:Arial;font-size:12px;margin-top:5px;">
+                <p style="padding-left:10px;font-family:Arial;font-size:12px;margin-top:5px;">
                     Dirección Fiscal: Calle 88 Av. Este - Oeste 4 CC Rotoval Nivel PB Local 2 y 3 Zona Industrial Municipal Norte Valencia Carabobo Zona Postal 2003 Telfs:
                     Directo: 0412-4411128, 0412-4432624, 0412-4883469 e-mail: manaru.molina@grupotemi.com, elisa.aponte@grupotemi.com
                     lila.garcia@grupotemi.com

@@ -46,7 +46,7 @@
                                             <p>Orden de Compra No.: <t t-esc="doc.name"/></p>
                                         </div>
                                         <div class="col-2">
-                                            <p>REV.</p>
+                                            <p>REV. <t t-esc="doc.revision"/></p>
                                         </div>
                                     </div>
                                     <p style="margin:0;padding:0;">Requisición/Lanz Nro.: <t t-esc="doc.requisition_id.name"/></p>

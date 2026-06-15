@@ -9,7 +9,7 @@ class NationalPurshaseOrder(models.Model):
 
     supplier = fields.Char('Proveedor')
     supplier_direction = fields.Char('Dirección')
-    rev = fields.Char('REV')
+    revision = fields.Integer('REV.')
     rif = fields.Char('RIF')
     city = fields.Char('Ciudad')
     country = fields.Char('País')
@@ -43,6 +43,13 @@ class NationalPurshaseOrder(models.Model):
     att = fields.Char(string='ATT')
     type_of_packing = fields.Char(string='Tipo de Empaquetamiento')
     regimen = fields.Char('Regimen')
+    wo_showed = fields.Selection(
+        [
+            ('intern','USO INTERNO'),
+            ('ot','ORDEN DE TRABAJO')
+        ], 
+        string='OT Mostrada en reporte'
+    )
 
 class PuchaseOrderLine(models.Model):
     _inherit = 'purchase.order.line'

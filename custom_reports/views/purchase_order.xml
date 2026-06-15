@@ -21,6 +21,7 @@
                             <field name="worker_order" />
                         </group>
                         <group>
+                            <field name="revision" />
                             <field name="annotations" />
                         </group>
                     </group>
@@ -30,6 +31,21 @@
                     <field name="custom_note" readonly="1" optional="hide"/>
                     <button icon="fa-sticky-note" name="action_open_note_wizard" type="object" invisible="not custom_note"/>
                     <button icon="fa-sticky-note" name="action_open_note_wizard" type="object" class="text-info" invisible="custom_note"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="national_purchase_order_report_view_tree" model="ir.ui.view">
+            <field name="name">national_purchase_order_report_view_tree</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='activity_ids']" position="after">
+                    <field name="worker_order" />
+                </xpath>
+
+                <xpath expr="//field[@name='origin']" position="attributes">
+                    <attribute name="optional">hide</attribute>
                 </xpath>
             </field>
         </record>
