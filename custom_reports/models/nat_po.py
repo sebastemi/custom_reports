@@ -45,7 +45,7 @@ class NationalPurshaseOrder(models.Model):
     regimen = fields.Char('Regimen')
     wo_showed = fields.Selection(
         [
-            ('intern','USO INTERNO'),
+            ('USO INTERNO','USO INTERNO'),
             ('ot','ORDEN DE TRABAJO')
         ], 
         string='OT Mostrada en reporte'
