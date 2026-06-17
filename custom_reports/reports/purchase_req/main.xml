@@ -114,6 +114,10 @@
                                     </td>
                                     <td  style="padding:2px;">
                                         <span t-esc="line.name.name"/>
+                                        <t t-if="line.custom_note">
+                                            <div style="margin-top:3px;"/>
+                                            <t t-esc="line.custom_note" />
+                                        </t>
                                         <div class="row" style="margin-top:5px">
                                             <div class="col-2">
                                                 <p>RC: 

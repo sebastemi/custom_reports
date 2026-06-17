@@ -36,7 +36,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <t t-foreach="doc.order_line" t-as="line">
+                        <t t-foreach="doc.order_line.filtered(lambda l: not l.display_type and l.product_id)" t-as="line">
                             <tr >
                                 <td class="td-data border-right border-left text-center px-2" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}; width:5%;">
                                    <t t-esc="line_index + 1"/>
