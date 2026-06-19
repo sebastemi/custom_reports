@@ -37,7 +37,7 @@
                                             <div class="col-2">
                                                 <p>RC: 
                                                     <span class="text-center" style="display:inline-block;width:20px;height:20px;border:1px solid #000;box-sizing:border-box;">
-                                                        <t t-if="'C' in tags_ids">
+                                                        <t t-if="'RC' in tags_ids">
                                                             X
                                                         </t>
                                                     </span>
