@@ -17,7 +17,7 @@ class NationalPurshaseOrder(models.Model):
     requisition = fields.Char('Requisicion')
     order_date = fields.Date('Fecha de orden')
     delivery_date = fields.Date('Fecha de entrega')
-    delivery_place = fields.Char('Shipping Mark / Lugar de Entrega') #DEPRECATED
+    delivery_place = fields.Char('Shipping Mark / Lugar de Entrega', readonly=True) #DEPRECATED
     delivery_place_list = fields.Selection(
         [
             ('default','TEMI, C.A. VALENCIA - VENEZUELA RIF J-07508517-5'),
@@ -45,7 +45,7 @@ class NationalPurshaseOrder(models.Model):
     reviewed_by_id = fields.Many2one('res.users','Revisado Por')
     approved_by_id = fields.Many2one('res.users','Aprobado Por')
     order_terms = fields.Text('Terminos de Orden')
-    insurance = fields.Char(string='Seguro') # DEPRECATED
+    insurance = fields.Char(string='Seguro', readonly=True) # DEPRECATED
     insurance_list = fields.Selection(
         [
             ('our','OUR'),
@@ -54,7 +54,7 @@ class NationalPurshaseOrder(models.Model):
         string='Seguro'
     )
     att = fields.Char(string='ATT')
-    type_of_packing = fields.Char(string='Tipo de Empaquetamiento') # DEPRECATED
+    type_of_packing = fields.Char(string='Tipo de Empaquetamiento', readonly=True) # DEPRECATED
     type_of_packing_list = fields.Selection(
         [
             ('export','EXPORT PACKING'),
@@ -62,7 +62,7 @@ class NationalPurshaseOrder(models.Model):
         ], 
         string='Tipo de Empaquetamiento'
     )
-    regimen = fields.Char('Regimen') # DEPRECATED
+    regimen = fields.Char('Regimen', readonly=True) # DEPRECATED
     regimen_list = fields.Selection(
         [
             ('own_funds','FONDOS PROPIOS'),
