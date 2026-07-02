@@ -38,13 +38,13 @@
                     <tbody>
                         <t t-foreach="doc.order_line.filtered(lambda l: not l.display_type and l.product_id)" t-as="line">
                             <tr >
-                                <td class="td-data border-right border-left text-center px-2" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}; width:5%;">
+                                <td class="td-data border-right border-left text-center px-2" t-attf-style=" width:5%;">
                                    <t t-esc="line_index + 1"/>
                                 </td>
-                                <td class="td-data border-right px-1" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}; width:20%">
+                                <td class="td-data border-right px-1" t-attf-style=" width:20%">
                                    <t t-esc="line.product_id.default_code"/>
                                 </td>
-                                <td class="td-data border-right px-2" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }};  width:40%;">
+                                <td class="td-data border-right px-2" t-attf-style="  width:40%;">
                                     <t t-if="'GSTADM' not in line.product_id.default_code">
                                         <t t-esc="line.product_id.name"/>
                                     </t>
@@ -53,18 +53,27 @@
                                         <t t-esc="line.custom_note" />
                                     </t>
                                 </td>
-                                <td class="td-data border-right px-2" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }};  text-align:right; width:10%;">
+                                <td class="td-data border-right px-2" t-attf-style="  text-align:right; width:10%;">
                                    <t t-esc="'{:.2f}'.format(line.product_qty)"/>
                                 </td>
-                                <td class="td-data border-right px-2" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }};  text-align:right; width:10%;">
+                                <td class="td-data border-right px-2" t-attf-style="  text-align:right; width:10%;">
                                    <span t-field="line.price_unit" t-options='{"widget": "float", "precision": 2}'/>
                                 </td>
-                                <td class="td-data border-right px-2" t-attf-style="{{ 'border-bottom: 1px solid #000;' if line_last else '' }}; text-align:right; width:15%;">
+                                <td class="td-data border-right px-2" t-attf-style=" text-align:right; width:15%;">
                                     <span t-field="line.price_subtotal" t-options='{"widget": "float", "precision": 2}'/>
                                 </td>
                             </tr>
                         </t>
                     </tbody>
+                    <tfoot style="display: table-footer-group;">
+                        <tr>
+                            <td 
+                                colspan="6" 
+                                style="border-top: 1px solid #000 !important; padding: 0 !important; margin: 0 !important; height: 1px;"
+                            >
+                            </td>
+                        </tr>
+                    </tfoot>
                 </table>
 
             </div>
