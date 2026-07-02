@@ -5,46 +5,46 @@
             <t t-if="doc.currency_id.name == 'USD'">
                 <t t-set="tasa" t-value="1"/>
             </t>
-            <t t-elif="doc.currency == 'EUR'">
+            <t t-elif="doc.currency_id.name == 'EUR'">
                 <t t-set="tasa" t-value="doc.currency_rate_usd_to_eur"/>
             </t>
             <t t-else="">
                 <t t-set="tasa" t-value="1"/>
             </t>
             <div class="font-courier">
-                <table style="width:100%;border:1px solid #000;border-collapse:collapse;">
-                    <thead >
-                        <tr style="height:20px;margin:0px;padding:0px;">
-                            <td style="border:1px solid #000;text-align:center;">
+                <table style="width:100%; border: 1px solid #000; border-collapse: separate; border-spacing: 0;">
+                    <thead>
+                        <tr style="height:20px;">
+                            <td style="border-bottom: 1px solid #000; border-right: 1px solid #000; text-align:center; padding:0px;">
                                 <p style="margin:0px">ITEM</p>
                             </td>
-                            <td style="border:1px solid #000;text-align:center;">
+                            <td style="border-bottom: 1px solid #000; border-right: 1px solid #000; text-align:center; padding:0px;">
                                 <p style="margin:5px">SUP CODE</p>
                             </td>
-                            <td style="border:1px solid #000;text-align:center;">
+                            <td style="border-bottom: 1px solid #000; border-right: 1px solid #000; text-align:center; padding:0px;">
                                 <p style="margin:5px">DESCRIPTION</p>
                             </td>
-                            <td style="border:1px solid #000;text-align:center;">
+                            <td style="border-bottom: 1px solid #000; border-right: 1px solid #000; text-align:center; padding:0px;">
                                 <p style="margin:5px">QTY</p>
                             </td>
-                            <td style="border:1px solid #000;text-align:center;">
+                            <td style="border-bottom: 1px solid #000; border-right: 1px solid #000; text-align:center; padding:0px;">
                                 <p style="margin:5px">U.P</p>
                             </td>
-                            <td style="border:1px solid #000;text-align:center;">
+                            <td style="border-bottom: 1px solid #000; text-align:center; padding:0px;">
                                 <p style="margin:5px">TOTAL</p>
                             </td>
                         </tr>
                     </thead>
                     <tbody>
                         <t t-foreach="doc.order_line.filtered(lambda l: not l.display_type and l.product_id)" t-as="line">
-                            <tr >
-                                <td class="td-data border-right border-left text-center px-2" t-attf-style=" width:5%;">
-                                   <t t-esc="line_index + 1"/>
+                            <tr>
+                                <td class="td-data border-right text-center px-2" style="width:5%;">
+                                    <t t-esc="line_index + 1"/>
                                 </td>
-                                <td class="td-data border-right px-1" t-attf-style=" width:20%">
-                                   <t t-esc="line.product_id.default_code"/>
+                                <td class="td-data border-right px-1" style="width:20%">
+                                    <t t-esc="line.product_id.default_code"/>
                                 </td>
-                                <td class="td-data border-right px-2" t-attf-style="  width:40%;">
+                                <td class="td-data border-right px-2" style="width:40%;">
                                     <t t-if="'GSTADM' not in line.product_id.default_code">
                                         <t t-esc="line.product_id.name"/>
                                     </t>
@@ -53,29 +53,19 @@
                                         <t t-esc="line.custom_note" />
                                     </t>
                                 </td>
-                                <td class="td-data border-right px-2" t-attf-style="  text-align:right; width:10%;">
-                                   <t t-esc="'{:.2f}'.format(line.product_qty)"/>
+                                <td class="td-data border-right px-2" style="text-align:right; width:10%;">
+                                    <t t-esc="'{:.2f}'.format(line.product_qty)"/>
                                 </td>
-                                <td class="td-data border-right px-2" t-attf-style="  text-align:right; width:10%;">
-                                   <span t-field="line.price_unit" t-options='{"widget": "float", "precision": 2}'/>
+                                <td class="td-data border-right px-2" style="text-align:right; width:10%;">
+                                    <span t-field="line.price_unit" t-options='{"widget": "float", "precision": 2}'/>
                                 </td>
-                                <td class="td-data border-right px-2" t-attf-style=" text-align:right; width:15%;">
+                                <td class="td-data px-2" style="text-align:right; width:15%;">
                                     <span t-field="line.price_subtotal" t-options='{"widget": "float", "precision": 2}'/>
                                 </td>
                             </tr>
                         </t>
                     </tbody>
-                    <tfoot style="display: table-footer-group;">
-                        <tr>
-                            <td 
-                                colspan="6" 
-                                style="border-top: 1px solid #000 !important; padding: 0 !important; margin: 0 !important; height: 1px;"
-                            >
-                            </td>
-                        </tr>
-                    </tfoot>
                 </table>
-
             </div>
             <style>
                 .td-data{
