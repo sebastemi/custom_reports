@@ -15,7 +15,7 @@
                 <table class="table-borderless" style="width:100%;border-collapse: collapse;">
                     <thead>
                         <tr style="height:20px;">
-                            <td style="border: 1px solid #000;  text-align:center; padding:0px;">
+                            <td style="border: 1px solid #000;  text-align:center; padding:2px;">
                                 <p style="margin:0px">ITEM</p>
                             </td>
                             <td style="border: 1px solid #000;  text-align:center; padding:0px;">
@@ -75,7 +75,7 @@
             </div>
             <style>
                 .border-right {
-                    border-right: 1px solid #000;
+                    border-right: 1px solid #000 !important;
                 }
             </style>
         </template>
