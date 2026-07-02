@@ -12,7 +12,7 @@
                 <t t-set="tasa" t-value="1"/>
             </t>
             <div class="font-courier">
-                <table style="width:100%; border: 1px solid #000; border-collapse: separate; border-spacing: 0;">
+                <table class="table-borderless" style="width:100%; border: 1px solid #000; border-collapse: separate; border-spacing: 0;">
                     <thead>
                         <tr style="height:20px;">
                             <td style="border-bottom: 1px solid #000; border-right: 1px solid #000; text-align:center; padding:0px;">
@@ -65,21 +65,23 @@
                             </tr>
                         </t>
                     </tbody>
+                    <tfoot style="display: table-footer-group;">
+                        <tr>
+                            <td colspan="6" style="border-top: 1px solid #000; font-size: 1px; color: white; padding: 0;">
+                                &amp;nbsp; </td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
             <style>
-                .td-data{
-                    border: 1px solid #fff;
+                .border-right {
                     border-right: 1px solid #000;
                 }
-
-                .border-left{
-                    border-left: 1px solid #000;
-                }
-
-                .border-right{
-                    border-right: 1px solid #000;
-                }
+                /* Obligamos a que las celdas del cuerpo no tengan bordes arriba ni abajo para que sea una lista corrida */
+                table tbody tr td {
+                    border-top: none !important;
+                    border-bottom: none !important;
+                }  
             </style>
         </template>
     </data>
