@@ -59,7 +59,7 @@
                                 <td class="td-data border-right px-2" style="text-align:right; width:10%;">
                                     <span t-field="line.price_unit" t-options='{"widget": "float", "precision": 2}'/>
                                 </td>
-                                <td class="td-data px-2" style="text-align:right; width:15%;">
+                                <td class="td-data border-right px-2" style="text-align:right; width:15%;">
                                     <span t-field="line.price_subtotal" t-options='{"widget": "float", "precision": 2}'/>
                                 </td>
                             </tr>
