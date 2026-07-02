@@ -8,16 +8,20 @@
                 <xpath expr="//page[@name='purchase_delivery_invoice']" position="inside">
                     <group string="Datos para Impresión" name="print_data">
                         <group>
-                            <field name="delivery_place" />
+                            <field name="delivery_place" invisible="not delivery_place"/>
+                            <field name="delivery_place_list" invisible="delivery_place"/>
                             <field name="payment_conditions" />
                             <field name="created_by_id" />
                             <field name="reviewed_by_id" />
                             <field name="approved_by_id" />
-                            <field name="insurance" />
+                            <field name="insurance" invisible="not insurance"/>
+                            <field name="insurance_list" invisible="insurance"/>
                             <field name="order_terms" />
                             <field name="att" />
-                            <field name="type_of_packing" />
-                            <field name="regimen" />
+                            <field name="type_of_packing" invisible="not type_of_packing"/>
+                            <field name="type_of_packing_list" invisible="type_of_packing"/>
+                            <field name="regimen" invisible="not regimen"/>
+                            <field name="regimen_list" invisible="regimen"/>
                             <field name="worker_order" />
                         </group>
                         <group>

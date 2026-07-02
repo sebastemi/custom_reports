@@ -17,7 +17,13 @@ class NationalPurshaseOrder(models.Model):
     requisition = fields.Char('Requisicion')
     order_date = fields.Date('Fecha de orden')
     delivery_date = fields.Date('Fecha de entrega')
-    delivery_place = fields.Char('Shipping Mark / Lugar de Entrega')
+    delivery_place = fields.Char('Shipping Mark / Lugar de Entrega') #DEPRECATED
+    delivery_place_list = fields.Selection(
+        [
+            ('default','TEMI, C.A. VALENCIA - VENEZUELA RIF J-07508517-5'),
+        ],
+        string='Shipping Mark / Lugar de Entrega'
+    )
     worker_order = fields.Char('Orden de trabajo')
     payment_conditions = fields.Char('Condiciones de Pago')
     transport = fields.Selection(TRANSPORTS ,'transporte')
@@ -39,10 +45,30 @@ class NationalPurshaseOrder(models.Model):
     reviewed_by_id = fields.Many2one('res.users','Revisado Por')
     approved_by_id = fields.Many2one('res.users','Aprobado Por')
     order_terms = fields.Text('Terminos de Orden')
-    insurance = fields.Char(string='Seguro')
+    insurance = fields.Char(string='Seguro') # DEPRECATED
+    insurance_list = fields.Selection(
+        [
+            ('our','OUR'),
+            ('yours','YOUR'),
+        ],
+        string='Seguro'
+    )
     att = fields.Char(string='ATT')
-    type_of_packing = fields.Char(string='Tipo de Empaquetamiento')
-    regimen = fields.Char('Regimen')
+    type_of_packing = fields.Char(string='Tipo de Empaquetamiento') # DEPRECATED
+    type_of_packing_list = fields.Selection(
+        [
+            ('export','EXPORT PACKING'),
+            ('import','IMPORT PACKING'),
+        ], 
+        string='Tipo de Empaquetamiento'
+    )
+    regimen = fields.Char('Regimen') # DEPRECATED
+    regimen_list = fields.Selection(
+        [
+            ('own_funds','FONDOS PROPIOS'),
+        ], 
+        string='Regimen'
+    )
     wo_showed = fields.Selection(
         [
             ('USO INTERNO','USO INTERNO'),
