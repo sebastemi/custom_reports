@@ -12,25 +12,25 @@
                 <t t-set="tasa" t-value="1"/>
             </t>
             <div class="font-courier">
-                <table class="table-borderless" style="width:100%; border: 1px solid #000; border-collapse: separate; border-spacing: 0;">
+                <table class="table-borderless" style="width:100%;border-collapse: collapse;">
                     <thead>
                         <tr style="height:20px;">
-                            <td style="border-bottom: 1px solid #000; border-right: 1px solid #000; text-align:center; padding:0px;">
+                            <td style="border: 1px solid #000;  text-align:center; padding:0px;">
                                 <p style="margin:0px">ITEM</p>
                             </td>
-                            <td style="border-bottom: 1px solid #000; border-right: 1px solid #000; text-align:center; padding:0px;">
+                            <td style="border: 1px solid #000;  text-align:center; padding:0px;">
                                 <p style="margin:5px">SUP CODE</p>
                             </td>
-                            <td style="border-bottom: 1px solid #000; border-right: 1px solid #000; text-align:center; padding:0px;">
+                            <td style="border: 1px solid #000;  text-align:center; padding:0px;">
                                 <p style="margin:5px">DESCRIPTION</p>
                             </td>
-                            <td style="border-bottom: 1px solid #000; border-right: 1px solid #000; text-align:center; padding:0px;">
+                            <td style="border: 1px solid #000;  text-align:center; padding:0px;">
                                 <p style="margin:5px">QTY</p>
                             </td>
-                            <td style="border-bottom: 1px solid #000; border-right: 1px solid #000; text-align:center; padding:0px;">
+                            <td style="border: 1px solid #000;  text-align:center; padding:0px;">
                                 <p style="margin:5px">U.P</p>
                             </td>
-                            <td style="border-bottom: 1px solid #000; text-align:center; padding:0px;">
+                            <td style="border: 1px solid #000; text-align:center; padding:0px;">
                                 <p style="margin:5px">TOTAL</p>
                             </td>
                         </tr>
@@ -38,7 +38,7 @@
                     <tbody>
                         <t t-foreach="doc.order_line.filtered(lambda l: not l.display_type and l.product_id)" t-as="line">
                             <tr>
-                                <td class="td-data border-right text-center px-2" style="width:5%;">
+                                <td class="td-data border-right text-center px-2" style="width:5%;border-left: 1px solid #000;">
                                     <t t-esc="line_index + 1"/>
                                 </td>
                                 <td class="td-data border-right px-1" style="width:20%">
@@ -77,11 +77,6 @@
                 .border-right {
                     border-right: 1px solid #000;
                 }
-                /* Obligamos a que las celdas del cuerpo no tengan bordes arriba ni abajo para que sea una lista corrida */
-                table tbody tr td {
-                    border-top: none !important;
-                    border-bottom: none !important;
-                }  
             </style>
         </template>
     </data>
