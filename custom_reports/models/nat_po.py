@@ -76,6 +76,15 @@ class NationalPurshaseOrder(models.Model):
         ], 
         string='OT Mostrada en reporte'
     )
+    
+    def button_confirm(self):
+        res = super(NationalPurshaseOrder, self).button_confirm()
+        
+        for order in self:
+            if order.partner_id:
+                order.message_unsubscribe(partner_ids=order.partner_id.ids)
+                
+        return res
 
 class PuchaseOrderLine(models.Model):
     _inherit = 'purchase.order.line'
