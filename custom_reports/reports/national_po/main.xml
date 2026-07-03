@@ -38,7 +38,7 @@
                                     </td>
 
                                     <td style="padding:2px;width:35%;line-height: 1.4;padding-bottom:10px;">
-                                        <t t-if="'GSTADM' not in line.product_id.default_code">
+                                        <t t-if="'GSTADM' not in (line.product_id.default_code or '')">
                                             <t t-esc="line.product_id.name"/>
                                         </t>
                                         <t t-if="line.custom_note">
