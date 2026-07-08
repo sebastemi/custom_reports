@@ -21,6 +21,9 @@ class NationalPurshaseOrder(models.Model):
     delivery_place_list = fields.Selection(
         [
             ('default','TEMI, C.A. VALENCIA - VENEZUELA RIF J-07508517-5'),
+            ('supplier_place','INSTALACIONES DEL PROVEEDOR'),
+            ('client_place','INSTALACIONES DEL CLIENTE'),
+            ('plant_place','PLANTA TEMI TOCUYITO'),
         ],
         string='Shipping Mark / Lugar de Entrega'
     )
