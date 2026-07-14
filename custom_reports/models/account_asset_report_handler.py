@@ -1,47 +1,43 @@
+import re
 from odoo import models
 
 class AccountAssetReportHandler(models.AbstractModel):
     _inherit = 'account.asset.report.handler'
 
     def _custom_line_postprocessor(self, report, options, lines, warnings=None):
-        """
-        Interceptamos las líneas del reporte de depreciación justo antes de imprimirlas.
-        """
-        # 1. Dejamos que Odoo haga su trabajo normal primero
         res = super()._custom_line_postprocessor(report, options, lines, warnings=warnings)
 
-        # 2. Buscamos el índice (posición) de tu columna 'method_period' en la interfaz
-        # options['columns'] tiene la lista de columnas configuradas en la pantalla
+        # Buscamos tu columna 'method_period'
         method_period_index = None
         for i, col in enumerate(options.get('columns', [])):
-            if col.get('expression_label') == 'method_number':
+            if col.get('expression_label') == 'method_period':
                 method_period_index = i
                 break
 
-        # Si no encontró la columna en la pantalla, no hacemos nada
         if method_period_index is None:
             return res
 
-        # 3. Recorremos cada fila (línea) del reporte
         for line in res:
-            # Los IDs de las líneas de activos en Odoo 17 suelen tener el formato 'account.asset~ID'
             line_id = str(line.get('id', ''))
             
-            if line_id.startswith('account.asset~'):
-                try:
-                    # Extraemos el ID numérico del activo
-                    asset_id = int(line_id.split('~')[1])
+            # ¡EL TRUCO MÁGICO!
+            # Esta expresión regular busca "account.asset" seguido de cualquier 
+            # símbolo no numérico, y extrae los números del ID.
+            # Funciona con '-account.asset-123', '~account.asset~123', etc.
+            match = re.search(r'account\.asset\D+(\d+)', line_id)
+            
+            if match:
+                # Sacamos el ID numérico limpio
+                asset_id = int(match.group(1))
+                asset = self.env['account.asset'].browse(asset_id)
+                
+                if asset.exists():
+                    # Como configuraste la columna como "Cadena" (String), lo convertimos
+                    valor = str(asset.method_period) if asset.method_period else ''
                     
-                    # Buscamos el activo en la base de datos
-                    asset = self.env['account.asset'].browse(asset_id)
-                    
-                    if asset.exists():
-                        # ¡INYECCIÓN! 
-                        # Reemplazamos la celda vacía con el valor real del activo
-                        line['columns'][method_period_index]['name'] = asset.method_period
-                        line['columns'][method_period_index]['no_format'] = asset.method_period
-                except Exception as e:
-                    # Si falla al parsear el ID (por ej. si es una línea de total), saltamos
-                    continue
-                    
+                    # Inyectamos el valor en la celda correspondiente
+                    if len(line['columns']) > method_period_index:
+                        line['columns'][method_period_index]['name'] = valor
+                        line['columns'][method_period_index]['no_format'] = valor
+
         return res
