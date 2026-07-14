@@ -19,9 +19,9 @@ class AccountAssetReportHandler(models.AbstractModel):
     
 
     @api.model
-    def _dynamic_lines_generator(self, options, line_id=None):
-        # Get baseline rows from the core method
-        lines = super()._dynamic_lines_generator(options, line_id=line_id)
+    def _dynamic_lines_generator(self, options, *args, **kwargs):
+        # Pass all unknown arguments safely using *args and **kwargs
+        lines = super()._dynamic_lines_generator(options, *args, **kwargs)
         
         for line in lines:
             # Locate the relevant database record mapped to the row
@@ -32,7 +32,7 @@ class AccountAssetReportHandler(models.AbstractModel):
                 asset = self.env['account.asset'].browse(res_id)
                 
                 # Fetch your custom value from the record
-                custom_value = asset.method_number or 0.0
+                custom_value = asset.my_custom_field or 0.0
                 
                 # Append the cell formatting dictionary into the row's column array
                 line['columns'].append({
