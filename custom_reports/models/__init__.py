@@ -1,6 +1,6 @@
 from . import (
     inventory,
     nat_po,
-    requisition
-
+    requisition,
+    account_asset_report_handler
 )
