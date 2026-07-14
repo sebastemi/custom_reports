@@ -79,6 +79,26 @@ class NationalPurshaseOrder(models.Model):
         ], 
         string='OT Mostrada en reporte'
     )
+    studio_approver_ids = fields.Many2many(
+        comodel_name='res.users',
+        compute='_compute_studio_approvers',
+        string='Aprobadores'
+    )
+
+    @api.depends('state')
+    def _compute_studio_approvers(self):
+        # 1. Buscamos todas las entradas de aprobación de Studio exitosas para estos registros
+        approvals = self.env['studio.approval.entry'].search([
+            ('model', '=', 'purchase.order'),
+            ('res_id', 'in', self.ids),
+            ('approved', '=', True)
+        ])
+        
+        
+        # 2. Asignamos los usuarios a la orden correspondiente
+        for order in self:
+            users = approvals.filtered(lambda a: a.res_id == order.id).mapped('user_id')
+            order.studio_approver_ids = [(6, 0, users.ids)]
     
     def button_confirm(self):
         res = super(NationalPurshaseOrder, self).button_confirm()
