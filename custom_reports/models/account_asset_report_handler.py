@@ -1,47 +1,21 @@
-from odoo import models, api
+from odoo import models
 
 class AccountAssetReportHandler(models.AbstractModel):
     # Heredamos el gestor personalizado exacto del reporte de depreciación
     _inherit = 'account.asset.report.handler'
 
-    @api.model
-    def _get_custom_columns_config(self, options):
-        # Retrieve the baseline columns
-        columns = super()._get_custom_columns_config(options)
+    def _custom_line_dict(self, options, line_id, current_groupby, record, level):
+        """
+        Interceptamos la construcción de la línea.
+        Este es el diccionario que Odoo envía finalmente a la interfaz gráfica.
+        """
+        # 1. Ejecutamos el código original para que Odoo arme la línea normal
+        res = super()._custom_line_dict(options, line_id, current_groupby, record, level)
         
-        # Define and append your custom column definition
-        columns.append({
-            'name': 'method_number',
-            'estimated_width': 15,
-            'blank_if_zero': True,
-        })
-        return columns
-    
-
-    @api.model
-    def _dynamic_lines_generator(self, options, *args, **kwargs):
-        # Pass all unknown arguments safely using *args and **kwargs
-        lines = super()._dynamic_lines_generator(options, *args, **kwargs)
-        
-        for line in lines:
-            # Locate the relevant database record mapped to the row
-            res_id = line.get('res_id')
-            model = line.get('model')
+        # 2. Verificamos que estamos en una línea de activo real (no en un total o cabecera)
+        # En Odoo 17, el 'record' en este punto suele ser el objeto account.asset
+        if record and record._name == 'account.asset':
             
-            if model == 'account.asset' and res_id:
-                asset = self.env['account.asset'].browse(res_id)
-                
-                # Fetch your custom value from the record
-                custom_value = asset.my_custom_field or 0.0
-                
-                # Append the cell formatting dictionary into the row's column array
-                line['columns'].append({
-                    'name': self.format_value(custom_value, options=options),
-                    'no_format': custom_value,
-                    'class': 'number',
-                })
-            else:
-                # Add an empty cell layout for totals or header rows
-                line['columns'].append({'name': ''})
-                
-        return lines
+            res['method_number'] = record.method_number
+            
+        return res
