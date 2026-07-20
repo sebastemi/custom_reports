@@ -38,7 +38,7 @@
                                             <t t-esc="doc.location_dest_id.location_id.name"/>
                                             - 
                                             <t t-if="doc.requisition_id and doc.origin_id">
-                                                <t t-esc="doc.origin_id.name"/>
+                                                <t t-esc="''.join((doc.origin_id.name or '').upper())"/>
                                             </t>
                                             <t t-else="">
                                                 <t t-esc="doc.location_dest_id.name"/>
