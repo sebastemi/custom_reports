@@ -98,73 +98,82 @@
                                 <p style="margin:0;padding:0">REQUISITION NUMBER</p>
                                 <p style="margin:0;padding:0"> <t t-esc="doc.requisition_id.name"/></p>
                             </td>
-                            
+                            <!-- PREPARED -->
                             <td style="border:1px solid #000;text-align:center;padding:0px 5px; vertical-align: middle;">
                                 <p style="margin:0;padding:0">PREPARED:</p>
-                                <p style="margin:0;padding:0; min-height: 35px; line-height: 35px;">
-                                    <t t-if="doc.created_by_id">
-                                        <t t-set="parts" t-value="doc.created_by_id.name.split(' ')"/>
-                                        
-                                        <t t-if="len(parts) >= 3">
-                                            <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
+                                <div style="margin:0;padding:0; min-height: 35px; line-height: 35px; white-space: nowrap;">
+                                    
+                                    <span style="font-size: 10px; vertical-align: middle;">
+                                        <t t-if="doc.created_by_id">
+                                            <t t-set="parts" t-value="doc.created_by_id.name.split(' ')"/>
+                                            <t t-if="len(parts) >= 3">
+                                                <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
+                                            </t>
+                                            <t t-else="">
+                                                <span t-esc="doc.created_by_id.name"/>
+                                            </t>
                                         </t>
-                                        <t t-else="">
-                                            <span t-esc="doc.created_by_id.name"/>
-                                        </t>
-                                        
-                                        <!-- Firma -->
-                                        <t t-if="doc.created_by_id.custom_sign">
-                                            <img t-att-src="image_data_uri(doc.created_by_id.custom_sign)" 
-                                                style="max-height: 30px; vertical-align: middle; margin-left: 5px;"/>
-                                        </t>
+                                    </span>
+                                    
+                                    <!-- Firma a la derecha -->
+                                    <t t-if="doc.created_by_id and doc.created_by_id.custom_sign">
+                                        <img t-att-src="image_data_uri(doc.created_by_id.custom_sign)" 
+                                            style="max-height: 25px; vertical-align: middle; margin-left: 5px; display: inline-block;"/>
                                     </t>
-                                </p>
+                                    
+                                </div>
                             </td>
 
                             <!-- REVISED BY -->
                             <td style="border:1px solid #000;text-align:center;padding:0px 5px; vertical-align: middle;">
                                 <p style="margin:0;padding:0">REVISED BY:</p>
-                                <p style="margin:0;padding:0; min-height: 35px; line-height: 35px;">
-                                    <t t-if="doc.reviewed_by_id">
-                                        <t t-set="parts" t-value="doc.reviewed_by_id.name.split(' ')"/>
-                                        
-                                        <t t-if="len(parts) >= 3">
-                                            <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
+                                <div style="margin:0;padding:0; min-height: 35px; line-height: 35px; white-space: nowrap;">
+                                    
+                                    <span style="font-size: 10px; vertical-align: middle;">
+                                        <t t-if="doc.reviewed_by_id">
+                                            <t t-set="parts" t-value="doc.reviewed_by_id.name.split(' ')"/>
+                                            <t t-if="len(parts) >= 3">
+                                                <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
+                                            </t>
+                                            <t t-else="">
+                                                <span t-esc="doc.reviewed_by_id.name"/>
+                                            </t>
                                         </t>
-                                        <t t-else="">
-                                            <span t-esc="doc.reviewed_by_id.name"/>
-                                        </t>
+                                    </span>
 
-                                        <!-- Firma -->
-                                        <t t-if="doc.reviewed_by_id.custom_sign">
-                                            <img t-att-src="image_data_uri(doc.reviewed_by_id.custom_sign)" 
-                                                style="max-height: 30px; vertical-align: middle; margin-left: 5px;"/>
-                                        </t>
+                                    <!-- Firma a la derecha -->
+                                    <t t-if="doc.reviewed_by_id and doc.reviewed_by_id.custom_sign">
+                                        <img t-att-src="image_data_uri(doc.reviewed_by_id.custom_sign)" 
+                                            style="max-height: 25px; vertical-align: middle; margin-left: 5px; display: inline-block;"/>
                                     </t>
-                                </p>
+                                    
+                                </div>
                             </td>
 
                             <!-- AUTORIZED BY -->
                             <td style="border:1px solid #000;text-align:center;padding:0px 5px; vertical-align: middle;">
                                 <p style="margin:0;padding:0">AUTORIZED BY:</p>
-                                <p style="margin:0;padding:0; min-height: 35px; line-height: 35px;">
-                                    <t t-if="doc.approved_by_id">
-                                        <t t-set="parts" t-value="doc.approved_by_id.name.split(' ')"/>
-                                        
-                                        <t t-if="len(parts) >= 3">
-                                            <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
+                                <div style="margin:0;padding:0; min-height: 35px; line-height: 35px; white-space: nowrap;">
+                                    
+                                    <span style="font-size: 10px; vertical-align: middle;">
+                                        <t t-if="doc.approved_by_id">
+                                            <t t-set="parts" t-value="doc.approved_by_id.name.split(' ')"/>
+                                            <t t-if="len(parts) >= 3">
+                                                <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
+                                            </t>
+                                            <t t-else="">
+                                                <span t-esc="doc.approved_by_id.name"/>
+                                            </t>
                                         </t>
-                                        <t t-else="">
-                                            <span t-esc="doc.approved_by_id.name"/>
-                                        </t>
+                                    </span>
 
-                                        <!-- Firma -->
-                                        <t t-if="doc.approved_by_id.custom_sign">
-                                            <img t-att-src="image_data_uri(doc.approved_by_id.custom_sign)" 
-                                                style="max-height: 30px; vertical-align: middle; margin-left: 5px;"/>
-                                        </t>
+                                    <!-- Firma a la derecha -->
+                                    <t t-if="doc.approved_by_id and doc.approved_by_id.custom_sign">
+                                        <img t-att-src="image_data_uri(doc.approved_by_id.custom_sign)" 
+                                            style="max-height: 25px; vertical-align: middle; margin-left: 5px; display: inline-block;"/>
                                     </t>
-                                </p>
+                                    
+                                </div>
                             </td>
                         </tr>
                     </tbody>
