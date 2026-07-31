@@ -103,7 +103,7 @@
                                 <p style="margin:0;padding:0">PREPARED:</p>
                                 <div style="margin:0;padding:0; min-height: 35px; line-height: 35px; white-space: nowrap;">
                                     
-                                    <span style="font-size: 10px; vertical-align: middle;">
+                                    <span style="font-size: 12px; vertical-align: middle;">
                                         <t t-if="doc.created_by_id">
                                             <t t-set="parts" t-value="doc.created_by_id.name.split(' ')"/>
                                             <t t-if="len(parts) >= 3">
@@ -129,7 +129,7 @@
                                 <p style="margin:0;padding:0">REVISED BY:</p>
                                 <div style="margin:0;padding:0; min-height: 35px; line-height: 35px; white-space: nowrap;">
                                     
-                                    <span style="font-size: 10px; vertical-align: middle;">
+                                    <span style="font-size: 12px; vertical-align: middle;">
                                         <t t-if="doc.reviewed_by_id">
                                             <t t-set="parts" t-value="doc.reviewed_by_id.name.split(' ')"/>
                                             <t t-if="len(parts) >= 3">
@@ -155,7 +155,7 @@
                                 <p style="margin:0;padding:0">AUTORIZED BY:</p>
                                 <div style="margin:0;padding:0; min-height: 35px; line-height: 35px; white-space: nowrap;">
                                     
-                                    <span style="font-size: 10px; vertical-align: middle;">
+                                    <span style="font-size: 12px; vertical-align: middle;">
                                         <t t-if="doc.approved_by_id">
                                             <t t-set="parts" t-value="doc.approved_by_id.name.split(' ')"/>
                                             <t t-if="len(parts) >= 3">
