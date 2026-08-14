@@ -24,6 +24,7 @@ class NationalPurshaseOrder(models.Model):
             ('supplier_place','INSTALACIONES DEL PROVEEDOR'),
             ('client_place','INSTALACIONES DEL CLIENTE'),
             ('plant_place','PLANTA TEMI TOCUYITO'),
+            ('rotoval','OFICINA ROTOVAL'),
         ],
         string='Shipping Mark / Lugar de Entrega'
     )
