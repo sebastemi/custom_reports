@@ -113,10 +113,10 @@
                                         </t>
                                         
                                         <!-- Firma -->
-                                        <!-- <t t-if="doc.created_by_id.custom_sign">
+                                        <t t-if="doc.created_by_id and doc.created_by_id.custom_sign">
                                             <img t-att-src="image_data_uri(doc.created_by_id.custom_sign)" 
                                                 style="max-height: 30px; vertical-align: middle; margin-left: 5px;"/>
-                                        </t> -->
+                                        </t>
                                     </t>
                                 </p>
                             </td>
@@ -136,10 +136,10 @@
                                         </t>
 
                                         <!-- Firma -->
-                                        <!-- <t t-if="doc.reviewed_by_id.custom_sign">
+                                        <t t-if="doc.reviewed_by_id and doc.reviewed_by_id.custom_sign">
                                             <img t-att-src="image_data_uri(doc.reviewed_by_id.custom_sign)" 
                                                 style="max-height: 30px; vertical-align: middle; margin-left: 5px;"/>
-                                        </t> -->
+                                        </t>
                                     </t>
                                 </p>
                             </td>
@@ -159,10 +159,10 @@
                                         </t>
 
                                         <!-- Firma -->
-                                        <!-- <t t-if="doc.approved_by_id.custom_sign">
+                                        <t t-if="doc.approved_by_id and doc.approved_by_id.custom_sign">
                                             <img t-att-src="image_data_uri(doc.approved_by_id.custom_sign)" 
                                                 style="max-height: 30px; vertical-align: middle; margin-left: 5px;"/>
-                                        </t> -->
+                                        </t>
                                     </t>
                                 </p>
                             </td>
