@@ -54,6 +54,7 @@ class NationalPurshaseOrder(models.Model):
         [
             ('our','OUR'),
             ('yours','YOUR'),
+            ('no_apply','N/A')
         ],
         string='Seguro'
     )
@@ -63,6 +64,7 @@ class NationalPurshaseOrder(models.Model):
         [
             ('export','EXPORT PACKING'),
             ('import','IMPORT PACKING'),
+            ('no_apply','N/A')
         ], 
         string='Tipo de Empaquetamiento'
     )
