@@ -108,6 +108,9 @@
                                         <t t-if="len(parts) >= 3">
                                             <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
                                         </t>
+                                        <t t-elif="len(parts) == 3">
+                                            <span t-esc="parts[2]"/> <span t-esc="parts[1]"/>   
+                                        </t>
                                         <t t-else="">
                                             <span t-esc="doc.created_by_id.name"/>
                                         </t>
@@ -130,6 +133,9 @@
                                         
                                         <t t-if="len(parts) >= 3">
                                             <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
+                                        </t>
+                                        <t t-elif="len(parts) == 3">
+                                            <span t-esc="parts[2]"/> <span t-esc="parts[1]"/>
                                         </t>
                                         <t t-else="">
                                             <span t-esc="doc.reviewed_by_id.name"/>
@@ -154,6 +160,9 @@
                                         <t t-if="len(parts) >= 3">
                                             <span t-esc="parts[2]"/> <span t-esc="parts[0]"/>
                                         </t>
+                                        <t t-elif="len(parts) == 3">
+                                            <span t-esc="parts[2]"/> <span t-esc="parts[1]"/>
+                                        </t>                                        
                                         <t t-else="">
                                             <span t-esc="doc.approved_by_id.name"/>
                                         </t>
