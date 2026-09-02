@@ -45,9 +45,9 @@ class NationalPurshaseOrder(models.Model):
     currency_rate_eur = fields.Float('Tasa EUR')
     currency_rate_usd_to_eur = fields.Float('Conversion USD a EUR')
     annotations = fields.Text('Note')
-    created_by_id = fields.Many2one('res.users','Elaborado Por', readonly=True)
-    reviewed_by_id = fields.Many2one('res.users','Revisado Por', readonly=True)
-    approved_by_id = fields.Many2one('res.users','Aprobado Por', readonly=True)
+    created_by_id = fields.Many2one('res.users','Elaborado Por', readonly=False)
+    reviewed_by_id = fields.Many2one('res.users','Revisado Por', readonly=False)
+    approved_by_id = fields.Many2one('res.users','Aprobado Por', readonly=False)
     order_terms = fields.Text('Terminos de Orden')
     insurance = fields.Char(string='Seguro', readonly=True) # DEPRECATED
     insurance_list = fields.Selection(
